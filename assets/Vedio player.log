@@ -1,0 +1,36 @@
+Line 18: Class MSComctlLib.StatusBar of control stbar was not a loaded control class.
+Line 35: Class MSComDlg.CommonDialog of control cmdlg was not a loaded control class.
+Line 57: Class WMPLibCtl.WindowsMediaPlayer of control wmp was not a loaded control class.
+Line 25: The property name _ExtentX in stbar is invalid.
+Line 26: The property name _ExtentY in stbar is invalid.
+Line 27: The property name Style in stbar is invalid.
+Line 28: The property name _Version in stbar is invalid.
+Line 33: The property name Panels in stbar is invalid.
+Line 38: The property name _ExtentX in cmdlg is invalid.
+Line 39: The property name _ExtentY in cmdlg is invalid.
+Line 40: The property name _Version in cmdlg is invalid.
+Line 41: The property name Filter in cmdlg is invalid.
+Line 63: The property name URL in wmp is invalid.
+Line 64: The property name rate in wmp is invalid.
+Line 65: The property name balance in wmp is invalid.
+Line 66: The property name currentPosition in wmp is invalid.
+Line 67: The property name defaultFrame in wmp is invalid.
+Line 68: The property name playCount in wmp is invalid.
+Line 69: The property name autoStart in wmp is invalid.
+Line 70: The property name currentMarker in wmp is invalid.
+Line 71: The property name invokeURLs in wmp is invalid.
+Line 72: The property name baseURL in wmp is invalid.
+Line 73: The property name volume in wmp is invalid.
+Line 74: The property name mute in wmp is invalid.
+Line 75: The property name uiMode in wmp is invalid.
+Line 76: The property name stretchToFit in wmp is invalid.
+Line 77: The property name windowlessVideo in wmp is invalid.
+Line 79: The property name enableContextMenu in wmp is invalid.
+Line 80: The property name fullScreen in wmp is invalid.
+Line 81: The property name SAMIStyle in wmp is invalid.
+Line 82: The property name SAMILang in wmp is invalid.
+Line 83: The property name SAMIFilename in wmp is invalid.
+Line 84: The property name captioningID in wmp is invalid.
+Line 85: The property name enableErrorDialogs in wmp is invalid.
+Line 86: The property name _cx in wmp is invalid.
+Line 87: The property name _cy in wmp is invalid.
