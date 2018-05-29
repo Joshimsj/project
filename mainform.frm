@@ -10,6 +10,7 @@ Begin VB.Form MainForm
    ScaleWidth      =   9900
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton loadcarBtn 
+      Appearance      =   0  'Flat
       Caption         =   "View"
       Height          =   495
       Left            =   240
@@ -18,7 +19,8 @@ Begin VB.Form MainForm
       Width           =   1815
    End
    Begin VB.ListBox CarList1 
-      Height          =   4740
+      Appearance      =   0  'Flat
+      Height          =   4320
       Left            =   240
       TabIndex        =   1
       Top             =   120
@@ -50,6 +52,9 @@ Dim conn As New ADODB.Connection
 Dim currentVdo As String
 Dim currentCar As String
 
+Private Sub CarList1_Click()
+    loadcarBtn.Enabled = True
+End Sub
 
 Private Sub Form_Load()
     Me.WindowState = 2
@@ -59,6 +64,7 @@ Private Sub Form_Load()
     BGPic.Width = Me.Width
     
     currentVdo = ""
+    loadcarBtn.Enabled = False
     
     'Connect to database
      ConnectDatabase "C:\Users\MSJ\Desktop\VB_Smart\c_details.mdb"
@@ -104,6 +110,8 @@ End Sub
 Private Sub ConnectDatabase(ByVal database_path As String)
     conn.Open "Provider=Microsoft.jet.OLEDB.4.0;Data Source =" & database_path & ";persist security info=false"
 End Sub
+
+
 
 Private Sub playVdoControl_Click()
     Load vdoPlayerDlg
