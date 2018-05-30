@@ -6,9 +6,34 @@ Begin VB.Form MainForm
    ClientTop       =   450
    ClientWidth     =   9900
    LinkTopic       =   "Form1"
-   ScaleHeight     =   10950
-   ScaleWidth      =   20250
+   ScaleHeight     =   6480
+   ScaleWidth      =   9900
    StartUpPosition =   3  'Windows Default
+   Begin VB.ListBox List1 
+      Columns         =   2
+      Height          =   2205
+      Left            =   3720
+      TabIndex        =   11
+      Top             =   1080
+      Width           =   1695
+   End
+   Begin VB.ListBox carModel 
+      Appearance      =   0  'Flat
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   12
+         Charset         =   0
+         Weight          =   300
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   2730
+      Left            =   120
+      TabIndex        =   10
+      Top             =   3795
+      Width           =   1905
+   End
    Begin VB.CommandButton loadcarBtn 
       Appearance      =   0  'Flat
       Caption         =   "View"
@@ -24,7 +49,7 @@ Begin VB.Form MainForm
       Height          =   600
       Left            =   100
       TabIndex        =   2
-      Top             =   4410
+      Top             =   6690
       Width           =   1900
    End
    Begin VB.ListBox carList 
@@ -38,13 +63,13 @@ Begin VB.Form MainForm
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   4230
+      Height          =   2730
       Left            =   100
       TabIndex        =   1
-      Top             =   100
+      Top             =   550
       Width           =   1900
    End
-   Begin VB.CommandButton vTop 
+   Begin VB.CommandButton playVdoControl 
       Caption         =   "Play Add"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -56,14 +81,59 @@ Begin VB.Form MainForm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   600
-      Left            =   100
+      Left            =   120
       TabIndex        =   0
-      Top             =   5100
+      Top             =   7440
       Width           =   1900
    End
-   Begin VB.Label Label2 
+   Begin VB.Label Model 
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
+      Caption         =   "Car Model"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   300
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H80000008&
+      Height          =   345
+      Index           =   1
+      Left            =   120
+      TabIndex        =   9
+      Top             =   3360
+      Width           =   1900
+   End
+   Begin VB.Label Brand 
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
+      Caption         =   "Car Brand"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   300
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H80000008&
+      Height          =   345
+      Index           =   0
+      Left            =   120
+      TabIndex        =   8
+      Top             =   105
+      Width           =   1905
+   End
+   Begin VB.Label topView 
       Alignment       =   2  'Center
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
       BackStyle       =   0  'Transparent
+      BorderStyle     =   1  'Fixed Single
       Caption         =   "Top"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -74,17 +144,72 @@ Begin VB.Form MainForm
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
-      Left            =   0
+      ForeColor       =   &H80000008&
+      Height          =   400
+      Index           =   3
+      Left            =   18500
+      TabIndex        =   7
+      ToolTipText     =   "Click to view Top View"
+      Top             =   1400
+      Width           =   1500
+   End
+   Begin VB.Label rearView 
+      Alignment       =   2  'Center
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
+      BorderStyle     =   1  'Fixed Single
+      Caption         =   "Rear"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   300
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H80000008&
+      Height          =   400
+      Index           =   2
+      Left            =   18500
+      TabIndex        =   6
+      ToolTipText     =   "Click to view Top View"
+      Top             =   900
+      Width           =   1500
+   End
+   Begin VB.Label sideAView 
+      Alignment       =   2  'Center
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
+      BorderStyle     =   1  'Fixed Single
+      Caption         =   "Side A"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   300
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H80000008&
+      Height          =   400
+      Index           =   0
+      Left            =   18500
       TabIndex        =   5
       ToolTipText     =   "Click to view Top View"
-      Top             =   0
+      Top             =   1900
       Width           =   1500
    End
-   Begin VB.Label Label1 
+   Begin VB.Label sideBView 
       Alignment       =   2  'Center
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
       BackStyle       =   0  'Transparent
-      Caption         =   "Top"
+      BorderStyle     =   1  'Fixed Single
+      Caption         =   "Side B"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -94,17 +219,22 @@ Begin VB.Form MainForm
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
-      Left            =   0
+      ForeColor       =   &H80000008&
+      Height          =   400
+      Index           =   1
+      Left            =   18500
       TabIndex        =   4
       ToolTipText     =   "Click to view Top View"
-      Top             =   0
+      Top             =   2400
       Width           =   1500
    End
-   Begin VB.Label TopView 
+   Begin VB.Label frontView 
       Alignment       =   2  'Center
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
       BackStyle       =   0  'Transparent
-      Caption         =   "Top"
+      BorderStyle     =   1  'Fixed Single
+      Caption         =   "Front"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -114,11 +244,12 @@ Begin VB.Form MainForm
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
-      Left            =   0
+      ForeColor       =   &H80000008&
+      Height          =   400
+      Left            =   18500
       TabIndex        =   3
       ToolTipText     =   "Click to view Top View"
-      Top             =   0
+      Top             =   400
       Width           =   1500
    End
    Begin VB.Image BGPic 
@@ -139,10 +270,6 @@ Dim conn As New ADODB.Connection
 Dim currentVdo As String
 Dim currentCar As String
 
-Private Sub carList_Click()
-    loadcarBtn.Enabled = True
-End Sub
-
 Private Sub Form_Load()
     Me.WindowState = 2
     BGPic.Top = 0
@@ -154,11 +281,11 @@ Private Sub Form_Load()
     loadcarBtn.Enabled = False
     
     'Connect to database
-     ConnectDatabase "C:\Users\MSJ\Desktop\VB_Smart\c_details.mdb"
+     ConnectDatabase "Z:\MSJ\project\assets\cars.mdb"
     
     'Load Carlist
      Dim cars As New ADODB.Recordset
-     query = "SELECT name FROM Cars"
+     query = "SELECT name FROM cars"
      
      cars.Open query, conn, adUseClient, adLockOptimistic, adCmdText
      
@@ -190,14 +317,57 @@ Private Sub loadcarBtn_Click()
     playVdoControl.Enabled = True
     car_id = carList.ListIndex
     Dim car As New ADODB.Recordset
-    q = "SELECT * FROM Cars WHERE ID = " & car_id + 1
-    car.Open q, conn
+    q = "SELECT * FROM car_details WHERE id = " & car_id + 1
+    car.Open q, conn, adUseClient, adLockOptimistic, adCmdText
+    
     avatar = car!avatar
     BGPic.Picture = LoadPicture("Z:\MSJ\project\images\" & avatar)
     
     currentCar = car!name
     currentVdo = car!video
+    
+    car.Close
 End Sub
+
+Private Sub carList_Click()
+    loadcarBtn.Enabled = True
+    
+    carModel.Clear
+    carModel.Refresh
+    
+    car_id = carList.ListIndex
+    
+    Dim car As New ADODB.Recordset
+    q = "SELECT model FROM car_details WHERE car_id = " & car_id + 1
+    car.Open q, conn, adUseClient, adLockOptimistic, adCmdText
+    
+    'avatar = car!avatar
+    'BGPic.Picture = LoadPicture("Z:\MSJ\project\images\" & avatar)
+    total_models = car.RecordCount
+    
+    For i = 0 To total_models - 1
+        carModel.AddItem car.Fields(0).Value, i
+        car.MoveNext
+    Next i
+    car.Close
+End Sub
+
+Private Sub carModel_Click()
+    playVdoControl.Enabled = True
+    car_id = carModel.ListIndex
+    Dim car As New ADODB.Recordset
+    q = "SELECT * FROM car_details WHERE id = " & car_id + 1
+    car.Open q, conn, adUseClient, adLockOptimistic, adCmdText
+    
+    avatar = car!avatar
+    BGPic.Picture = LoadPicture("Z:\MSJ\project\images\" & avatar)
+    
+    currentCar = car!name
+    currentVdo = car!video
+    
+    car.Close
+End Sub
+
 
 '************************
 ' Database subrouteines (Functions)
