@@ -6,37 +6,124 @@ Begin VB.Form MainForm
    ClientTop       =   450
    ClientWidth     =   9900
    LinkTopic       =   "Form1"
-   ScaleHeight     =   6480
-   ScaleWidth      =   9900
+   ScaleHeight     =   10950
+   ScaleWidth      =   20250
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton loadcarBtn 
       Appearance      =   0  'Flat
       Caption         =   "View"
-      Height          =   495
-      Left            =   240
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   12
+         Charset         =   0
+         Weight          =   300
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   600
+      Left            =   100
       TabIndex        =   2
-      Top             =   5160
-      Width           =   1815
+      Top             =   4410
+      Width           =   1900
    End
-   Begin VB.ListBox CarList1 
+   Begin VB.ListBox carList 
       Appearance      =   0  'Flat
-      Height          =   4320
-      Left            =   240
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   12
+         Charset         =   0
+         Weight          =   300
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   4230
+      Left            =   100
       TabIndex        =   1
-      Top             =   120
-      Width           =   1815
+      Top             =   100
+      Width           =   1900
    End
-   Begin VB.CommandButton playVdoControl 
-      Caption         =   "play"
-      Height          =   615
-      Left            =   18720
+   Begin VB.CommandButton vTop 
+      Caption         =   "Play Add"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   12
+         Charset         =   0
+         Weight          =   300
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   600
+      Left            =   100
       TabIndex        =   0
-      Top             =   240
-      Width           =   1335
+      Top             =   5100
+      Width           =   1900
+   End
+   Begin VB.Label Label2 
+      Alignment       =   2  'Center
+      BackStyle       =   0  'Transparent
+      Caption         =   "Top"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   300
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   0
+      TabIndex        =   5
+      ToolTipText     =   "Click to view Top View"
+      Top             =   0
+      Width           =   1500
+   End
+   Begin VB.Label Label1 
+      Alignment       =   2  'Center
+      BackStyle       =   0  'Transparent
+      Caption         =   "Top"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   300
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   0
+      TabIndex        =   4
+      ToolTipText     =   "Click to view Top View"
+      Top             =   0
+      Width           =   1500
+   End
+   Begin VB.Label TopView 
+      Alignment       =   2  'Center
+      BackStyle       =   0  'Transparent
+      Caption         =   "Top"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   300
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   0
+      TabIndex        =   3
+      ToolTipText     =   "Click to view Top View"
+      Top             =   0
+      Width           =   1500
    End
    Begin VB.Image BGPic 
       Height          =   16200
-      Left            =   0
+      Left            =   -120
       Picture         =   "mainform.frx":0000
       Stretch         =   -1  'True
       Top             =   0
@@ -52,7 +139,7 @@ Dim conn As New ADODB.Connection
 Dim currentVdo As String
 Dim currentCar As String
 
-Private Sub CarList1_Click()
+Private Sub carList_Click()
     loadcarBtn.Enabled = True
 End Sub
 
@@ -73,16 +160,24 @@ Private Sub Form_Load()
      Dim cars As New ADODB.Recordset
      query = "SELECT name FROM Cars"
      
-     cars.Open query, conn
+     cars.Open query, conn, adUseClient, adLockOptimistic, adCmdText
      
 
     'Append carlist
-    'CarList1.AddItem cars!name
+    'Set carList.DataSource = cars
+    'carList.DataField = "name"
+    
+    'Total cars in Database
+    total_cars = cars.RecordCount
+    
+    For i = 0 To total_cars - 1
+        carList.AddItem cars.Fields(0).Value, i
+        cars.MoveNext
+    Next i
+    
+    'carList.AddItem cars.Fields(1)
     cars.Close
-
-    CarList1.AddItem "Aston Martin", 0
-    CarList1.AddItem "Aston Martin", 1
-    CarList1.AddItem "Audi", 2
+    
     playVdoControl.Enabled = False
 End Sub
 
@@ -93,15 +188,15 @@ End Sub
 
 Private Sub loadcarBtn_Click()
     playVdoControl.Enabled = True
-    car_id = CarList1.ListIndex
-    Dim cars As New ADODB.Recordset
+    car_id = carList.ListIndex
+    Dim car As New ADODB.Recordset
     q = "SELECT * FROM Cars WHERE ID = " & car_id + 1
-    cars.Open q, conn
-    avatar = cars!avatar
+    car.Open q, conn
+    avatar = car!avatar
     BGPic.Picture = LoadPicture("Z:\MSJ\project\images\" & avatar)
     
-    currentCar = cars!name
-    currentVdo = cars!video
+    currentCar = car!name
+    currentVdo = car!video
 End Sub
 
 '************************

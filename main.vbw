@@ -1,3 +1,3 @@
-frmSplash = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+frmSplash = 0, 0, 0, 0, C, 25, 25, 922, 486, C
 vdoPlayerDlg = 0, 0, 0, 0, C, 0, 0, 0, 0, C
-MainForm = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+MainForm = 100, 100, 997, 561, Z, 75, 75, 972, 536, C
