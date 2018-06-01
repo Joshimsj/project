@@ -9,14 +9,6 @@ Begin VB.Form MainForm
    ScaleHeight     =   6480
    ScaleWidth      =   9900
    StartUpPosition =   3  'Windows Default
-   Begin VB.ListBox List1 
-      Columns         =   2
-      Height          =   2205
-      Left            =   3720
-      TabIndex        =   11
-      Top             =   1080
-      Width           =   1695
-   End
    Begin VB.ListBox carModel 
       Appearance      =   0  'Flat
       BeginProperty Font 
@@ -270,6 +262,8 @@ Dim conn As New ADODB.Connection
 Dim currentVdo As String
 Dim currentCar As String
 
+Dim currentModels() As Integer
+
 Private Sub Form_Load()
     Me.WindowState = 2
     BGPic.Top = 0
@@ -338,14 +332,17 @@ Private Sub carList_Click()
     car_id = carList.ListIndex
     
     Dim car As New ADODB.Recordset
-    q = "SELECT model FROM car_details WHERE car_id = " & car_id + 1
+    q = "SELECT model, id FROM car_details WHERE car_id = " & car_id + 1
     car.Open q, conn, adUseClient, adLockOptimistic, adCmdText
     
     'avatar = car!avatar
     'BGPic.Picture = LoadPicture("Z:\MSJ\project\images\" & avatar)
     total_models = car.RecordCount
     
+    ReDim currentModels(total_models) As Integer
+    
     For i = 0 To total_models - 1
+        currentModels(i) = car.Fields(1).Value
         carModel.AddItem car.Fields(0).Value, i
         car.MoveNext
     Next i
@@ -354,9 +351,10 @@ End Sub
 
 Private Sub carModel_Click()
     playVdoControl.Enabled = True
-    car_id = carModel.ListIndex
+    Index = carModel.ListIndex
+    car_id = currentModels(Index)
     Dim car As New ADODB.Recordset
-    q = "SELECT * FROM car_details WHERE id = " & car_id + 1
+    q = "SELECT * FROM car_details WHERE id = " & car_id
     car.Open q, conn, adUseClient, adLockOptimistic, adCmdText
     
     avatar = car!avatar
