@@ -308,24 +308,12 @@ Private Sub Form_Resize()
 End Sub
 
 Private Sub loadcarBtn_Click()
-    playVdoControl.Enabled = True
-    car_id = carList.ListIndex
-    Dim car As New ADODB.Recordset
-    q = "SELECT * FROM car_details WHERE id = " & car_id + 1
-    car.Open q, conn, adUseClient, adLockOptimistic, adCmdText
-    
-    avatar = car!avatar
-    BGPic.Picture = LoadPicture("Z:\MSJ\project\images\" & avatar)
-    
-    currentCar = car!name
-    currentVdo = car!video
-    
-    car.Close
+    Load carConfiguration
+    carConfiguration.Show
 End Sub
 
 Private Sub carList_Click()
-    loadcarBtn.Enabled = True
-    
+        
     carModel.Clear
     carModel.Refresh
     
@@ -350,6 +338,7 @@ Private Sub carList_Click()
 End Sub
 
 Private Sub carModel_Click()
+    loadcarBtn.Enabled = True
     playVdoControl.Enabled = True
     Index = carModel.ListIndex
     car_id = currentModels(Index)
