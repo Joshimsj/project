@@ -4,8 +4,8 @@ Begin VB.Form vdoPlayerDlg
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Viedeo Name"
    ClientHeight    =   7785
-   ClientLeft      =   2760
-   ClientTop       =   3750
+   ClientLeft      =   2115
+   ClientTop       =   1485
    ClientWidth     =   16170
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -51,7 +51,6 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-
 Option Explicit
 
 Private Sub Form_Load()
@@ -63,6 +62,6 @@ Private Sub Form_Load()
 End Sub
 
 Public Sub Play_Video(ByVal path As String, Optional ByVal name As String = "VDO")
-    player.Url = path
+    player.url = path
     Me.Caption = name
 End Sub
