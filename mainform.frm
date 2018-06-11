@@ -9,6 +9,14 @@ Begin VB.Form MainForm
    ScaleHeight     =   6480
    ScaleWidth      =   9900
    StartUpPosition =   3  'Windows Default
+   Begin VB.ComboBox brandType 
+      Height          =   315
+      Left            =   120
+      TabIndex        =   10
+      Text            =   "Combo1"
+      Top             =   120
+      Width           =   1900
+   End
    Begin VB.ListBox carModel 
       Appearance      =   0  'Flat
       BeginProperty Font 
@@ -22,7 +30,7 @@ Begin VB.Form MainForm
       EndProperty
       Height          =   2730
       Left            =   120
-      TabIndex        =   10
+      TabIndex        =   9
       Top             =   3795
       Width           =   1905
    End
@@ -95,30 +103,9 @@ Begin VB.Form MainForm
       Height          =   345
       Index           =   1
       Left            =   120
-      TabIndex        =   9
+      TabIndex        =   8
       Top             =   3360
       Width           =   1900
-   End
-   Begin VB.Label Brand 
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      Caption         =   "Car Brand"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   300
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   345
-      Index           =   0
-      Left            =   120
-      TabIndex        =   8
-      Top             =   105
-      Width           =   1905
    End
    Begin VB.Label topView 
       Alignment       =   2  'Center
@@ -261,8 +248,46 @@ Attribute VB_Exposed = False
 Dim conn As New ADODB.Connection
 Dim currentVdo As String
 Dim currentCar As String
+Dim currentCategory As Integer
 
-Dim currentModels() As Integer
+'Dim currentModels() As Integer
+Dim carBrands() As Integer
+
+Private Sub brandType_Click()
+    Index = brandType.ListIndex
+    
+    'Sets the current category on clipboard
+    currentCategory = Index
+    
+    'Load Carlist
+     Dim cars As New ADODB.Recordset
+     query = "SELECT DISTINCT car_id, brand FROM cars WHERE category = " & Index
+     
+     cars.Open query, conn, adUseClient, adLockOptimistic, adCmdText
+     
+
+    'Append carlist
+        
+    'Total cars in Database
+    total_cars = cars.RecordCount
+    ReDim carBrands(total_cars) As Integer
+    
+    carList.Clear
+    carList.Refresh
+    
+    If total_cars > 0 Then
+    
+        For i = 0 To total_cars - 1
+            'Check for empty value
+            carList.AddItem cars.Fields(1).Value, i
+            carBrands(i) = cars.Fields(0).Value
+            cars.MoveNext
+        Next i
+    End If
+    
+    'carList.AddItem cars.Fields(1)
+    cars.Close
+End Sub
 
 Private Sub Form_Load()
     Me.WindowState = 2
@@ -274,30 +299,17 @@ Private Sub Form_Load()
     currentVdo = ""
     loadcarBtn.Enabled = False
     
+    'carTypeTables = Array("sport", "vintage", "luxury", "hybrid", "evision")
+    
+    brandType.AddItem "Sports", 0
+    brandType.AddItem "Vintage", 1
+    brandType.AddItem "Luxury", 2
+    brandType.AddItem "Hybrid", 3
+    brandType.AddItem "Evision", 4
+    
+    
     'Connect to database
-     ConnectDatabase "Z:\MSJ\project\assets\cars.mdb"
-    
-    'Load Carlist
-     Dim cars As New ADODB.Recordset
-     query = "SELECT name FROM cars"
-     
-     cars.Open query, conn, adUseClient, adLockOptimistic, adCmdText
-     
-
-    'Append carlist
-    'Set carList.DataSource = cars
-    'carList.DataField = "name"
-    
-    'Total cars in Database
-    total_cars = cars.RecordCount
-    
-    For i = 0 To total_cars - 1
-        carList.AddItem cars.Fields(0).Value, i
-        cars.MoveNext
-    Next i
-    
-    'carList.AddItem cars.Fields(1)
-    cars.Close
+    ConnectDatabase "Z:\MSJ\project\assets\cars3.mdb"
     
     playVdoControl.Enabled = False
 End Sub
@@ -312,15 +324,18 @@ Private Sub loadcarBtn_Click()
     carConfiguration.Show
 End Sub
 
+
+
 Private Sub carList_Click()
         
     carModel.Clear
     carModel.Refresh
     
-    car_id = carList.ListIndex
+    Index = carList.ListIndex
     
     Dim car As New ADODB.Recordset
-    q = "SELECT model, id FROM car_details WHERE car_id = " & car_id + 1
+    
+    q = "SELECT model_id, model FROM cars WHERE car_id = " & carBrands(Index) & " AND category = " & currentCategory
     car.Open q, conn, adUseClient, adLockOptimistic, adCmdText
     
     'avatar = car!avatar
@@ -328,14 +343,18 @@ Private Sub carList_Click()
     total_models = car.RecordCount
     
     ReDim currentModels(total_models) As Integer
+    carModel.Clear
+    carModel.Refresh
     
     For i = 0 To total_models - 1
-        currentModels(i) = car.Fields(1).Value
-        carModel.AddItem car.Fields(0).Value, i
+        currentModels(i) = car.Fields(0).Value
+        carModel.AddItem car.Fields(1).Value, i
         car.MoveNext
     Next i
     car.Close
 End Sub
+
+
 
 Private Sub carModel_Click()
     loadcarBtn.Enabled = True

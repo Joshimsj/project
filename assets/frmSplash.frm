@@ -19,7 +19,7 @@ Begin VB.Form frmSplash
    ScaleWidth      =   15780
    ShowInTaskbar   =   0   'False
    Begin VB.Timer Timer1 
-      Interval        =   4500
+      Interval        =   5000
       Left            =   480
       Top             =   360
    End
