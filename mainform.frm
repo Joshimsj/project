@@ -250,7 +250,7 @@ Dim currentVdo As String
 Dim currentCar As String
 Dim currentCategory As Integer
 
-'Dim currentModels() As Integer
+Dim currentModels() As Integer
 Dim carBrands() As Integer
 
 Private Sub brandType_Click()
@@ -289,6 +289,35 @@ Private Sub brandType_Click()
     cars.Close
 End Sub
 
+Private Sub carModel_Click()
+    loadcarBtn.Enabled = True
+        
+    Index = carModel.ListIndex
+    model_id = currentModels(Index)
+    
+    Dim car As New ADODB.Recordset
+    q = "SELECT * FROM cars WHERE model_id = " & model_id
+    car.Open q, conn, adUseClient, adLockOptimistic, adCmdText
+    
+    If IsNull(car!display_pic) Then
+        MsgBox ("No Pics found for this car")
+    Else
+        BGPic.Picture = LoadPicture("Z:\MSJ\project\images\" & car!display_pic)
+    End If
+    
+    currentCar = car!brand & "(" & car!Model & ")"
+    
+    If IsNull(car!video) Then
+    MsgBox ("No Vdo found for this car")
+       playVdoControl.Enabled = False
+    Else
+        playVdoControl.Enabled = True
+        currentVdo = car!video
+    End If
+    
+    car.Close
+End Sub
+
 Private Sub Form_Load()
     Me.WindowState = 2
     BGPic.Top = 0
@@ -319,18 +348,32 @@ Private Sub Form_Resize()
     BGPic.Width = Me.Width
 End Sub
 
+Private Sub frontView_Click()
+    Dim pic As New ADODB.Recordset
+        
+    Index = carModel.ListIndex
+    model_id = currentModels(Index)
+    
+    Dim car As New ADODB.Recordset
+    q = "SELECT pic FROM pictures WHERE model_id = " & model_id & " AND view = 'front'"
+    car.Open q, conn, adUseClient, adLockOptimistic, adCmdText
+    
+    If IsNull(car!pic) Then
+        MsgBox ("No Pictures found for this car")
+    Else
+        BGPic.Picture = LoadPicture("Z:\MSJ\project\images\" & car!pic)
+    End If
+    
+End Sub
+
 Private Sub loadcarBtn_Click()
     Load carConfiguration
     carConfiguration.Show
 End Sub
 
 
-
 Private Sub carList_Click()
-        
-    carModel.Clear
-    carModel.Refresh
-    
+
     Index = carList.ListIndex
     
     Dim car As New ADODB.Recordset
@@ -354,25 +397,6 @@ Private Sub carList_Click()
     car.Close
 End Sub
 
-
-
-Private Sub carModel_Click()
-    loadcarBtn.Enabled = True
-    playVdoControl.Enabled = True
-    Index = carModel.ListIndex
-    car_id = currentModels(Index)
-    Dim car As New ADODB.Recordset
-    q = "SELECT * FROM car_details WHERE id = " & car_id
-    car.Open q, conn, adUseClient, adLockOptimistic, adCmdText
-    
-    avatar = car!avatar
-    BGPic.Picture = LoadPicture("Z:\MSJ\project\images\" & avatar)
-    
-    currentCar = car!name
-    currentVdo = car!video
-    
-    car.Close
-End Sub
 
 
 '************************
