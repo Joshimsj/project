@@ -1,0 +1,25 @@
+Line 16: Class WMPLibCtl.WindowsMediaPlayer of control player was not a loaded control class.
+Line 22: The property name URL in player is invalid.
+Line 23: The property name rate in player is invalid.
+Line 24: The property name balance in player is invalid.
+Line 25: The property name currentPosition in player is invalid.
+Line 26: The property name defaultFrame in player is invalid.
+Line 27: The property name playCount in player is invalid.
+Line 28: The property name autoStart in player is invalid.
+Line 29: The property name currentMarker in player is invalid.
+Line 30: The property name invokeURLs in player is invalid.
+Line 31: The property name baseURL in player is invalid.
+Line 32: The property name volume in player is invalid.
+Line 33: The property name mute in player is invalid.
+Line 34: The property name uiMode in player is invalid.
+Line 35: The property name stretchToFit in player is invalid.
+Line 36: The property name windowlessVideo in player is invalid.
+Line 38: The property name enableContextMenu in player is invalid.
+Line 39: The property name fullScreen in player is invalid.
+Line 40: The property name SAMIStyle in player is invalid.
+Line 41: The property name SAMILang in player is invalid.
+Line 42: The property name SAMIFilename in player is invalid.
+Line 43: The property name captioningID in player is invalid.
+Line 44: The property name enableErrorDialogs in player is invalid.
+Line 45: The property name _cx in player is invalid.
+Line 46: The property name _cy in player is invalid.

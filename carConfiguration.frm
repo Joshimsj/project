@@ -2,14 +2,13 @@ VERSION 5.00
 Begin VB.Form carConfiguration 
    BackColor       =   &H8000000B&
    Caption         =   "Car Configuration"
-   ClientHeight    =   8160
-   ClientLeft      =   120
-   ClientTop       =   450
-   ClientWidth     =   11820
+   ClientHeight    =   10410
+   ClientLeft      =   -240
+   ClientTop       =   630
+   ClientWidth     =   20250
    LinkTopic       =   "Form1"
-   ScaleHeight     =   8160
-   ScaleWidth      =   11820
-   StartUpPosition =   3  'Windows Default
+   ScaleHeight     =   10410
+   ScaleWidth      =   20250
    Begin VB.Timer tim 
       Interval        =   500
       Left            =   100

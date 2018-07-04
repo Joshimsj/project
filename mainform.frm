@@ -1,243 +1,274 @@
 VERSION 5.00
 Begin VB.Form MainForm 
+   BorderStyle     =   0  'None
    Caption         =   "Form1"
-   ClientHeight    =   6480
-   ClientLeft      =   120
-   ClientTop       =   450
-   ClientWidth     =   9900
+   ClientHeight    =   11280
+   ClientLeft      =   0
+   ClientTop       =   180
+   ClientWidth     =   20490
    LinkTopic       =   "Form1"
-   ScaleHeight     =   6480
-   ScaleWidth      =   9900
-   StartUpPosition =   3  'Windows Default
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   ScaleHeight     =   11280
+   ScaleWidth      =   20490
+   ShowInTaskbar   =   0   'False
+   WindowState     =   2  'Maximized
+   Begin VB.CommandButton Command2 
+      Caption         =   "X"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   12
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   19800
+      TabIndex        =   6
+      Top             =   10560
+      Width           =   615
+   End
+   Begin VB.CommandButton Command1 
+      Caption         =   "Book"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   17880
+      TabIndex        =   5
+      Top             =   10560
+      Width           =   1815
+   End
    Begin VB.ComboBox brandType 
-      Height          =   315
+      BackColor       =   &H00808000&
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   450
       Left            =   120
-      TabIndex        =   10
-      Text            =   "Combo1"
-      Top             =   120
-      Width           =   1900
+      TabIndex        =   4
+      Text            =   "Select Category"
+      Top             =   240
+      Width           =   2865
    End
    Begin VB.ListBox carModel 
       Appearance      =   0  'Flat
+      BackColor       =   &H00404000&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
-         Size            =   12
+         Size            =   14.25
          Charset         =   0
-         Weight          =   300
+         Weight          =   600
          Underline       =   0   'False
-         Italic          =   0   'False
+         Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   2730
-      Left            =   120
-      TabIndex        =   9
-      Top             =   3795
-      Width           =   1905
+      ForeColor       =   &H0000FFFF&
+      Height          =   1020
+      Left            =   3240
+      TabIndex        =   3
+      Top             =   840
+      Width           =   3105
    End
    Begin VB.CommandButton loadcarBtn 
-      Appearance      =   0  'Flat
+      BackColor       =   &H000080FF&
       Caption         =   "View"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
-         Size            =   12
+         Size            =   14.25
          Charset         =   0
-         Weight          =   300
+         Weight          =   600
          Underline       =   0   'False
-         Italic          =   0   'False
+         Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
       Height          =   600
-      Left            =   100
+      Left            =   120
+      MaskColor       =   &H0000FFFF&
+      Style           =   1  'Graphical
       TabIndex        =   2
-      Top             =   6690
+      Top             =   10560
+      UseMaskColor    =   -1  'True
       Width           =   1900
    End
    Begin VB.ListBox carList 
       Appearance      =   0  'Flat
+      BackColor       =   &H00404000&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
-         Size            =   12
+         Size            =   14.25
          Charset         =   0
-         Weight          =   300
+         Weight          =   600
          Underline       =   0   'False
-         Italic          =   0   'False
+         Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   2730
-      Left            =   100
+      ForeColor       =   &H0000FFFF&
+      Height          =   1020
+      Left            =   120
       TabIndex        =   1
-      Top             =   550
-      Width           =   1900
+      Top             =   840
+      Width           =   2865
    End
    Begin VB.CommandButton playVdoControl 
-      Caption         =   "Play Add"
+      Cancel          =   -1  'True
+      Caption         =   "Play"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
-         Size            =   12
+         Size            =   14.25
          Charset         =   0
-         Weight          =   300
+         Weight          =   600
          Underline       =   0   'False
-         Italic          =   0   'False
+         Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
       Height          =   600
-      Left            =   120
+      Left            =   15840
+      Style           =   1  'Graphical
       TabIndex        =   0
-      Top             =   7440
-      Width           =   1900
+      Top             =   10560
+      Width           =   1905
    End
-   Begin VB.Label Model 
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      Caption         =   "Car Model"
+   Begin VB.Label Label6 
+      BackStyle       =   0  'Transparent
+      Caption         =   """The Best of the Best"""
       BeginProperty Font 
          Name            =   "Bookman Old Style"
-         Size            =   9.75
+         Size            =   48
          Charset         =   0
-         Weight          =   300
+         Weight          =   600
          Underline       =   0   'False
-         Italic          =   0   'False
+         Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   345
-      Index           =   1
-      Left            =   120
-      TabIndex        =   8
-      Top             =   3360
-      Width           =   1900
+      ForeColor       =   &H000040C0&
+      Height          =   1215
+      Left            =   7080
+      TabIndex        =   12
+      Top             =   360
+      Width           =   11295
    End
-   Begin VB.Label topView 
+   Begin VB.Label Label5 
       Alignment       =   2  'Center
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
       BackStyle       =   0  'Transparent
-      BorderStyle     =   1  'Fixed Single
-      Caption         =   "Top"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   300
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   400
-      Index           =   3
-      Left            =   18500
-      TabIndex        =   7
-      ToolTipText     =   "Click to view Top View"
-      Top             =   1400
-      Width           =   1500
-   End
-   Begin VB.Label rearView 
-      Alignment       =   2  'Center
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      BackStyle       =   0  'Transparent
-      BorderStyle     =   1  'Fixed Single
-      Caption         =   "Rear"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   300
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   400
-      Index           =   2
-      Left            =   18500
-      TabIndex        =   6
-      ToolTipText     =   "Click to view Top View"
-      Top             =   900
-      Width           =   1500
-   End
-   Begin VB.Label sideAView 
-      Alignment       =   2  'Center
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      BackStyle       =   0  'Transparent
-      BorderStyle     =   1  'Fixed Single
-      Caption         =   "Side A"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   300
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   400
-      Index           =   0
-      Left            =   18500
-      TabIndex        =   5
-      ToolTipText     =   "Click to view Top View"
-      Top             =   1900
-      Width           =   1500
-   End
-   Begin VB.Label sideBView 
-      Alignment       =   2  'Center
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      BackStyle       =   0  'Transparent
-      BorderStyle     =   1  'Fixed Single
       Caption         =   "Side B"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
          Charset         =   0
-         Weight          =   300
+         Weight          =   600
          Underline       =   0   'False
-         Italic          =   0   'False
+         Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   400
-      Index           =   1
-      Left            =   18500
-      TabIndex        =   4
-      ToolTipText     =   "Click to view Top View"
-      Top             =   2400
-      Width           =   1500
+      ForeColor       =   &H000000FF&
+      Height          =   495
+      Left            =   18120
+      TabIndex        =   11
+      Top             =   2160
+      Width           =   2295
    End
-   Begin VB.Label frontView 
+   Begin VB.Label Label4 
       Alignment       =   2  'Center
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
       BackStyle       =   0  'Transparent
-      BorderStyle     =   1  'Fixed Single
+      Caption         =   "Side A"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000000FF&
+      Height          =   495
+      Left            =   18120
+      TabIndex        =   10
+      Top             =   1560
+      Width           =   2295
+   End
+   Begin VB.Label Label3 
+      Alignment       =   2  'Center
+      BackStyle       =   0  'Transparent
+      Caption         =   "Rear"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000000FF&
+      Height          =   495
+      Left            =   18120
+      TabIndex        =   9
+      Top             =   960
+      Width           =   2295
+   End
+   Begin VB.Label Label2 
+      Alignment       =   2  'Center
+      BackStyle       =   0  'Transparent
       Caption         =   "Front"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
          Charset         =   0
-         Weight          =   300
+         Weight          =   600
          Underline       =   0   'False
-         Italic          =   0   'False
+         Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   400
-      Left            =   18500
-      TabIndex        =   3
-      ToolTipText     =   "Click to view Top View"
-      Top             =   400
-      Width           =   1500
+      ForeColor       =   &H000000FF&
+      Height          =   495
+      Left            =   18120
+      TabIndex        =   8
+      Top             =   360
+      Width           =   2295
    End
-   Begin VB.Image BGPic 
-      Height          =   16200
-      Left            =   -120
+   Begin VB.Label Label1 
+      BackColor       =   &H00808080&
+      Caption         =   "Car Model "
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000080FF&
+      Height          =   495
+      Left            =   3240
+      TabIndex        =   7
+      Top             =   240
+      Width           =   3135
+   End
+   Begin VB.Image BGpic 
+      Height          =   11295
+      Left            =   0
       Picture         =   "mainform.frx":0000
       Stretch         =   -1  'True
       Top             =   0
-      Width           =   29400
+      Width           =   21135
    End
 End
 Attribute VB_Name = "MainForm"
@@ -302,7 +333,7 @@ Private Sub carModel_Click()
     If IsNull(car!display_pic) Then
         MsgBox ("No Pics found for this car")
     Else
-        BGPic.Picture = LoadPicture("Z:\MSJ\project\images\" & car!display_pic)
+        BGpic.Picture = LoadPicture("E:\project\images\" & car!display_pic)
     End If
     
     currentCar = car!brand & "(" & car!Model & ")"
@@ -318,12 +349,21 @@ Private Sub carModel_Click()
     car.Close
 End Sub
 
+Private Sub Command1_Click()
+    Load bookingfrm
+    bookingfrm.Show
+End Sub
+
+Private Sub Command2_Click()
+End
+End Sub
+
 Private Sub Form_Load()
     Me.WindowState = 2
-    BGPic.Top = 0
-    BGPic.Left = 0
-    BGPic.Height = Me.Height
-    BGPic.Width = Me.Width
+    BGpic.Top = Me.Top
+    BGpic.Left = Me.Left
+    BGpic.Height = Me.Height
+    BGpic.Width = Me.Width
     
     currentVdo = ""
     loadcarBtn.Enabled = False
@@ -338,14 +378,14 @@ Private Sub Form_Load()
     
     
     'Connect to database
-    ConnectDatabase "Z:\MSJ\project\assets\cars3.mdb"
+    ConnectDatabase "E:\project\assets\cars3.mdb"
     
     playVdoControl.Enabled = False
 End Sub
 
 Private Sub Form_Resize()
-    BGPic.Height = Me.Height
-    BGPic.Width = Me.Width
+    BGpic.Height = Me.Height
+    BGpic.Width = Me.Width
 End Sub
 
 Private Sub frontView_Click()
@@ -361,7 +401,7 @@ Private Sub frontView_Click()
     If IsNull(car!pic) Then
         MsgBox ("No Pictures found for this car")
     Else
-        BGPic.Picture = LoadPicture("Z:\MSJ\project\images\" & car!pic)
+        BGpic.Picture = LoadPicture("E:\project\images\" & car!pic)
     End If
     
 End Sub
@@ -411,5 +451,10 @@ End Sub
 Private Sub playVdoControl_Click()
     Load vdoPlayerDlg
     vdoPlayerDlg.Show
-    vdoPlayerDlg.Play_Video "Z:\MSJ\project\vdo\" & currentVdo, currentCar
+    vdoPlayerDlg.Play_Video "E:\project\vdo\" & currentVdo, currentCar
+End Sub
+
+Public Sub loadBrands(ByRef brands() As Integer, total As Integer)
+    ReDim carBrands(total) As Integer
+    carBrands = brands
 End Sub
