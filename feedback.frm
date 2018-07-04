@@ -2,33 +2,104 @@ VERSION 5.00
 Begin VB.Form feedbackfrm 
    BorderStyle     =   0  'None
    Caption         =   "Feedbackfrm"
-   ClientHeight    =   10050
+   ClientHeight    =   10350
    ClientLeft      =   2160
    ClientTop       =   360
-   ClientWidth     =   15930
+   ClientWidth     =   15915
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    Moveable        =   0   'False
    NegotiateMenus  =   0   'False
-   ScaleHeight     =   10050
-   ScaleWidth      =   15930
+   ScaleHeight     =   10350
+   ScaleWidth      =   15915
    ShowInTaskbar   =   0   'False
-   Begin VB.ComboBox Combo2 
-      Height          =   315
-      Left            =   11760
-      TabIndex        =   27
-      Text            =   "Combo2"
-      Top             =   3120
-      Width           =   3255
+   Begin VB.TextBox TxtQ8 
+      BorderStyle     =   0  'None
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Index           =   1
+      Left            =   9360
+      TabIndex        =   29
+      Text            =   "Q8"
+      Top             =   9000
+      Width           =   6255
    End
-   Begin VB.ComboBox Agegroup 
-      Height          =   315
-      Left            =   6960
+   Begin VB.TextBox TxtSex 
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   6120
+      TabIndex        =   27
+      Text            =   "Enter Sex"
+      Top             =   3360
+      Width           =   1695
+   End
+   Begin VB.TextBox TxtName 
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   465
+      Left            =   2040
       TabIndex        =   26
-      Text            =   "Combo1"
-      Top             =   3000
-      Width           =   2415
+      Text            =   "Enter Name"
+      Top             =   3360
+      Width           =   1935
+   End
+   Begin VB.TextBox TxtIncome 
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   13320
+      TabIndex        =   24
+      Text            =   "Income"
+      Top             =   3360
+      Width           =   2175
+   End
+   Begin VB.TextBox TxtAge 
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   9600
+      TabIndex        =   23
+      Text            =   "Enter Age"
+      Top             =   3360
+      Width           =   1695
    End
    Begin VB.CommandButton CmdAdd 
       Caption         =   "Add"
@@ -42,9 +113,9 @@ Begin VB.Form feedbackfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   11880
-      TabIndex        =   25
-      Top             =   9480
+      Left            =   11280
+      TabIndex        =   22
+      Top             =   9720
       Width           =   1095
    End
    Begin VB.CommandButton CmdSubmit 
@@ -59,9 +130,9 @@ Begin VB.Form feedbackfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   13200
-      TabIndex        =   24
-      Top             =   9480
+      Left            =   12720
+      TabIndex        =   21
+      Top             =   9720
       Width           =   1215
    End
    Begin VB.CommandButton Command1 
@@ -76,9 +147,9 @@ Begin VB.Form feedbackfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   14640
-      TabIndex        =   23
-      Top             =   9480
+      Left            =   14400
+      TabIndex        =   20
+      Top             =   9720
       Width           =   975
    End
    Begin VB.TextBox TxtQ7 
@@ -93,11 +164,12 @@ Begin VB.Form feedbackfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
+      Index           =   0
       Left            =   9360
-      TabIndex        =   22
-      Text            =   "Text7"
-      Top             =   9360
-      Width           =   2415
+      TabIndex        =   19
+      Text            =   "Q7"
+      Top             =   8400
+      Width           =   6255
    End
    Begin VB.TextBox TxtQ6 
       BorderStyle     =   0  'None
@@ -112,9 +184,9 @@ Begin VB.Form feedbackfrm
       EndProperty
       Height          =   495
       Left            =   9360
-      TabIndex        =   21
-      Text            =   "Text6"
-      Top             =   8760
+      TabIndex        =   18
+      Text            =   "Q6"
+      Top             =   7800
       Width           =   6255
    End
    Begin VB.TextBox TxtQ5 
@@ -130,9 +202,9 @@ Begin VB.Form feedbackfrm
       EndProperty
       Height          =   495
       Left            =   9360
-      TabIndex        =   20
-      Text            =   "Text5"
-      Top             =   8160
+      TabIndex        =   17
+      Text            =   "Q5"
+      Top             =   7200
       Width           =   6255
    End
    Begin VB.TextBox TxtQ4 
@@ -148,9 +220,9 @@ Begin VB.Form feedbackfrm
       EndProperty
       Height          =   495
       Left            =   9360
-      TabIndex        =   19
-      Text            =   "Text4"
-      Top             =   7560
+      TabIndex        =   16
+      Text            =   "Q4"
+      Top             =   6600
       Width           =   6255
    End
    Begin VB.TextBox TxtQ3 
@@ -166,9 +238,9 @@ Begin VB.Form feedbackfrm
       EndProperty
       Height          =   495
       Left            =   9360
-      TabIndex        =   18
-      Text            =   "Text3"
-      Top             =   6960
+      TabIndex        =   15
+      Text            =   "Q3"
+      Top             =   6000
       Width           =   6255
    End
    Begin VB.TextBox TxtQ2 
@@ -184,9 +256,9 @@ Begin VB.Form feedbackfrm
       EndProperty
       Height          =   495
       Left            =   9360
-      TabIndex        =   17
-      Text            =   "Text2"
-      Top             =   6360
+      TabIndex        =   14
+      Text            =   "Q2"
+      Top             =   5400
       Width           =   6255
    End
    Begin VB.TextBox TxtQ1 
@@ -202,13 +274,14 @@ Begin VB.Form feedbackfrm
       EndProperty
       Height          =   495
       Left            =   9360
-      TabIndex        =   16
-      Text            =   "Text1"
-      Top             =   5760
+      TabIndex        =   13
+      Text            =   "Q1"
+      Top             =   4800
       Width           =   6255
    End
-   Begin VB.OptionButton Female 
-      Caption         =   "Female"
+   Begin VB.Label Label14 
+      BackStyle       =   0  'Transparent
+      Caption         =   "8-Any Improvement needed in our service"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -218,14 +291,17 @@ Begin VB.Form feedbackfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   495
-      Left            =   2760
-      TabIndex        =   5
-      Top             =   3360
-      Width           =   1695
+      ForeColor       =   &H00C00000&
+      Height          =   375
+      Index           =   1
+      Left            =   240
+      TabIndex        =   30
+      Top             =   9000
+      Width           =   9015
    End
-   Begin VB.OptionButton Male 
-      Caption         =   "Male"
+   Begin VB.Label Sex 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Sex:- "
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -236,10 +312,28 @@ Begin VB.Form feedbackfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   2760
-      TabIndex        =   4
+      Left            =   4440
+      TabIndex        =   28
       Top             =   2760
-      Width           =   1695
+      Width           =   1815
+   End
+   Begin VB.Label Label4 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Name:-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   480
+      TabIndex        =   25
+      Top             =   2760
+      Width           =   1575
    End
    Begin VB.Label Label14 
       BackStyle       =   0  'Transparent
@@ -255,9 +349,10 @@ Begin VB.Form feedbackfrm
       EndProperty
       ForeColor       =   &H00C00000&
       Height          =   495
+      Index           =   0
       Left            =   240
-      TabIndex        =   15
-      Top             =   5880
+      TabIndex        =   12
+      Top             =   4800
       Width           =   9015
    End
    Begin VB.Label Label13 
@@ -275,8 +370,8 @@ Begin VB.Form feedbackfrm
       ForeColor       =   &H00C00000&
       Height          =   495
       Left            =   240
-      TabIndex        =   14
-      Top             =   8160
+      TabIndex        =   11
+      Top             =   7200
       Width           =   9015
    End
    Begin VB.Label Label12 
@@ -293,9 +388,10 @@ Begin VB.Form feedbackfrm
       EndProperty
       ForeColor       =   &H00C00000&
       Height          =   375
+      Index           =   0
       Left            =   240
-      TabIndex        =   13
-      Top             =   9360
+      TabIndex        =   10
+      Top             =   8400
       Width           =   9015
    End
    Begin VB.Label Label11 
@@ -313,8 +409,8 @@ Begin VB.Form feedbackfrm
       ForeColor       =   &H00C00000&
       Height          =   495
       Left            =   240
-      TabIndex        =   12
-      Top             =   8760
+      TabIndex        =   9
+      Top             =   7800
       Width           =   9015
    End
    Begin VB.Label Label10 
@@ -332,8 +428,8 @@ Begin VB.Form feedbackfrm
       ForeColor       =   &H00C00000&
       Height          =   495
       Left            =   240
-      TabIndex        =   11
-      Top             =   7560
+      TabIndex        =   8
+      Top             =   6600
       Width           =   9015
    End
    Begin VB.Label Label9 
@@ -351,8 +447,8 @@ Begin VB.Form feedbackfrm
       ForeColor       =   &H00C00000&
       Height          =   495
       Left            =   240
-      TabIndex        =   10
-      Top             =   6960
+      TabIndex        =   7
+      Top             =   6000
       Width           =   9015
    End
    Begin VB.Label Label8 
@@ -370,8 +466,8 @@ Begin VB.Form feedbackfrm
       ForeColor       =   &H00C00000&
       Height          =   375
       Left            =   240
-      TabIndex        =   9
-      Top             =   6480
+      TabIndex        =   6
+      Top             =   5400
       Width           =   9015
    End
    Begin VB.Label Label7 
@@ -388,13 +484,13 @@ Begin VB.Form feedbackfrm
       EndProperty
       Height          =   495
       Left            =   120
-      TabIndex        =   8
-      Top             =   5160
+      TabIndex        =   5
+      Top             =   4080
       Width           =   15615
    End
    Begin VB.Label Label6 
       BackStyle       =   0  'Transparent
-      Caption         =   " Level:-"
+      Caption         =   " Annual Income:-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -405,10 +501,10 @@ Begin VB.Form feedbackfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   9600
-      TabIndex        =   7
+      Left            =   11520
+      TabIndex        =   4
       Top             =   2760
-      Width           =   2295
+      Width           =   2535
    End
    Begin VB.Label Label5 
       BackStyle       =   0  'Transparent
@@ -423,28 +519,10 @@ Begin VB.Form feedbackfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   5040
-      TabIndex        =   6
-      Top             =   2760
-      Width           =   2055
-   End
-   Begin VB.Label Label4 
-      BackStyle       =   0  'Transparent
-      Caption         =   "Gender:-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   495
-      Left            =   720
+      Left            =   8040
       TabIndex        =   3
       Top             =   2760
-      Width           =   1575
+      Width           =   2055
    End
    Begin VB.Label Label3 
       BackColor       =   &H000080FF&
@@ -503,12 +581,12 @@ Begin VB.Form feedbackfrm
       Width           =   4935
    End
    Begin VB.Image Image1 
-      Height          =   10035
-      Left            =   0
+      Height          =   10395
+      Left            =   -120
       Picture         =   "feedback.frx":0103
       Stretch         =   -1  'True
       Top             =   0
-      Width           =   15885
+      Width           =   16005
    End
 End
 Attribute VB_Name = "feedbackfrm"
@@ -519,22 +597,13 @@ Attribute VB_Exposed = False
 Dim c As New ADODB.Connection
 Dim r As New ADODB.Recordset
 Dim s As String
-Dim Gender As String
-
-
+'Dim Gender As String
 
 Private Sub CmdAdd_Click()
-Option1.Value = False
-Option2.Value = False
-Option3.Value = False
-Option4.Value = False
-Option5.Value = False
-Option6.Value = False
-Option7.Value = False
-Option8.Value = False
-Option9.Value = False
-Option10.Value = False
-Option11.Value = False
+TxtName.Text = ""
+TxtSex.Text = ""
+TxtAge.Text = ""
+TxtIncome.Text = ""
 TxtQ1.Text = ""
 TxtQ2.Text = ""
 TxtQ3.Text = ""
@@ -542,10 +611,25 @@ TxtQ4.Text = ""
 TxtQ5.Text = ""
 TxtQ6.Text = ""
 TxtQ7.Text = ""
+TxtQ8.Text = ""
 End Sub
 
 Private Sub CmdSubmit_Click()
-MsgBox (Gender)
+'MsgBox (Gender)
+Dim fee As New Feedback
+fee.Name = TxtName.Text
+fee.Sex = TxtSex.Text
+fee.Age = TxtAge.Text
+fee.Income = TxtIncome.Text
+fee.Q1 = TxtQ1.Text
+fee.Q2 = TxtQ2.Text
+fee.Q3 = TxtQ3.Text
+fee.Q4 = TxtQ4.Text
+fee.Q5 = TxtQ5.Text
+fee.Q6 = TxtQ6.Text
+fee.Q7 = TxtQ7.Text
+fee.Q8 = TxtQ8.Text
+Call fee.SaveData
 End Sub
 
 Private Sub Command1_Click()
@@ -553,11 +637,11 @@ MsgBox "Thank you for Visting"
 End
 End Sub
 
-Private Sub Female_Click()
-Gender = "Female"
-End Sub
+'Private Sub Female_Click()
+'Gender = "Female"
+'End Sub
 
-Private Sub Male_Click()
-Gender = "Male"
-End Sub
+'Private Sub Male_Click()
+'Gender = "Male"
+'End Sub
 
