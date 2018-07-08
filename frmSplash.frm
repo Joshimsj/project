@@ -20,12 +20,12 @@ Begin VB.Form frmWelcome
    ShowInTaskbar   =   0   'False
    Begin VB.Timer Timer1 
       Interval        =   5000
-      Left            =   480
-      Top             =   360
+      Left            =   0
+      Top             =   8640
    End
-   Begin VB.Label Label2 
+   Begin VB.Label Label5 
       BackStyle       =   0  'Transparent
-      Caption         =   """The Best Of the Best"""
+      Caption         =   "Welcomes You !!!!!"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   36
@@ -35,35 +35,73 @@ Begin VB.Form frmWelcome
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H0000FFFF&
-      Height          =   975
-      Left            =   120
-      TabIndex        =   1
-      Top             =   8040
-      Width           =   8655
+      ForeColor       =   &H000000FF&
+      Height          =   1095
+      Left            =   5160
+      TabIndex        =   3
+      Top             =   6000
+      Width           =   7215
    End
-   Begin VB.Label Label1 
+   Begin VB.Label Label4 
       BackStyle       =   0  'Transparent
-      Caption         =   """Welcome to Auto Expo"""
+      Caption         =   "Auto Expo"
       BeginProperty Font 
-         Name            =   "Brush Script MT"
+         Name            =   "Bookman Old Style"
          Size            =   36
          Charset         =   0
-         Weight          =   700
+         Weight          =   600
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00FF0000&
-      Height          =   1335
-      Left            =   5280
+      ForeColor       =   &H000000FF&
+      Height          =   1935
+      Left            =   7320
+      TabIndex        =   2
+      Top             =   4200
+      Width           =   2895
+   End
+   Begin VB.Label Label1 
+      BackStyle       =   0  'Transparent
+      Caption         =   "The Best"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   36
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000000FF&
+      Height          =   1095
+      Left            =   6600
+      TabIndex        =   1
+      Top             =   3360
+      Width           =   3975
+   End
+   Begin VB.Label Label2 
+      BackStyle       =   0  'Transparent
+      Caption         =   "The Best Of "
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   36
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000000FF&
+      Height          =   975
+      Left            =   6000
       TabIndex        =   0
-      Top             =   2160
-      Width           =   9855
+      Top             =   2400
+      Width           =   4935
    End
    Begin VB.Image SplashImg 
       Height          =   9105
-      Left            =   0
+      Left            =   -120
       Picture         =   "frmSplash.frx":000C
       Stretch         =   -1  'True
       Top             =   0

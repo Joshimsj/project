@@ -1,5 +1,5 @@
 VERSION 5.00
-Begin VB.Form Login 
+Begin VB.Form MainLogin 
    BorderStyle     =   0  'None
    Caption         =   "Login "
    ClientHeight    =   5970
@@ -96,10 +96,10 @@ Begin VB.Form Login
       Left            =   0
       Picture         =   "Login.frx":0000
       Top             =   -240
-      Width           =   9900
+      Width           =   12780
    End
 End
-Attribute VB_Name = "Login"
+Attribute VB_Name = "MainLogin"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True

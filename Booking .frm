@@ -2,13 +2,13 @@ VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Begin VB.Form bookingfrm 
    BorderStyle     =   0  'None
-   ClientHeight    =   6360
+   ClientHeight    =   6315
    ClientLeft      =   4500
    ClientTop       =   2520
-   ClientWidth     =   11190
+   ClientWidth     =   11010
    LinkTopic       =   "Form1"
-   ScaleHeight     =   6360
-   ScaleWidth      =   11190
+   ScaleHeight     =   6315
+   ScaleWidth      =   11010
    ShowInTaskbar   =   0   'False
    Begin VB.CommandButton Command1 
       Caption         =   "Next"
@@ -56,7 +56,7 @@ Begin VB.Form bookingfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   9600
+      Left            =   9360
       TabIndex        =   9
       Top             =   5640
       Width           =   1335
@@ -164,7 +164,7 @@ Begin VB.Form bookingfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   113573889
+      Format          =   122290177
       CurrentDate     =   43265
    End
    Begin VB.TextBox TxtMob 
@@ -367,16 +367,16 @@ Begin VB.Form bookingfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   4440
+      Left            =   4080
       TabIndex        =   11
       Top             =   240
       Width           =   3135
    End
    Begin VB.Image Image1 
-      Height          =   6375
+      Height          =   6255
       Left            =   0
       Top             =   0
-      Width           =   11175
+      Width           =   10935
    End
 End
 Attribute VB_Name = "bookingfrm"
@@ -384,11 +384,11 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim c As New ADODB.Connection
+Dim C As New ADODB.Connection
 Dim r As New ADODB.Recordset
 Dim s As String
 
-Private Sub cmdadd_Click()
+Private Sub CmdAdd_Click()
 TxtName.Text = ""
 TxtCompany.Text = ""
 TxtMob.Text = ""
@@ -401,7 +401,7 @@ TxtZip.Text = ""
 'Txtdata.Text = ""
 End Sub
 
-Private Sub CmdSave_Click()
+Private Sub cmdSave_Click()
 ''r.Close
 ''s = "insert into cus_details(" & TxtName.Text & "," & TxtCompany.Text & "," & TxtMob.Text & "," & DOB.Value & "," & TxtAdd.Text & "," & TxtSate.Text & "," & TxtCity.Text & "," & TxtZip.Text & ")"
 ''r.Open s, c, adOpenDynamic, adLockOptimistic

@@ -13,6 +13,40 @@ Begin VB.Form MainForm
    ScaleWidth      =   20490
    ShowInTaskbar   =   0   'False
    WindowState     =   2  'Maximized
+   Begin VB.CommandButton Command3 
+      Caption         =   "Select"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   13440
+      TabIndex        =   10
+      Top             =   10560
+      Width           =   1455
+   End
+   Begin VB.CommandButton ResetFilters 
+      Caption         =   "Reset Filters"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   15000
+      TabIndex        =   9
+      Top             =   10560
+      Width           =   1695
+   End
    Begin VB.CommandButton Command2 
       Caption         =   "X"
       BeginProperty Font 
@@ -42,10 +76,10 @@ Begin VB.Form MainForm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   17880
+      Left            =   18360
       TabIndex        =   5
       Top             =   10560
-      Width           =   1815
+      Width           =   1335
    End
    Begin VB.ComboBox brandType 
       BackColor       =   &H00808000&
@@ -138,11 +172,11 @@ Begin VB.Form MainForm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   600
-      Left            =   15840
+      Left            =   16800
       Style           =   1  'Graphical
       TabIndex        =   0
       Top             =   10560
-      Width           =   1905
+      Width           =   1425
    End
    Begin VB.Label Label6 
       BackStyle       =   0  'Transparent
@@ -158,90 +192,10 @@ Begin VB.Form MainForm
       EndProperty
       ForeColor       =   &H000040C0&
       Height          =   1215
-      Left            =   7080
-      TabIndex        =   12
-      Top             =   360
-      Width           =   11295
-   End
-   Begin VB.Label Label5 
-      Alignment       =   2  'Center
-      BackStyle       =   0  'Transparent
-      Caption         =   "Side B"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H000000FF&
-      Height          =   495
-      Left            =   18120
-      TabIndex        =   11
-      Top             =   2160
-      Width           =   2295
-   End
-   Begin VB.Label Label4 
-      Alignment       =   2  'Center
-      BackStyle       =   0  'Transparent
-      Caption         =   "Side A"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H000000FF&
-      Height          =   495
-      Left            =   18120
-      TabIndex        =   10
-      Top             =   1560
-      Width           =   2295
-   End
-   Begin VB.Label Label3 
-      Alignment       =   2  'Center
-      BackStyle       =   0  'Transparent
-      Caption         =   "Rear"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H000000FF&
-      Height          =   495
-      Left            =   18120
-      TabIndex        =   9
-      Top             =   960
-      Width           =   2295
-   End
-   Begin VB.Label Label2 
-      Alignment       =   2  'Center
-      BackStyle       =   0  'Transparent
-      Caption         =   "Front"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H000000FF&
-      Height          =   495
-      Left            =   18120
+      Left            =   8640
       TabIndex        =   8
       Top             =   360
-      Width           =   2295
+      Width           =   11295
    End
    Begin VB.Label Label1 
       BackColor       =   &H00808080&
@@ -282,8 +236,40 @@ Dim currentCar As String
 Dim currentCategory As Integer
 
 Dim currentModels() As Integer
+
+'Store car brand ids
 Dim carBrands() As Integer
 
+Dim filter_query As String
+
+Private Sub Form_Load()
+    filter_query = ""
+    
+    Me.WindowState = 2
+    BGpic.Top = Me.Top
+    BGpic.Left = Me.Left
+    BGpic.Height = Me.Height
+    BGpic.Width = Me.Width
+    
+    currentVdo = ""
+    loadcarBtn.Enabled = False
+    
+    'carTypeTables = Array("sport", "vintage", "luxury", "hybrid", "evision")
+    
+    brandType.AddItem "Sports", 0
+    brandType.AddItem "Vintage", 1
+    brandType.AddItem "Luxury", 2
+    brandType.AddItem "Hybrid", 3
+    brandType.AddItem "Concept", 4
+    
+    
+    'Connect to database
+    ConnectDatabase "E:\project\assets\cars3.mdb"
+    
+    playVdoControl.Enabled = False
+End Sub
+
+' Brand Type: sports, vintage, ...
 Private Sub brandType_Click()
     Index = brandType.ListIndex
     
@@ -322,7 +308,6 @@ End Sub
 
 Private Sub carModel_Click()
     loadcarBtn.Enabled = True
-        
     Index = carModel.ListIndex
     model_id = currentModels(Index)
     
@@ -358,30 +343,6 @@ Private Sub Command2_Click()
 End
 End Sub
 
-Private Sub Form_Load()
-    Me.WindowState = 2
-    BGpic.Top = Me.Top
-    BGpic.Left = Me.Left
-    BGpic.Height = Me.Height
-    BGpic.Width = Me.Width
-    
-    currentVdo = ""
-    loadcarBtn.Enabled = False
-    
-    'carTypeTables = Array("sport", "vintage", "luxury", "hybrid", "evision")
-    
-    brandType.AddItem "Sports", 0
-    brandType.AddItem "Vintage", 1
-    brandType.AddItem "Luxury", 2
-    brandType.AddItem "Hybrid", 3
-    brandType.AddItem "Evision", 4
-    
-    
-    'Connect to database
-    ConnectDatabase "E:\project\assets\cars3.mdb"
-    
-    playVdoControl.Enabled = False
-End Sub
 
 Private Sub Form_Resize()
     BGpic.Height = Me.Height
@@ -418,7 +379,13 @@ Private Sub carList_Click()
     
     Dim car As New ADODB.Recordset
     
+    
     q = "SELECT model_id, model FROM cars WHERE car_id = " & carBrands(Index) & " AND category = " & currentCategory
+    
+    If Not filter_query = "" Then
+        q = q & " AND " & filter_query
+    End If
+    
     car.Open q, conn, adUseClient, adLockOptimistic, adCmdText
     
     'avatar = car!avatar
@@ -454,7 +421,29 @@ Private Sub playVdoControl_Click()
     vdoPlayerDlg.Play_Video "E:\project\vdo\" & currentVdo, currentCar
 End Sub
 
-Public Sub loadBrands(ByRef brands() As Integer, total As Integer)
+Public Sub loadBrands(ByRef brands() As Integer, ByRef names() As String, total As Integer)
     ReDim carBrands(total) As Integer
     carBrands = brands
+    
+    carList.Clear
+    carList.Refresh
+    
+    For i = 0 To total - 1
+        'MsgBox (names(i))
+        carList.AddItem names(i), i
+    Next i
+End Sub
+
+Public Sub loadFilters(ByRef query As String, category As Integer)
+    filter_query = query
+    brandType.ListIndex = category
+End Sub
+
+Private Sub ResetFilters_Click()
+    filter_query = ""
+    Unload MainForm
+    Set MainForm = Nothing
+    Load MainForm
+    MainForm.Show
+    
 End Sub
