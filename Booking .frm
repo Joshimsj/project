@@ -2,13 +2,14 @@ VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Begin VB.Form bookingfrm 
    BorderStyle     =   0  'None
-   ClientHeight    =   6315
-   ClientLeft      =   4500
-   ClientTop       =   2520
-   ClientWidth     =   11010
+   ClientHeight    =   6405
+   ClientLeft      =   5265
+   ClientTop       =   2310
+   ClientWidth     =   11295
    LinkTopic       =   "Form1"
-   ScaleHeight     =   6315
-   ScaleWidth      =   11010
+   Picture         =   "Booking .frx":0000
+   ScaleHeight     =   6405
+   ScaleWidth      =   11295
    ShowInTaskbar   =   0   'False
    Begin VB.CommandButton Command1 
       Caption         =   "Next"
@@ -39,7 +40,7 @@ Begin VB.Form bookingfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   2400
+      Left            =   3120
       TabIndex        =   10
       Top             =   4680
       Width           =   1815
@@ -73,7 +74,7 @@ Begin VB.Form bookingfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   4800
+      Left            =   5160
       TabIndex        =   8
       Top             =   4680
       Width           =   1695
@@ -164,7 +165,7 @@ Begin VB.Form bookingfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   122290177
+      Format          =   99876865
       CurrentDate     =   43265
    End
    Begin VB.TextBox TxtMob 
@@ -373,10 +374,12 @@ Begin VB.Form bookingfrm
       Width           =   3135
    End
    Begin VB.Image Image1 
-      Height          =   6255
+      Height          =   6405
       Left            =   0
+      Picture         =   "Booking .frx":B3F1D
+      Stretch         =   -1  'True
       Top             =   0
-      Width           =   10935
+      Width           =   11340
    End
 End
 Attribute VB_Name = "bookingfrm"
@@ -423,6 +426,11 @@ Call cst.SaveData
 ''Else
 ''MsgBox "Details are Sucessfully Added", vbInformation, "Customers"
 ''End If
+End Sub
+
+Private Sub Command1_Click()
+Load Selfrom
+Selfrom.Show
 End Sub
 
 Private Sub Command8_Click()

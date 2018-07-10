@@ -72,6 +72,14 @@ Begin VB.Form MainLogin
       Top             =   2520
       Width           =   2895
    End
+   Begin VB.Image Image2 
+      Height          =   480
+      Left            =   240
+      Picture         =   "Login.frx":0000
+      Stretch         =   -1  'True
+      Top             =   3240
+      Width           =   600
+   End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
       Caption         =   "Login "
@@ -94,7 +102,7 @@ Begin VB.Form MainLogin
    Begin VB.Image Image1 
       Height          =   7200
       Left            =   0
-      Picture         =   "Login.frx":0000
+      Picture         =   "Login.frx":1A5B
       Top             =   -240
       Width           =   12780
    End
@@ -110,9 +118,9 @@ Public conn As ADODB.Connection
 
 
 Private Sub cmdlogin_Click()
-If TxtUser.Text = "" Then
+If Txtuser.Text = "" Then
 MsgBox "Username is Empty.", vbInformation
-TxtUser.SetFocus
+Txtuser.SetFocus
 Exit Sub
 ElseIf TxtPass.Text = "" Then
 MsgBox "Password is Empty"
@@ -125,10 +133,10 @@ End Sub
 
 Private Sub login()
 Dim rs As New ADODB.Recordset
-rs.Open "SELECT password FROM Logintab WHERE Username = '" & TxtUser.Text & "'", conn, adOpenStatic, adLockReadOnly
+rs.Open "SELECT password FROM Logintab WHERE Username = '" & Txtuser.Text & "'", conn, adOpenStatic, adLockReadOnly
 If rs.RecordCount < 1 Then
     MsgBox "Username is Invalid. Please try again.", vbInformation
-    TxtUser.SetFocus
+    Txtuser.SetFocus
 Exit Sub
 Else
     If TxtPass.Text = rs!Password Then

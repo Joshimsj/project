@@ -1,0 +1,46 @@
+Dim centre(1) As Long
+Dim radius As Long
+Dim theta As Integer
+
+
+Private Sub Form_Load()
+    centre(1) = cmain.Top + (cmain.Height / 2)
+    centre(0) = cmain.Left + (cmain.Width / 2)
+    radius = cmain.Width / 2
+    
+    If tim.Enabled = False Then
+    tim.Enabled = True
+    End If
+    
+    theta = 0
+    c1.Left = centre(0) + radius * Cos(theta) - c1.Height / 2
+    c1.Top = centre(1) + radius * Sin(theta) - c1.Height / 2
+    
+    
+End Sub
+
+Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    If X >= c1.Left And X <= c1.Left + c1.Width And Y >= c1.Top And Y <= c1.Top + c1.Height Then
+        'xShift = c1.Left + 3000
+        'Y = ((radius ^ 2) - (xShift - centre(0)) ^ 2) ^ (1 / 2) + centre(1)
+        'c1.Left = xShift
+        'c1.Top = Y
+        'distance = 100
+        'theta = distance / radius '2 pi (radian)
+        
+        theta = 0.6
+        c1.Left = centre(0) + radius * Cos(theta) - c1.Height / 2
+        c1.Top = centre(1) + radius * Sin(theta) - c1.Height / 2
+    End If
+End Sub
+
+Private Sub tim_Timer()
+    If theta > 2 * 22 / 7 Then
+    theta = 0.6
+    Else
+    theta = theta + 0.6
+    End If
+    
+    c1.Left = centre(0) + radius * Cos(theta) - c1.Height / 2
+    c1.Top = centre(1) + radius * Sin(theta) - c1.Height / 2
+End Sub

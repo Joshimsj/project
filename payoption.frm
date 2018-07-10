@@ -1,17 +1,18 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Begin VB.Form Chqfrm 
-   BorderStyle     =   1  'Fixed Single
+   BorderStyle     =   0  'None
    Caption         =   "Cheque Option"
    ClientHeight    =   7845
-   ClientLeft      =   4065
-   ClientTop       =   1515
+   ClientLeft      =   4020
+   ClientTop       =   1140
    ClientWidth     =   10335
    LinkTopic       =   "Form2"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   7845
    ScaleWidth      =   10335
+   ShowInTaskbar   =   0   'False
    Begin MSComCtl2.DTPicker ChqD 
       Height          =   495
       Left            =   6360
@@ -30,7 +31,7 @@ Begin VB.Form Chqfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   97452033
+      Format          =   107216897
       CurrentDate     =   43288
    End
    Begin VB.CommandButton C 
@@ -204,7 +205,7 @@ Begin VB.Form Chqfrm
       Width           =   4815
    End
    Begin VB.Label Label7 
-      Caption         =   "Cheque dated:- "
+      Caption         =   "Cheque Dated:- "
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -238,7 +239,7 @@ Begin VB.Form Chqfrm
       Width           =   4455
    End
    Begin VB.Label Label5 
-      Caption         =   "Cheque Amount in Words:-"
+      Caption         =   "Cheque Amount ( in Words):-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -255,7 +256,7 @@ Begin VB.Form Chqfrm
       Width           =   4455
    End
    Begin VB.Label Label4 
-      Caption         =   "Cheque Amount in No:-"
+      Caption         =   "Cheque Amount (in No):-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -349,7 +350,8 @@ ChqD.Value = "1/10/2018"
 End Sub
 
 Private Sub CmdClose_Click()
-End
+Load feedbackfrm
+feedbackfrm.Show
 End Sub
 
 Private Sub Submit_Click()

@@ -123,6 +123,6 @@ End Sub
 
 Private Sub Timer1_Timer()
  Unload Me
-    Load login
-    login.Show
+    Load MainLogin
+    MainLogin.Show
 End Sub

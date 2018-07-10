@@ -1,18 +1,18 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Begin VB.Form Accfrm 
-   BorderStyle     =   1  'Fixed Single
+   BorderStyle     =   0  'None
    Caption         =   "Account Details"
    ClientHeight    =   8415
-   ClientLeft      =   45
-   ClientTop       =   375
+   ClientLeft      =   6390
+   ClientTop       =   1920
    ClientWidth     =   9750
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   8415
    ScaleWidth      =   9750
-   StartUpPosition =   3  'Windows Default
+   ShowInTaskbar   =   0   'False
    Begin VB.CommandButton CmdClose 
       Caption         =   "Close"
       BeginProperty Font 
@@ -82,7 +82,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   57081857
+      Format          =   56819713
       CurrentDate     =   43289
    End
    Begin VB.TextBox TxtDeMob 
@@ -239,6 +239,7 @@ Begin VB.Form Accfrm
       Width           =   5055
    End
    Begin VB.Label Label11 
+      BackStyle       =   0  'Transparent
       Caption         =   "Depositer Mob No:-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -249,6 +250,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FFFF&
       Height          =   375
       Left            =   360
       TabIndex        =   10
@@ -256,6 +258,7 @@ Begin VB.Form Accfrm
       Width           =   3135
    End
    Begin VB.Label Label10 
+      BackStyle       =   0  'Transparent
       Caption         =   "Depositer Name:-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -266,6 +269,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FFFF&
       Height          =   375
       Left            =   360
       TabIndex        =   9
@@ -274,7 +278,8 @@ Begin VB.Form Accfrm
    End
    Begin VB.Label Label9 
       Alignment       =   2  'Center
-      Caption         =   "Account Deposit"
+      BackStyle       =   0  'Transparent
+      Caption         =   "Bank Acc Payment"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   24
@@ -284,13 +289,15 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FFFF&
       Height          =   735
-      Left            =   2640
+      Left            =   2520
       TabIndex        =   8
       Top             =   240
-      Width           =   4815
+      Width           =   5175
    End
    Begin VB.Label Label8 
+      BackStyle       =   0  'Transparent
       Caption         =   "Date:-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -301,6 +308,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FFFF&
       Height          =   375
       Left            =   360
       TabIndex        =   7
@@ -308,6 +316,7 @@ Begin VB.Form Accfrm
       Width           =   3135
    End
    Begin VB.Label Label7 
+      BackStyle       =   0  'Transparent
       Caption         =   "Amount in Words:- "
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -318,6 +327,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FFFF&
       Height          =   375
       Left            =   360
       TabIndex        =   6
@@ -325,6 +335,7 @@ Begin VB.Form Accfrm
       Width           =   3135
    End
    Begin VB.Label Label6 
+      BackStyle       =   0  'Transparent
       Caption         =   "Branch Name:-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -335,6 +346,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FFFF&
       Height          =   375
       Left            =   360
       TabIndex        =   5
@@ -342,6 +354,7 @@ Begin VB.Form Accfrm
       Width           =   3135
    End
    Begin VB.Label Label5 
+      BackStyle       =   0  'Transparent
       Caption         =   "IFSC Code:-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -352,6 +365,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FFFF&
       Height          =   375
       Left            =   360
       TabIndex        =   4
@@ -359,6 +373,7 @@ Begin VB.Form Accfrm
       Width           =   3135
    End
    Begin VB.Label Label4 
+      BackStyle       =   0  'Transparent
       Caption         =   "Amount in No:-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -369,6 +384,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FFFF&
       Height          =   375
       Left            =   360
       TabIndex        =   3
@@ -376,6 +392,7 @@ Begin VB.Form Accfrm
       Width           =   3135
    End
    Begin VB.Label Label3 
+      BackStyle       =   0  'Transparent
       Caption         =   "Bank Drawn Name:-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -386,6 +403,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FFFF&
       Height          =   375
       Left            =   360
       TabIndex        =   2
@@ -393,6 +411,7 @@ Begin VB.Form Accfrm
       Width           =   3135
    End
    Begin VB.Label Label2 
+      BackStyle       =   0  'Transparent
       Caption         =   "Acc No:-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -403,6 +422,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FFFF&
       Height          =   375
       Left            =   360
       TabIndex        =   1
@@ -410,6 +430,7 @@ Begin VB.Form Accfrm
       Width           =   3135
    End
    Begin VB.Label Label1 
+      BackStyle       =   0  'Transparent
       Caption         =   "Acc Holder Name:- "
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -420,6 +441,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FFFF&
       Height          =   375
       Left            =   360
       TabIndex        =   0
@@ -427,10 +449,12 @@ Begin VB.Form Accfrm
       Width           =   3135
    End
    Begin VB.Image Image1 
-      Height          =   8415
+      Height          =   8400
       Left            =   0
+      Picture         =   "Accfrm.frx":0000
+      Stretch         =   -1  'True
       Top             =   0
-      Width           =   9735
+      Width           =   9720
    End
 End
 Attribute VB_Name = "Accfrm"
@@ -457,7 +481,8 @@ Dat.Value = "1/10/2018"
 End Sub
 
 Private Sub CmdClose_Click()
-End
+Load feedbackfrm
+feedbackfrm.Show
 End Sub
 
 Private Sub CmdSummit_Click()

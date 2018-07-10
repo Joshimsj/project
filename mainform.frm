@@ -236,11 +236,17 @@ Dim currentCar As String
 Dim currentCategory As Integer
 
 Dim currentModels() As Integer
+Dim current_model As Integer
 
 'Store car brand ids
 Dim carBrands() As Integer
 
 Dim filter_query As String
+
+Private Sub Command3_Click()
+Load Selection
+Selection.Load
+End Sub
 
 Private Sub Form_Load()
     filter_query = ""
@@ -310,6 +316,7 @@ Private Sub carModel_Click()
     loadcarBtn.Enabled = True
     Index = carModel.ListIndex
     model_id = currentModels(Index)
+    current_model = model_id
     
     Dim car As New ADODB.Recordset
     q = "SELECT * FROM cars WHERE model_id = " & model_id
@@ -321,7 +328,7 @@ Private Sub carModel_Click()
         BGpic.Picture = LoadPicture("E:\project\images\" & car!display_pic)
     End If
     
-    currentCar = car!brand & "(" & car!Model & ")"
+    currentCar = car!brand & "(" & car!model & ")"
     
     If IsNull(car!video) Then
     MsgBox ("No Vdo found for this car")
@@ -335,8 +342,8 @@ Private Sub carModel_Click()
 End Sub
 
 Private Sub Command1_Click()
-    Load bookingfrm
-    bookingfrm.Show
+    Load AccLogin
+    AccLogin.Show
 End Sub
 
 Private Sub Command2_Click()
@@ -369,6 +376,8 @@ End Sub
 
 Private Sub loadcarBtn_Click()
     Load carConfiguration
+    carConfiguration.Add_model_id current_model
+    carConfiguration.Intilize_form
     carConfiguration.Show
 End Sub
 

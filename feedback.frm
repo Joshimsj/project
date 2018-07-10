@@ -25,7 +25,7 @@ Begin VB.Form feedbackfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   7560
+      Left            =   7680
       TabIndex        =   30
       Text            =   "Q7"
       Top             =   7560
@@ -42,7 +42,7 @@ Begin VB.Form feedbackfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   7560
+      Left            =   7680
       TabIndex        =   29
       Text            =   "Q8"
       Top             =   8160
@@ -117,7 +117,7 @@ Begin VB.Form feedbackfrm
       Width           =   1695
    End
    Begin VB.CommandButton CmdAdd 
-      Caption         =   "Add"
+      Caption         =   "Clear"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -128,7 +128,7 @@ Begin VB.Form feedbackfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   12000
+      Left            =   12120
       TabIndex        =   21
       Top             =   8160
       Width           =   1095
@@ -145,7 +145,7 @@ Begin VB.Form feedbackfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   13200
+      Left            =   13320
       TabIndex        =   20
       Top             =   8160
       Width           =   1215
@@ -162,7 +162,7 @@ Begin VB.Form feedbackfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   14520
+      Left            =   14640
       TabIndex        =   19
       Top             =   8160
       Width           =   975
@@ -600,7 +600,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim c As New ADODB.Connection
+Dim C As New ADODB.Connection
 Dim r As New ADODB.Recordset
 Dim s As String
 'Dim Gender As String
@@ -639,8 +639,9 @@ Call fee.SaveData
 End Sub
 
 Private Sub Command1_Click()
-MsgBox "Thank you for Visting"
-End
+Load Thankufrm
+Thankufrm.Show
+'MsgBox "Thank you for Visting"
 End Sub
 
 'Private Sub Female_Click()

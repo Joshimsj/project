@@ -1,16 +1,17 @@
 VERSION 5.00
 Begin VB.Form Selfrom 
-   BorderStyle     =   1  'Fixed Single
+   BorderStyle     =   0  'None
    Caption         =   "Payment Option"
    ClientHeight    =   4605
-   ClientLeft      =   7125
-   ClientTop       =   4725
+   ClientLeft      =   7080
+   ClientTop       =   4350
    ClientWidth     =   8775
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   4605
    ScaleWidth      =   8775
+   ShowInTaskbar   =   0   'False
    Begin VB.CommandButton Command2 
       Caption         =   "X"
       BeginProperty Font 
@@ -46,7 +47,7 @@ Begin VB.Form Selfrom
       Width           =   1575
    End
    Begin VB.OptionButton Option2 
-      Caption         =   "Cheque pay"
+      Caption         =   "Cheque "
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -63,7 +64,7 @@ Begin VB.Form Selfrom
       Width           =   2895
    End
    Begin VB.OptionButton Option1 
-      Caption         =   "Account Pay"
+      Caption         =   "Bank Acc"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -160,3 +161,6 @@ End Sub
 'Next
 'End Sub
 
+Private Sub Command2_Click()
+End
+End Sub
