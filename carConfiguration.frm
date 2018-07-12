@@ -3,17 +3,91 @@ Begin VB.Form carConfiguration
    BackColor       =   &H8000000B&
    BorderStyle     =   0  'None
    Caption         =   "Car Configuration"
-   ClientHeight    =   11100
+   ClientHeight    =   11265
    ClientLeft      =   0
    ClientTop       =   0
    ClientWidth     =   20400
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   11100
+   ScaleHeight     =   11265
    ScaleWidth      =   20400
    ShowInTaskbar   =   0   'False
    WindowState     =   2  'Maximized
+   Begin VB.TextBox Txt_Whee 
+      Enabled         =   0   'False
+      Height          =   405
+      Left            =   17400
+      TabIndex        =   41
+      Top             =   10680
+      Width           =   2535
+   End
+   Begin VB.TextBox Txt_Dri 
+      Enabled         =   0   'False
+      Height          =   375
+      Left            =   17400
+      TabIndex        =   40
+      Top             =   10080
+      Width           =   2535
+   End
+   Begin VB.TextBox Txt_Stw 
+      Enabled         =   0   'False
+      Height          =   375
+      Left            =   17400
+      TabIndex        =   39
+      Top             =   9480
+      Width           =   2535
+   End
+   Begin VB.TextBox Txt_Tank 
+      Enabled         =   0   'False
+      Height          =   375
+      Left            =   17400
+      TabIndex        =   38
+      Top             =   8880
+      Width           =   2535
+   End
+   Begin VB.TextBox Txt_Size 
+      Enabled         =   0   'False
+      Height          =   375
+      Left            =   17400
+      TabIndex        =   37
+      Top             =   8280
+      Width           =   2535
+   End
+   Begin VB.CommandButton CmdNex 
+      Caption         =   "Next"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   2520
+      TabIndex        =   31
+      Top             =   8160
+      Width           =   1815
+   End
+   Begin VB.CommandButton CmdPrev 
+      Caption         =   "Previous "
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   360
+      TabIndex        =   30
+      Top             =   8160
+      Width           =   1575
+   End
    Begin VB.CommandButton Command6 
       Caption         =   "Exit"
       BeginProperty Font 
@@ -25,10 +99,10 @@ Begin VB.Form carConfiguration
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   615
-      Left            =   18000
+      Height          =   495
+      Left            =   12240
       TabIndex        =   28
-      Top             =   9720
+      Top             =   8160
       Width           =   1935
    End
    Begin VB.CommandButton Command5 
@@ -42,27 +116,27 @@ Begin VB.Form carConfiguration
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   615
-      Left            =   15360
+      Height          =   495
+      Left            =   7440
       TabIndex        =   27
-      Top             =   9720
-      Width           =   2055
+      Top             =   8160
+      Width           =   1695
    End
    Begin VB.CommandButton Command4 
       Caption         =   "Book"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
-         Size            =   11.25
+         Size            =   14.25
          Charset         =   0
          Weight          =   600
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   615
-      Left            =   18000
+      Height          =   495
+      Left            =   9720
       TabIndex        =   26
-      Top             =   8760
+      Top             =   8160
       Width           =   1935
    End
    Begin VB.CommandButton Command3 
@@ -76,11 +150,11 @@ Begin VB.Form carConfiguration
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   615
-      Left            =   15360
+      Height          =   495
+      Left            =   4920
       TabIndex        =   25
-      Top             =   8760
-      Width           =   2055
+      Top             =   8160
+      Width           =   1815
    End
    Begin VB.TextBox Txt_Cost 
       Enabled         =   0   'False
@@ -286,6 +360,91 @@ Begin VB.Form carConfiguration
       Top             =   1080
       Width           =   2535
    End
+   Begin VB.Label Label19 
+      Caption         =   "Wheels Cover :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   36
+      Top             =   10680
+      Width           =   2175
+   End
+   Begin VB.Label Label18 
+      Caption         =   "Driving Mode :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   35
+      Top             =   10080
+      Width           =   2175
+   End
+   Begin VB.Label Label17 
+      Caption         =   "Steering Wheel :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   34
+      Top             =   9480
+      Width           =   2175
+   End
+   Begin VB.Label Label16 
+      Caption         =   "Fuel Tank (ltr) :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   33
+      Top             =   8880
+      Width           =   2175
+   End
+   Begin VB.Label Label2 
+      Caption         =   "Tyre Size :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   32
+      Top             =   8280
+      Width           =   2175
+   End
    Begin VB.Label Label1 
       Caption         =   "Label1"
       BeginProperty Font 
@@ -297,10 +456,10 @@ Begin VB.Form carConfiguration
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   2775
+      Height          =   1935
       Left            =   120
       TabIndex        =   29
-      Top             =   8160
+      Top             =   9000
       Width           =   14295
    End
    Begin VB.Label Label15 
@@ -533,10 +692,10 @@ Begin VB.Form carConfiguration
       Width           =   14415
    End
    Begin VB.Image Image1 
-      Height          =   11175
-      Left            =   -120
+      Height          =   11295
+      Left            =   0
       Top             =   0
-      Width           =   20535
+      Width           =   20415
    End
 End
 Attribute VB_Name = "carConfiguration"

@@ -2,14 +2,14 @@ VERSION 5.00
 Begin VB.Form MainForm 
    BorderStyle     =   0  'None
    Caption         =   "Form1"
-   ClientHeight    =   11280
+   ClientHeight    =   11445
    ClientLeft      =   0
-   ClientTop       =   180
+   ClientTop       =   0
    ClientWidth     =   20490
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   11280
+   ScaleHeight     =   11445
    ScaleWidth      =   20490
    ShowInTaskbar   =   0   'False
    WindowState     =   2  'Maximized
@@ -217,7 +217,7 @@ Begin VB.Form MainForm
       Width           =   3135
    End
    Begin VB.Image BGpic 
-      Height          =   11295
+      Height          =   11415
       Left            =   0
       Picture         =   "mainform.frx":0000
       Stretch         =   -1  'True
