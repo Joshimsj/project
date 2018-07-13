@@ -3,14 +3,13 @@ Begin VB.Form Thankufrm
    BorderStyle     =   0  'None
    Caption         =   "Form1"
    ClientHeight    =   5475
-   ClientLeft      =   0
-   ClientTop       =   0
+   ClientLeft      =   5445
+   ClientTop       =   2115
    ClientWidth     =   9555
    LinkTopic       =   "Form1"
    ScaleHeight     =   5475
    ScaleWidth      =   9555
    ShowInTaskbar   =   0   'False
-   StartUpPosition =   3  'Windows Default
    Begin VB.Timer Timer1 
       Interval        =   4500
       Left            =   120

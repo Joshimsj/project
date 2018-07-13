@@ -245,7 +245,7 @@ Dim filter_query As String
 
 Private Sub Command3_Click()
 Load Selection
-Selection.Load
+Selection.Show
 End Sub
 
 Private Sub Form_Load()

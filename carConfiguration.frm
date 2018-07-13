@@ -16,6 +16,15 @@ Begin VB.Form carConfiguration
    WindowState     =   2  'Maximized
    Begin VB.TextBox Txt_Whee 
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   405
       Left            =   17400
       TabIndex        =   41
@@ -24,6 +33,15 @@ Begin VB.Form carConfiguration
    End
    Begin VB.TextBox Txt_Dri 
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   17400
       TabIndex        =   40
@@ -32,6 +50,15 @@ Begin VB.Form carConfiguration
    End
    Begin VB.TextBox Txt_Stw 
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   17400
       TabIndex        =   39
@@ -40,6 +67,15 @@ Begin VB.Form carConfiguration
    End
    Begin VB.TextBox Txt_Tank 
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   17400
       TabIndex        =   38
@@ -48,6 +84,15 @@ Begin VB.Form carConfiguration
    End
    Begin VB.TextBox Txt_Size 
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   17400
       TabIndex        =   37
@@ -738,8 +783,12 @@ Public Sub Intilize_form()
             Txt_Torque.Text = car!torque
             Txt_FuelType.Text = car!fuel_type
             Txt_Cost.Text = car!cost
-            
-            If Not IsNull(car!display_pic) Then
+            Txt_Size.Text = car!Trye_Size
+            Txt_Tank.Text = car!Fuel_tank
+            Txt_Stw.Text = car!Steering_Wheel
+            Txt_Dri.Text = car!Drive_mode
+            Txt_Whee.Text = car!Wheels_Cover
+             If Not IsNull(car!display_pic) Then
                 ImageDisplay.Picture = LoadPicture("E:\project\images\" & car!display_pic)
             End If
         Else

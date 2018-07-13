@@ -26,6 +26,7 @@ Form=AccLogin.frm
 Class=AccDetails; AccDetails.cls
 Class=ChqDetails; ChqDetails.cls
 Form=Thankufrm.frm
+Form=Invoice.frm
 Startup="MainForm"
 HelpFile=""
 Command32=""

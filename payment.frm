@@ -3,8 +3,8 @@ Begin VB.Form Selfrom
    BorderStyle     =   0  'None
    Caption         =   "Payment Option"
    ClientHeight    =   4605
-   ClientLeft      =   7080
-   ClientTop       =   4350
+   ClientLeft      =   6210
+   ClientTop       =   2880
    ClientWidth     =   8775
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
