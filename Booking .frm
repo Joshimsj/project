@@ -29,10 +29,11 @@ Begin VB.Form bookingfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   168165377
+      Format          =   57278465
       CurrentDate     =   43294
    End
-   Begin VB.TextBox Text2 
+   Begin VB.TextBox Brand_Txt 
+      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   11.25
@@ -46,10 +47,10 @@ Begin VB.Form bookingfrm
       Left            =   7440
       TabIndex        =   24
       Top             =   1200
-      Visible         =   0   'False
       Width           =   3255
    End
-   Begin VB.TextBox Text1 
+   Begin VB.TextBox Model_Txt 
+      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   11.25
@@ -63,7 +64,6 @@ Begin VB.Form bookingfrm
       Left            =   2160
       TabIndex        =   22
       Top             =   1200
-      Visible         =   0   'False
       Width           =   3135
    End
    Begin VB.CommandButton Command1 
@@ -220,7 +220,7 @@ Begin VB.Form bookingfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   168165377
+      Format          =   97910785
       CurrentDate     =   43265
    End
    Begin VB.TextBox TxtMob 
@@ -497,6 +497,10 @@ Dim C As New ADODB.Connection
 Dim r As New ADODB.Recordset
 Dim s As String
 
+Dim model_id_selected As Integer
+Dim brand_selected As String
+Dim model_price As String
+
 Private Sub CmdAdd_Click()
 TxtName.Text = ""
 TxtCompany.Text = ""
@@ -536,6 +540,7 @@ End Sub
 
 Private Sub Command1_Click()
 Load Selfrom
+Selfrom.Load_Amount model_price
 Selfrom.Show
 End Sub
 
@@ -554,6 +559,16 @@ End Sub
 
 
 Private Sub Form_Load()
+'c.Open "provider=microsoft.jet.oledb.4.0;data "
+End Sub
+
+Public Sub Load_Selected_Data(model_id, brand, price)
+    model_id_selected = model_id
+    brand_selected = brand
+    model_price = price
+    
+    Model_Txt.Text = model_id_selected
+    Brand_Txt.Text = brand_selected
 'c.Open "provider=microsoft.jet.oledb.4.0;data "
 End Sub
 

@@ -749,8 +749,43 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim model_id As Integer
+Dim brand As String
+Dim model_price As String
+
 Dim conn As New ADODB.Connection
 Dim car As New ADODB.Recordset
+Dim pictures As New ADODB.Recordset
+
+Dim pic_context() As String
+Dim display_pic As String
+Dim current_loaded_pic_index As Integer
+
+Private Sub CmdNex_Click()
+    If current_loaded_pic_index < UBound(pic_context) - 1 Then
+        current_loaded_pic_index = current_loaded_pic_index + 1
+        ImageDisplay.Picture = LoadPicture("E:\project\images\Extra\" & model_id & "\" & pic_context(current_loaded_pic_index))
+    Else
+        current_loaded_pic_index = -1
+        ImageDisplay.Picture = LoadPicture("E:\project\images\" & display_pic)
+    End If
+End Sub
+
+Private Sub CmdPrev_Click()
+    If current_loaded_pic_index > 0 Then
+        current_loaded_pic_index = current_loaded_pic_index - 1
+        ImageDisplay.Picture = LoadPicture("E:\project\images\Extra\" & model_id & "\" & pic_context(current_loaded_pic_index))
+    Else
+        current_loaded_pic_index = -1
+        ImageDisplay.Picture = LoadPicture("E:\project\images\" & display_pic)
+    End If
+End Sub
+
+Private Sub Command4_Click()
+    Load bookingfrm
+    bookingfrm.Load_Selected_Data model_id, brand, model_price
+    bookingfrm.Show
+    
+End Sub
 
 Private Sub Command6_Click()
 End
@@ -759,7 +794,7 @@ End Sub
 Private Sub Form_Load()
     conn.Open "Provider=Microsoft.jet.OLEDB.4.0;Data Source =E:\project\assets\cars3.mdb;persist security info=false"
     
-    'model_id = 5
+    'model_id = 1
     
     
     
@@ -772,7 +807,10 @@ Public Sub Intilize_form()
         
         If car.RecordCount > 0 Then
             Txt_Model_ID.Text = car!model_id
+            
+            brand = car!brand
             Txt_Brand.Text = car!brand
+            
             Txt_Model.Text = car!model
             Txt_Engine.Text = car!engine
             Txt_Transmission.Text = car!transmission
@@ -782,14 +820,32 @@ Public Sub Intilize_form()
             Txt_Abs.Text = car!Abs
             Txt_Torque.Text = car!torque
             Txt_FuelType.Text = car!fuel_type
+            
+            model_price = car!cost
             Txt_Cost.Text = car!cost
+            
             Txt_Size.Text = car!Trye_Size
             Txt_Tank.Text = car!Fuel_tank
             Txt_Stw.Text = car!Steering_Wheel
             Txt_Dri.Text = car!Drive_mode
             Txt_Whee.Text = car!Wheels_Cover
-             If Not IsNull(car!display_pic) Then
-                ImageDisplay.Picture = LoadPicture("E:\project\images\" & car!display_pic)
+            
+            'Load images from pictures database
+            pic_query = "SELECT Pic FROM cars2 WHERE model_id = " & model_id
+            pictures.Open pic_query, conn, adUseClient, adLockOptimistic, adCmdText
+            
+            If pictures.RecordCount > 0 Then
+                ReDim pic_context(pictures.RecordCount) As String
+                For i = 0 To pictures.RecordCount - 1
+                    pic_context(i) = pictures!pic
+                    pictures.MoveNext
+                Next i
+            End If
+            
+            If Not IsNull(car!display_pic) Then
+                display_pic = car!display_pic
+                ImageDisplay.Picture = LoadPicture("E:\project\images\" & display_pic)
+                current_loaded_pic_index = -1
             End If
         Else
             MsgBox ("Model not found")

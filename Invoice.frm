@@ -26,11 +26,11 @@ Begin VB.Form Invoice
       EndProperty
       Height          =   495
       Left            =   11280
-      TabIndex        =   26
+      TabIndex        =   24
       Top             =   6720
       Width           =   1455
    End
-   Begin VB.TextBox Text11 
+   Begin VB.TextBox TxtPur 
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -42,29 +42,12 @@ Begin VB.Form Invoice
       EndProperty
       Height          =   495
       Left            =   13320
-      TabIndex        =   25
+      TabIndex        =   23
       Text            =   "Text11"
       Top             =   240
       Width           =   2055
    End
-   Begin VB.TextBox Text10 
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   495
-      Left            =   4320
-      TabIndex        =   23
-      Text            =   "Text10"
-      Top             =   7680
-      Width           =   2535
-   End
-   Begin VB.TextBox Text9 
+   Begin VB.TextBox TxtCos 
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -77,45 +60,28 @@ Begin VB.Form Invoice
       Height          =   495
       Left            =   4320
       TabIndex        =   21
+      Text            =   "Text10"
+      Top             =   7680
+      Width           =   2535
+   End
+   Begin VB.TextBox TxtPay 
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   4320
+      TabIndex        =   19
       Text            =   "Text9"
       Top             =   6840
       Width           =   2535
    End
-   Begin VB.TextBox Text8 
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   495
-      Left            =   12120
-      TabIndex        =   18
-      Text            =   "Text8"
-      Top             =   5160
-      Width           =   2415
-   End
-   Begin VB.TextBox Text7 
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   495
-      Left            =   12120
-      TabIndex        =   17
-      Text            =   "Text7"
-      Top             =   4320
-      Width           =   2415
-   End
-   Begin VB.TextBox Text6 
+   Begin VB.TextBox TxtMod 
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -128,11 +94,11 @@ Begin VB.Form Invoice
       Height          =   495
       Left            =   12120
       TabIndex        =   16
-      Text            =   "Text6"
-      Top             =   3480
+      Text            =   "Text7"
+      Top             =   4320
       Width           =   2415
    End
-   Begin VB.TextBox Text5 
+   Begin VB.TextBox TxtBra 
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -145,11 +111,11 @@ Begin VB.Form Invoice
       Height          =   495
       Left            =   12120
       TabIndex        =   15
-      Text            =   "Text5"
-      Top             =   2640
+      Text            =   "Text6"
+      Top             =   3480
       Width           =   2415
    End
-   Begin VB.TextBox Text4 
+   Begin VB.TextBox Txtmodid 
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -160,13 +126,13 @@ Begin VB.Form Invoice
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   4320
+      Left            =   12120
       TabIndex        =   14
-      Text            =   "Text4"
-      Top             =   5160
-      Width           =   2535
+      Text            =   "Text5"
+      Top             =   2640
+      Width           =   2415
    End
-   Begin VB.TextBox Text3 
+   Begin VB.TextBox TxtCit 
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -179,11 +145,11 @@ Begin VB.Form Invoice
       Height          =   495
       Left            =   4320
       TabIndex        =   13
-      Text            =   "Text3"
-      Top             =   4320
+      Text            =   "Text4"
+      Top             =   5160
       Width           =   2535
    End
-   Begin VB.TextBox Text2 
+   Begin VB.TextBox TxtMob 
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -196,11 +162,11 @@ Begin VB.Form Invoice
       Height          =   495
       Left            =   4320
       TabIndex        =   12
-      Text            =   "Text2"
-      Top             =   3480
+      Text            =   "Text3"
+      Top             =   4320
       Width           =   2535
    End
-   Begin VB.TextBox Text1 
+   Begin VB.TextBox TxtAdd 
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -213,6 +179,23 @@ Begin VB.Form Invoice
       Height          =   495
       Left            =   4320
       TabIndex        =   11
+      Text            =   "Text2"
+      Top             =   3480
+      Width           =   2535
+   End
+   Begin VB.TextBox TxtNam 
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   4320
+      TabIndex        =   10
       Text            =   "Text1"
       Top             =   2640
       Width           =   2535
@@ -231,7 +214,7 @@ Begin VB.Form Invoice
       EndProperty
       Height          =   375
       Left            =   6720
-      TabIndex        =   27
+      TabIndex        =   25
       Top             =   120
       Width           =   1935
    End
@@ -248,7 +231,7 @@ Begin VB.Form Invoice
       EndProperty
       Height          =   495
       Left            =   9960
-      TabIndex        =   24
+      TabIndex        =   22
       Top             =   240
       Width           =   3015
    End
@@ -265,7 +248,7 @@ Begin VB.Form Invoice
       EndProperty
       Height          =   495
       Left            =   1200
-      TabIndex        =   22
+      TabIndex        =   20
       Top             =   7680
       Width           =   2655
    End
@@ -282,7 +265,7 @@ Begin VB.Form Invoice
       EndProperty
       Height          =   495
       Left            =   1200
-      TabIndex        =   20
+      TabIndex        =   18
       Top             =   6840
       Width           =   2655
    End
@@ -299,26 +282,9 @@ Begin VB.Form Invoice
       EndProperty
       Height          =   495
       Left            =   240
-      TabIndex        =   19
+      TabIndex        =   17
       Top             =   6000
       Width           =   2895
-   End
-   Begin VB.Label Label11 
-      Caption         =   "Engine :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   495
-      Left            =   9240
-      TabIndex        =   10
-      Top             =   5160
-      Width           =   2295
    End
    Begin VB.Label Label10 
       Caption         =   "Model :-"

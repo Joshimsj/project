@@ -82,7 +82,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   56819713
+      Format          =   97845249
       CurrentDate     =   43289
    End
    Begin VB.TextBox TxtDeMob 
@@ -466,6 +466,8 @@ Dim Con As New ADODB.Connection
 Dim r As New ADODB.Recordset
 Dim s As String
 
+Dim amount As String
+
 Private Sub CmdAdd_Click()
 TxtAccN.Text = ""
 TxtAccNo.Text = ""
@@ -499,3 +501,9 @@ An.Depositor_Mob_No = TxtDeMob.Text
 An.Acc_Dat = Dat.Value
 Call An.Save
 End Sub
+
+Public Sub Load_Amount(price)
+    amount = price
+    TxtAmtNo.Text = amount
+End Sub
+

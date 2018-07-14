@@ -126,29 +126,20 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-
-'Dim cardType
-
-'Private Sub cmdSave_Click()
-'Selected_cardType_index = Payment_type.ListIndex
-
-'Selected_cardType = cardType(Selected_cardType_index)
-
-'q = "INSERT INTO cards (card_type) VALUES(" & Selected_cardType & ")"
-
-'MsgBox (q)
-
-'End Sub
+Dim amount As String
 
 Private Sub Command1_Click()
 If Option1.Value = True Then
 Selfrom.Visible = False
+
 Accfrm.Visible = True
 Chqfrm.Visible = False
 Else
 Selfrom.Visible = False
 Accfrm.Visible = False
+
 Chqfrm.Visible = True
+
 End If
 End Sub
 
@@ -161,6 +152,17 @@ End Sub
 'Next
 'End Sub
 
+
 Private Sub Command2_Click()
 End
 End Sub
+
+Public Sub Load_Amount(price)
+    amount = price
+    
+    Load Accfrm
+    Accfrm.Load_Amount price
+    
+    Load Chqfrm
+End Sub
+
