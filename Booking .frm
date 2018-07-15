@@ -5,20 +5,20 @@ Begin VB.Form bookingfrm
    ClientHeight    =   6405
    ClientLeft      =   5070
    ClientTop       =   2115
-   ClientWidth     =   11295
+   ClientWidth     =   11340
    LinkTopic       =   "Form1"
    Picture         =   "Booking .frx":0000
    ScaleHeight     =   6405
-   ScaleWidth      =   11295
+   ScaleWidth      =   11340
    ShowInTaskbar   =   0   'False
-   Begin MSComCtl2.DTPicker DTPicker1 
-      Height          =   495
+   Begin MSComCtl2.DTPicker DOP 
+      Height          =   615
       Left            =   7440
       TabIndex        =   26
-      Top             =   3960
+      Top             =   3240
       Width           =   3255
       _ExtentX        =   5741
-      _ExtentY        =   873
+      _ExtentY        =   1085
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Bookman Old Style"
@@ -29,7 +29,7 @@ Begin VB.Form bookingfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   57278465
+      Format          =   130023425
       CurrentDate     =   43294
    End
    Begin VB.TextBox Brand_Txt 
@@ -78,9 +78,9 @@ Begin VB.Form bookingfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   7200
+      Left            =   9240
       TabIndex        =   20
-      Top             =   5760
+      Top             =   4680
       Width           =   1455
    End
    Begin VB.CommandButton cmdadd 
@@ -95,10 +95,10 @@ Begin VB.Form bookingfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   3120
+      Left            =   5640
       TabIndex        =   10
-      Top             =   5760
-      Width           =   1815
+      Top             =   4680
+      Width           =   1695
    End
    Begin VB.CommandButton Command8 
       Caption         =   "Close"
@@ -112,9 +112,9 @@ Begin VB.Form bookingfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   9360
+      Left            =   4920
       TabIndex        =   9
-      Top             =   5760
+      Top             =   5400
       Width           =   1335
    End
    Begin VB.CommandButton CmdSave 
@@ -129,9 +129,9 @@ Begin VB.Form bookingfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   5280
+      Left            =   7440
       TabIndex        =   8
-      Top             =   5760
+      Top             =   4680
       Width           =   1695
    End
    Begin VB.TextBox TxtZip 
@@ -145,11 +145,11 @@ Begin VB.Form bookingfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   5640
+      Left            =   7440
       TabIndex        =   7
       Text            =   "Enter your Zipcode"
-      Top             =   4800
-      Width           =   2655
+      Top             =   3960
+      Width           =   3255
    End
    Begin VB.TextBox TxtCity 
       BeginProperty Font 
@@ -165,7 +165,7 @@ Begin VB.Form bookingfrm
       Left            =   7440
       TabIndex        =   6
       Text            =   "Enter your City"
-      Top             =   3240
+      Top             =   2520
       Width           =   3255
    End
    Begin VB.TextBox TxtState 
@@ -182,7 +182,7 @@ Begin VB.Form bookingfrm
       Left            =   7440
       TabIndex        =   5
       Text            =   "Enter your Sate"
-      Top             =   2520
+      Top             =   1800
       Width           =   3255
    End
    Begin VB.TextBox TxtAdd 
@@ -195,18 +195,18 @@ Begin VB.Form bookingfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   615
-      Left            =   7440
+      Height          =   495
+      Left            =   2160
       TabIndex        =   4
       Text            =   "Enter your Address"
-      Top             =   1800
-      Width           =   3255
+      Top             =   3960
+      Width           =   3135
    End
    Begin MSComCtl2.DTPicker DOB 
       Height          =   495
       Left            =   2160
       TabIndex        =   3
-      Top             =   3960
+      Top             =   4680
       Width           =   3135
       _ExtentX        =   5530
       _ExtentY        =   873
@@ -220,7 +220,7 @@ Begin VB.Form bookingfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   97910785
+      Format          =   130088961
       CurrentDate     =   43265
    End
    Begin VB.TextBox TxtMob 
@@ -285,10 +285,10 @@ Begin VB.Form bookingfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
+      Height          =   495
       Left            =   5640
       TabIndex        =   25
-      Top             =   3960
+      Top             =   3240
       Width           =   1575
    End
    Begin VB.Label Label11 
@@ -337,9 +337,9 @@ Begin VB.Form bookingfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   3840
+      Left            =   5640
       TabIndex        =   19
-      Top             =   4800
+      Top             =   3960
       Width           =   1575
    End
    Begin VB.Label Label8 
@@ -356,7 +356,7 @@ Begin VB.Form bookingfrm
       Height          =   495
       Left            =   5640
       TabIndex        =   18
-      Top             =   3240
+      Top             =   2520
       Width           =   1575
    End
    Begin VB.Label Label7 
@@ -373,7 +373,7 @@ Begin VB.Form bookingfrm
       Height          =   495
       Left            =   5640
       TabIndex        =   17
-      Top             =   2520
+      Top             =   1800
       Width           =   1575
    End
    Begin VB.Label Label6 
@@ -387,10 +387,10 @@ Begin VB.Form bookingfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   495
-      Left            =   5640
+      Height          =   375
+      Left            =   240
       TabIndex        =   16
-      Top             =   1800
+      Top             =   3960
       Width           =   1575
    End
    Begin VB.Label Label5 
@@ -407,7 +407,7 @@ Begin VB.Form bookingfrm
       Height          =   375
       Left            =   240
       TabIndex        =   15
-      Top             =   3960
+      Top             =   4680
       Width           =   1695
    End
    Begin VB.Label Label4 
@@ -463,7 +463,7 @@ Begin VB.Form bookingfrm
    End
    Begin VB.Label Label1 
       Alignment       =   2  'Center
-      Caption         =   "Booking Detail"
+      Caption         =   """Customer Details"""
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -501,6 +501,11 @@ Dim model_id_selected As Integer
 Dim brand_selected As String
 Dim model_price As String
 
+Dim car_category As String
+Dim model_name As String
+
+Dim cst As New customer
+
 Private Sub CmdAdd_Click()
 TxtName.Text = ""
 TxtCompany.Text = ""
@@ -521,7 +526,7 @@ Private Sub cmdSave_Click()
 ''s = "select * from Customers"
 ''r.Open s, c, adOpenDynamic, adLockOptimistic
 ''If Not r.BOF And r.EOF Then
-Dim cst As New customer
+
 cst.Name = TxtName.Text
 cst.Company = TxtCompany.Text
 cst.MobileNumber = TxtMob.Text
@@ -530,6 +535,9 @@ cst.Address = TxtAdd.Text
 cst.State = TxtState.Text
 cst.City = TxtCity.Text
 cst.Zip = TxtZip.Text
+cst.model_id = Model_Txt.Text
+cst.brand = Brand_Txt.Text
+cst.DOP = DOP.Value
 'cst.Identity = Com_ID1.Text
 'cst.EnterDetails = com_ID2.Text
 Call cst.SaveData
@@ -540,7 +548,7 @@ End Sub
 
 Private Sub Command1_Click()
 Load Selfrom
-Selfrom.Load_Amount model_price
+Selfrom.Load_data model_price, car_category, brand_selected, model_id, model_name, cst
 Selfrom.Show
 End Sub
 
@@ -562,10 +570,12 @@ Private Sub Form_Load()
 'c.Open "provider=microsoft.jet.oledb.4.0;data "
 End Sub
 
-Public Sub Load_Selected_Data(model_id, brand, price)
+Public Sub Load_Selected_Data(model_id, brand, price, model, category)
     model_id_selected = model_id
     brand_selected = brand
     model_price = price
+    model_name = model
+    car_category = category
     
     Model_Txt.Text = model_id_selected
     Brand_Txt.Text = brand_selected

@@ -4,8 +4,8 @@ Begin VB.Form Accfrm
    BorderStyle     =   0  'None
    Caption         =   "Account Details"
    ClientHeight    =   8415
-   ClientLeft      =   6390
-   ClientTop       =   1920
+   ClientLeft      =   5640
+   ClientTop       =   765
    ClientWidth     =   9750
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -82,7 +82,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   97845249
+      Format          =   130220033
       CurrentDate     =   43289
    End
    Begin VB.TextBox TxtDeMob 
@@ -483,8 +483,10 @@ Dat.Value = "1/10/2018"
 End Sub
 
 Private Sub CmdClose_Click()
-Load feedbackfrm
-feedbackfrm.Show
+'Load feedbackfrm
+'feedbackfrm.Show
+
+Invoice.Show
 End Sub
 
 Private Sub CmdSummit_Click()
@@ -500,6 +502,8 @@ An.Depositor_Name = TxtDeName.Text
 An.Depositor_Mob_No = TxtDeMob.Text
 An.Acc_Dat = Dat.Value
 Call An.Save
+
+Invoice.Load_payment TxtAmtNo.Text, "Account Pay"
 End Sub
 
 Public Sub Load_Amount(price)

@@ -31,7 +31,7 @@ Begin VB.Form Chqfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   107216897
+      Format          =   59179009
       CurrentDate     =   43288
    End
    Begin VB.CommandButton C 
@@ -339,6 +339,9 @@ Dim Cn As New ADODB.Connection
 Dim r As New ADODB.Recordset
 Dim s As String
 
+
+Dim amount As String
+
 Private Sub C_Click()
 Txtpay.Text = ""
 TxtName.Text = ""
@@ -364,4 +367,9 @@ ch.Cheq_Amt_Words = TxtAw.Text
 ch.Cheq_No = TxtCn.Text
 ch.Cheq_Dated = ChqD.Value
 Call ch.SaveD
+End Sub
+
+Public Sub Load_Amount(price)
+    amount = price
+    TxtAno.Text = amount
 End Sub

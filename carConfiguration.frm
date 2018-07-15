@@ -491,7 +491,7 @@ Begin VB.Form carConfiguration
       Width           =   2175
    End
    Begin VB.Label Label1 
-      Caption         =   "Label1"
+      Caption         =   """A Car is not just 4 wheels.... It's Much More Then That...!!!!"""
       BeginProperty Font 
          Name            =   "Century Gothic"
          Size            =   27.75
@@ -751,6 +751,10 @@ Attribute VB_Exposed = False
 Dim model_id As Integer
 Dim brand As String
 Dim model_price As String
+Dim car_category_list
+Dim car_category As String
+Dim model_name As String
+
 
 Dim conn As New ADODB.Connection
 Dim car As New ADODB.Recordset
@@ -780,11 +784,23 @@ Private Sub CmdPrev_Click()
     End If
 End Sub
 
+Private Sub Command3_Click()
+Load MainForm
+MainForm.Show
+End Sub
+
 Private Sub Command4_Click()
+    'Load AccLogin
     Load bookingfrm
-    bookingfrm.Load_Selected_Data model_id, brand, model_price
+    bookingfrm.Load_Selected_Data model_id, brand, model_price, model_name, car_category
     bookingfrm.Show
+    'AccLogin.Show
     
+End Sub
+
+Private Sub Command5_Click()
+Load feedbackfrm
+feedbackfrm.Show
 End Sub
 
 Private Sub Command6_Click()
@@ -801,17 +817,23 @@ Private Sub Form_Load()
 End Sub
 
 Public Sub Intilize_form()
+    car_category_list = Array("Sports", "Vintage", "Luxury", "Hybrid", "Concept")
+    
     If model_id > 0 Then
         query = "SELECT * FROM cars WHERE model_id = " & model_id
         car.Open query, conn, adUseClient, adLockOptimistic, adCmdText
         
         If car.RecordCount > 0 Then
+            car_category = car_category_list(car!category)
+            
             Txt_Model_ID.Text = car!model_id
             
             brand = car!brand
             Txt_Brand.Text = car!brand
             
             Txt_Model.Text = car!model
+            model_name = car!model
+            
             Txt_Engine.Text = car!engine
             Txt_Transmission.Text = car!transmission
             Txt_Power.Text = car!power
@@ -824,7 +846,7 @@ Public Sub Intilize_form()
             model_price = car!cost
             Txt_Cost.Text = car!cost
             
-            Txt_Size.Text = car!Trye_Size
+            Txt_Size.Text = car!Tyre_Size
             Txt_Tank.Text = car!Fuel_tank
             Txt_Stw.Text = car!Steering_Wheel
             Txt_Dri.Text = car!Drive_mode

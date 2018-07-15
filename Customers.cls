@@ -22,6 +22,11 @@ Private cState As String
 Private cCity As String
 Private cZip As String
 Private cDOB As String
+Private cModel_id As String
+Private cBrand As String
+Private cDOP As String
+
+
 Public Property Let Name(customerName As String)
     cName = customerName
 End Property
@@ -60,6 +65,18 @@ End Property
 
 Public Property Let DOB(customerDOB As String)
     cDOB = customerDOB
+End Property
+
+Public Property Let Model_id(customerModel_id As String)
+    cModel_id = customerModel_id
+End Property
+
+Public Property Let Brand(customerBrand As String)
+    cBrand = customerBrand
+End Property
+
+Public Property Let DOP(customerDOP As String)
+    cDOP = customerDOP
 End Property
 
 Public Property Get Name() As String
@@ -101,6 +118,17 @@ End Property
 Public Property Get DOB() As String
     DOB = cDOB
 End Property
+Public Property Get Model_id() As String
+    Model_id = cModel_id
+End Property
+
+Public Property Get Brand() As String
+    Brand = cBrand
+End Property
+
+Public Property Get DOP() As String
+    DOP = cDOP
+End Property
 
 Public Sub SaveData()
 'create an adodb conn, adodb recordset
@@ -111,7 +139,7 @@ Dim s As String
  conn.Open "Provider=Microsoft.jet.OLEDB.4.0;Data Source =E:\project\assets\Customers.mdb;persist security info=false"
 'query
   's = "INSERT INTO cus_details (name, company, contact, dob, identity, address, state, city, pincode) VALUES (" & Me.Name & "," & Me.Company & "," & Me.MobileNumber & "," & Me.DOB & "," & Me.Identity & ", " & Me.Address & ", " & Me.State & "," & Me.City & "," & Me.Zip & ")"
-   s = "INSERT INTO cus_details (name, company, contact, DOB, address, state, city, pincode) VALUES('" & Me.Name & "','" & Me.Company & "','" & Me.MobileNumber & "','" & Me.DOB & "','" & Me.Address & "','" & Me.State & "','" & Me.City & "','" & Me.Zip & "')"
+   s = "INSERT INTO cus_details (name, company, contact, DOB, address, state, city, pincode, Model_id, Brand, DOP) VALUES('" & Me.Name & "','" & Me.Company & "','" & Me.MobileNumber & "','" & Me.DOB & "','" & Me.Address & "','" & Me.State & "','" & Me.City & "','" & Me.Zip & "','" & Me.Model_id & "','" & Me.Brand & "','" & Me.DOP & "')"
 
    rec.Open s, conn, adOpenDynamic, adLockOptimistic
    conn.Close

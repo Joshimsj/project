@@ -74,11 +74,11 @@ Begin VB.Form MainLogin
    End
    Begin VB.Image Image2 
       Height          =   480
-      Left            =   240
+      Left            =   360
       Picture         =   "Login.frx":0000
       Stretch         =   -1  'True
       Top             =   3240
-      Width           =   600
+      Width           =   480
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent

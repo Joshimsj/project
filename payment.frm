@@ -127,42 +127,43 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim amount As String
+Dim model_id As Integer
+Dim model_name As String
+Dim category As String
+Dim brand As String
+
 
 Private Sub Command1_Click()
 If Option1.Value = True Then
 Selfrom.Visible = False
-
 Accfrm.Visible = True
 Chqfrm.Visible = False
 Else
 Selfrom.Visible = False
 Accfrm.Visible = False
-
 Chqfrm.Visible = True
-
 End If
 End Sub
 
-'Private Sub Form_Load()
-
-'cardType = Array("Net Banking", "Debit card", "Credit card")
-
-'For i = 0 To UBound(cardType)
-    'Payment_type.AddItem cardType(i), Val(cardType(i))
-'Next
-'End Sub
-
-
 Private Sub Command2_Click()
-End
+Invoice.Show
 End Sub
 
-Public Sub Load_Amount(price)
+Public Sub Load_data(price, car_category, car_brand, m_id, m_name, ByRef customer_object As customer)
     amount = price
+    category = car_category
+    brand = car_brand
+    model_id = m_id
+    model_name = m_name
+    
+    Load Invoice
+    Invoice.Load_data model_id, model_name, category, brand, customer_object
+       
     
     Load Accfrm
     Accfrm.Load_Amount price
     
     Load Chqfrm
+    Chqfrm.Load_Amount price
 End Sub
 

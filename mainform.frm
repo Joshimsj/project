@@ -25,13 +25,13 @@ Begin VB.Form MainForm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   13440
-      TabIndex        =   10
-      Top             =   10560
-      Width           =   1455
+      Left            =   15480
+      TabIndex        =   9
+      Top             =   10800
+      Width           =   1335
    End
    Begin VB.CommandButton ResetFilters 
-      Caption         =   "Reset Filters"
+      Caption         =   "Reset"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -42,10 +42,10 @@ Begin VB.Form MainForm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   15000
-      TabIndex        =   9
-      Top             =   10560
-      Width           =   1695
+      Left            =   16920
+      TabIndex        =   8
+      Top             =   10800
+      Width           =   1335
    End
    Begin VB.CommandButton Command2 
       Caption         =   "X"
@@ -60,26 +60,9 @@ Begin VB.Form MainForm
       EndProperty
       Height          =   615
       Left            =   19800
-      TabIndex        =   6
-      Top             =   10560
-      Width           =   615
-   End
-   Begin VB.CommandButton Command1 
-      Caption         =   "Book"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   615
-      Left            =   18360
       TabIndex        =   5
-      Top             =   10560
-      Width           =   1335
+      Top             =   10800
+      Width           =   615
    End
    Begin VB.ComboBox brandType 
       BackColor       =   &H00808000&
@@ -136,7 +119,7 @@ Begin VB.Form MainForm
       MaskColor       =   &H0000FFFF&
       Style           =   1  'Graphical
       TabIndex        =   2
-      Top             =   10560
+      Top             =   10800
       UseMaskColor    =   -1  'True
       Width           =   1900
    End
@@ -172,11 +155,11 @@ Begin VB.Form MainForm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   600
-      Left            =   16800
+      Left            =   18360
       Style           =   1  'Graphical
       TabIndex        =   0
-      Top             =   10560
-      Width           =   1425
+      Top             =   10800
+      Width           =   1305
    End
    Begin VB.Label Label6 
       BackStyle       =   0  'Transparent
@@ -193,7 +176,7 @@ Begin VB.Form MainForm
       ForeColor       =   &H000040C0&
       Height          =   1215
       Left            =   8640
-      TabIndex        =   8
+      TabIndex        =   7
       Top             =   360
       Width           =   11295
    End
@@ -212,7 +195,7 @@ Begin VB.Form MainForm
       ForeColor       =   &H000080FF&
       Height          =   495
       Left            =   3240
-      TabIndex        =   7
+      TabIndex        =   6
       Top             =   240
       Width           =   3135
    End
@@ -230,6 +213,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
 Dim conn As New ADODB.Connection
 Dim currentVdo As String
 Dim currentCar As String
@@ -315,11 +299,11 @@ End Sub
 Private Sub carModel_Click()
     loadcarBtn.Enabled = True
     Index = carModel.ListIndex
-    model_id = currentModels(Index)
-    current_model = model_id
+    Model_id = currentModels(Index)
+    current_model = Model_id
     
     Dim car As New ADODB.Recordset
-    q = "SELECT * FROM cars WHERE model_id = " & model_id
+    q = "SELECT * FROM cars WHERE model_id = " & Model_id
     car.Open q, conn, adUseClient, adLockOptimistic, adCmdText
     
     If IsNull(car!display_pic) Then
@@ -328,7 +312,7 @@ Private Sub carModel_Click()
         BGpic.Picture = LoadPicture("E:\project\images\" & car!display_pic)
     End If
     
-    currentCar = car!brand & "(" & car!model & ")"
+    currentCar = car!Brand & "(" & car!Model & ")"
     
     If IsNull(car!video) Then
     MsgBox ("No Vdo found for this car")
@@ -342,8 +326,7 @@ Private Sub carModel_Click()
 End Sub
 
 Private Sub Command1_Click()
-    Load AccLogin
-    AccLogin.Show
+    
 End Sub
 
 Private Sub Command2_Click()
@@ -360,10 +343,10 @@ Private Sub frontView_Click()
     Dim pic As New ADODB.Recordset
         
     Index = carModel.ListIndex
-    model_id = currentModels(Index)
+    Model_id = currentModels(Index)
     
     Dim car As New ADODB.Recordset
-    q = "SELECT pic FROM pictures WHERE model_id = " & model_id & " AND view = 'front'"
+    q = "SELECT pic FROM pictures WHERE model_id = " & Model_id & " AND view = 'front'"
     car.Open q, conn, adUseClient, adLockOptimistic, adCmdText
     
     If IsNull(car!pic) Then
