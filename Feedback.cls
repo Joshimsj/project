@@ -131,8 +131,7 @@ Dim s As String
 'connect
  conn.Open "Provider=Microsoft.jet.OLEDB.4.0;Data Source =E:\project\assets\Feeback.mdb;persist security info=false"
 'query
-  's = "INSERT INTO cus_details (name, company, contact, dob, identity, address, state, city, pincode) VALUES (" & Me.Name & "," & Me.Company & "," & Me.MobileNumber & "," & Me.DOB & "," & Me.Identity & ", " & Me.Address & ", " & Me.State & "," & Me.City & "," & Me.Zip & ")"
-   s = "INSERT INTO Feed_Details (Name,Sex,Age, Income, Q1, Q2, Q3, Q4,Q5,Q6,Q7,Q8) VALUES('" & Me.Name & "','" & Me.Sex & "','" & Me.Age & "','" & Me.Income & "','" & Me.Q1 & "','" & Me.Q2 & "','" & Me.Q3 & "','" & Me.Q4 & "','" & Me.Q5 & "','" & Me.Q6 & "','" & Me.Q7 & "','" & Me.Q8 & "')"
+     s = "INSERT INTO Feed_Details (Name,Sex,Age, Income, Q1, Q2, Q3, Q4,Q5,Q6,Q7,Q8) VALUES('" & Me.Name & "','" & Me.Sex & "','" & Me.Age & "','" & Me.Income & "','" & Me.Q1 & "','" & Me.Q2 & "','" & Me.Q3 & "','" & Me.Q4 & "','" & Me.Q5 & "','" & Me.Q6 & "','" & Me.Q7 & "','" & Me.Q8 & "')"
 
    rec.Open s, conn, adOpenDynamic, adLockOptimistic
    conn.Close

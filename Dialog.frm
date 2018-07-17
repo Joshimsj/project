@@ -178,9 +178,6 @@ Private Sub Search_Click()
             filter_query = " cost > " & price_range(range)
     End Select
     
-    
-    ' filter_query = filter_query & " AND speed > TextBox.val.integer"
-    
     'Load Carlist
      Dim cars As New ADODB.Recordset
      
@@ -190,6 +187,7 @@ Private Sub Search_Click()
     'Append carlist
         
     'Total cars in Database
+    
     total_cars = cars.RecordCount
     ReDim carBrands(total_cars) As Integer
     ReDim brandNames(total_cars) As String
@@ -212,8 +210,6 @@ Private Sub Search_Click()
     End If
     
     
-    
-    'carList.AddItem cars.Fields(1)
     cars.Close
 End Sub
 

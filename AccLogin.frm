@@ -103,24 +103,20 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-'Dim Model_id As Integer
-'Dim Brand As String
-'Dim model_price As String
-
 Public conn As ADODB.Connection
 
 Private Sub SignIn()
 Dim rs As New ADODB.Recordset
-rs.Open "SELECT Password FROM Admin_L WHERE Username = '" & TxtUser.Text & "'", conn, adOpenStatic, adLockReadOnly
+rs.Open "SELECT Password FROM Admin_L WHERE Username = '" & Txtuser.Text & "'", conn, adOpenStatic, adLockReadOnly
 If rs.RecordCount < 1 Then
     MsgBox "Username is Invalid. Please try again.", vbInformation
-    TxtUser.SetFocus
+    Txtuser.SetFocus
 Exit Sub
 Else
     If TxtPass.Text = rs!Password Then
-        Load bookingfrm
-        bookingfrm.Show
-        Unload Me
+       Load bookingfrm
+       bookingfrm.Show
+       Unload Me
         
     Exit Sub
     Else
@@ -134,9 +130,9 @@ End Sub
 
 
 Private Sub CmdSign_Click()
-If TxtUser.Text = "" Then
+If Txtuser.Text = "" Then
 MsgBox "Username is Empty.", vbInformation
-TxtUser.SetFocus
+Txtuser.SetFocus
 Exit Sub
 ElseIf TxtPass.Text = "" Then
 MsgBox "Password is Empty"

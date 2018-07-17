@@ -16,8 +16,6 @@ Private cName As String
 Private cMobileNumber As String
 Private cAddress As String
 Private cCompany As String
-'Private cIdentity As String
-'Private cEnterDetails As String
 Private cState As String
 Private cCity As String
 Private cZip As String
@@ -25,7 +23,9 @@ Private cDOB As String
 Private cModel_id As String
 Private cBrand As String
 Private cDOP As String
-
+Private cDealer_Name As String
+Private cDealer_Mob As String
+Private cDealer_Mid As String
 
 Public Property Let Name(customerName As String)
     cName = customerName
@@ -43,14 +43,6 @@ Public Property Let Company(customerCompany As String)
     cCompany = customerCompany
 End Property
 
-'Public Property Let Identity(customerIdentity As String)
-    'cIdentity = customerIdentity
-'End Property
-
-'Public Property Let EnterDetails(customerEnterDetails As String)
-    'cEnterDetails = customerEnterDetails
-'End Property
-
 Public Property Let State(customerState As String)
     cState = customerState
 End Property
@@ -67,17 +59,29 @@ Public Property Let DOB(customerDOB As String)
     cDOB = customerDOB
 End Property
 
-Public Property Let Model_id(customerModel_id As String)
+Public Property Let model_id(customerModel_id As String)
     cModel_id = customerModel_id
 End Property
 
-Public Property Let Brand(customerBrand As String)
+Public Property Let brand(customerBrand As String)
     cBrand = customerBrand
 End Property
 
 Public Property Let DOP(customerDOP As String)
     cDOP = customerDOP
 End Property
+Public Property Let Dealer_Name(customerDealer_Name As String)
+    cDealer_Name = customerDealer_Name
+End Property
+
+Public Property Let Dealer_Mob(customerDealer_Mob As String)
+    cDealer_Mob = customerDealer_Mob
+End Property
+
+Public Property Let Dealer_Mid(customerDealer_Mid As String)
+    cDealer_Mid = customerDealer_Mid
+End Property
+
 
 Public Property Get Name() As String
     Name = cName
@@ -95,14 +99,6 @@ Public Property Get Company() As String
     Company = cCompany
 End Property
 
-'Public Property Get Identity() As String
-    'Identity = cIdentity
-'End Property
-
-'Public Property Get EnterDetails() As String
-    'EnterDetails = cEnterDetails
-'End Property
-
 Public Property Get State() As String
     State = cState
 End Property
@@ -118,16 +114,28 @@ End Property
 Public Property Get DOB() As String
     DOB = cDOB
 End Property
-Public Property Get Model_id() As String
-    Model_id = cModel_id
+Public Property Get model_id() As String
+    model_id = cModel_id
 End Property
 
-Public Property Get Brand() As String
-    Brand = cBrand
+Public Property Get brand() As String
+    brand = cBrand
 End Property
 
 Public Property Get DOP() As String
     DOP = cDOP
+End Property
+
+Public Property Get Dealer_Name() As String
+    Dealer_Name = cDealer_Name
+End Property
+
+Public Property Get Dealer_Mob() As String
+    Dealer_Mob = cDealer_Mob
+End Property
+
+Public Property Get Dealer_Mid() As String
+    Dealer_Mid = cDealer_Mid
 End Property
 
 Public Sub SaveData()
@@ -138,10 +146,8 @@ Dim s As String
 'connect
  conn.Open "Provider=Microsoft.jet.OLEDB.4.0;Data Source =E:\project\assets\Customers.mdb;persist security info=false"
 'query
-  's = "INSERT INTO cus_details (name, company, contact, dob, identity, address, state, city, pincode) VALUES (" & Me.Name & "," & Me.Company & "," & Me.MobileNumber & "," & Me.DOB & "," & Me.Identity & ", " & Me.Address & ", " & Me.State & "," & Me.City & "," & Me.Zip & ")"
-   s = "INSERT INTO cus_details (name, company, contact, DOB, address, state, city, pincode, Model_id, Brand, DOP) VALUES('" & Me.Name & "','" & Me.Company & "','" & Me.MobileNumber & "','" & Me.DOB & "','" & Me.Address & "','" & Me.State & "','" & Me.City & "','" & Me.Zip & "','" & Me.Model_id & "','" & Me.Brand & "','" & Me.DOP & "')"
-
-   rec.Open s, conn, adOpenDynamic, adLockOptimistic
-   conn.Close
-   MsgBox "Customer Saved", vbInformation
+     s = "INSERT INTO cus_details (name, company, contact, DOB, address, state, city, pincode, Model_id, Brand, DOP, Deal_name, Deal_mobile, Deal_Mail ) VALUES('" & Me.Name & "','" & Me.Company & "','" & Me.MobileNumber & "','" & Me.DOB & "','" & Me.Address & "','" & Me.State & "','" & Me.City & "','" & Me.Zip & "','" & Me.model_id & "','" & Me.brand & "','" & Me.DOP & "','" & Me.Dealer_Name & "','" & Me.Dealer_Mob & "','" & Me.Dealer_Mid & "')"
+     rec.Open s, conn, adOpenDynamic, adLockOptimistic
+     conn.Close
+     MsgBox "Customer Saved", vbInformation
 End Sub

@@ -2,16 +2,67 @@ VERSION 5.00
 Begin VB.Form Invoice 
    BorderStyle     =   0  'None
    Caption         =   "Form1"
-   ClientHeight    =   8670
-   ClientLeft      =   2625
-   ClientTop       =   570
-   ClientWidth     =   15855
+   ClientHeight    =   9450
+   ClientLeft      =   2325
+   ClientTop       =   465
+   ClientWidth     =   15990
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   8670
-   ScaleWidth      =   15855
+   ScaleHeight     =   9450
+   ScaleWidth      =   15990
    ShowInTaskbar   =   0   'False
+   Begin VB.TextBox TxtDelMid 
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   4320
+      TabIndex        =   34
+      Top             =   8520
+      Width           =   2535
+   End
+   Begin VB.TextBox TxtDelN 
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   4320
+      TabIndex        =   33
+      Top             =   6840
+      Width           =   2535
+   End
+   Begin VB.TextBox TxtDelMno 
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   4320
+      TabIndex        =   32
+      Top             =   7680
+      Width           =   2535
+   End
    Begin VB.TextBox TxtCategory 
       Enabled         =   0   'False
       BeginProperty Font 
@@ -29,7 +80,7 @@ Begin VB.Form Invoice
       Top             =   2640
       Width           =   2415
    End
-   Begin VB.CommandButton Command2 
+   Begin VB.CommandButton CmdExit 
       Caption         =   "Exit"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -41,12 +92,13 @@ Begin VB.Form Invoice
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   11280
+      Left            =   12960
       TabIndex        =   24
-      Top             =   6720
+      Top             =   8880
       Width           =   1455
    End
    Begin VB.TextBox TxtPur 
+      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -74,10 +126,10 @@ Begin VB.Form Invoice
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   4320
+      Left            =   12120
       TabIndex        =   21
       Top             =   7680
-      Width           =   2535
+      Width           =   2415
    End
    Begin VB.TextBox TxtPay 
       Enabled         =   0   'False
@@ -91,10 +143,10 @@ Begin VB.Form Invoice
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   4320
+      Left            =   12120
       TabIndex        =   19
       Top             =   6840
-      Width           =   2535
+      Width           =   2415
    End
    Begin VB.TextBox TxtMod 
       Enabled         =   0   'False
@@ -215,6 +267,74 @@ Begin VB.Form Invoice
       Top             =   2640
       Width           =   2535
    End
+   Begin VB.Label Label20 
+      Caption         =   "Dealer Details :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   240
+      TabIndex        =   31
+      Top             =   6000
+      Width           =   2415
+   End
+   Begin VB.Label Label19 
+      Caption         =   "Dealer Mail Id :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   840
+      TabIndex        =   30
+      Top             =   8400
+      Width           =   2775
+   End
+   Begin VB.Label Label18 
+      Caption         =   "Dealer Mobile No :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   840
+      TabIndex        =   29
+      Top             =   7680
+      Width           =   2775
+   End
+   Begin VB.Label Label17 
+      Caption         =   "Dealer Name :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   840
+      TabIndex        =   28
+      Top             =   6840
+      Width           =   2775
+   End
    Begin VB.Label Label11 
       Caption         =   "Category :- "
       BeginProperty Font 
@@ -279,10 +399,10 @@ Begin VB.Form Invoice
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   1200
+      Left            =   9000
       TabIndex        =   20
       Top             =   7680
-      Width           =   2655
+      Width           =   2535
    End
    Begin VB.Label Label13 
       Caption         =   "Payment Type :- "
@@ -296,10 +416,10 @@ Begin VB.Form Invoice
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   1200
+      Left            =   9000
       TabIndex        =   18
       Top             =   6840
-      Width           =   2655
+      Width           =   2535
    End
    Begin VB.Label Label12 
       Caption         =   "Payment Details :-"
@@ -313,7 +433,7 @@ Begin VB.Form Invoice
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   240
+      Left            =   7080
       TabIndex        =   17
       Top             =   6000
       Width           =   2895
@@ -489,10 +609,10 @@ Begin VB.Form Invoice
       Width           =   3855
    End
    Begin VB.Image Image1 
-      Height          =   8655
+      Height          =   9495
       Left            =   0
       Top             =   0
-      Width           =   15855
+      Width           =   16095
    End
 End
 Attribute VB_Name = "Invoice"
@@ -500,9 +620,19 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Public Sub Load_data(m_id, m_name, category, brand, ByRef customer_data As customer)
+Public Sub Load_data(car_model_id, m_name, category, brand, ByRef customer_data As customer)
     TxtName.Text = customer_data.Name
     TxtCategory.Text = category
+    Txtmodid.Text = car_model_id
+    TxtBra.Text = brand
+    TxtMod.Text = m_name
+    TxtAdd.Text = customer_data.Address
+    TxtMob.Text = customer_data.MobileNumber
+    TxtCit.Text = customer_data.City
+    TxtPur.Text = customer_data.DOP
+    TxtDelN.Text = customer_data.Dealer_Name
+    TxtDelMno.Text = customer_data.Dealer_Mob
+    TxtDelMid.Text = customer_data.Dealer_Mid
 End Sub
 
 Public Sub Load_payment(amount, method)
@@ -510,3 +640,8 @@ Public Sub Load_payment(amount, method)
     TxtCos.Text = amount
 End Sub
 
+
+Private Sub CmdExit_Click()
+ Load feedbackfrm
+ feedbackfrm.Show
+End Sub

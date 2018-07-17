@@ -133,7 +133,7 @@ Begin VB.Form carConfiguration
       Top             =   8160
       Width           =   1575
    End
-   Begin VB.CommandButton Command6 
+   Begin VB.CommandButton CmdExit 
       Caption         =   "Exit"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -150,7 +150,7 @@ Begin VB.Form carConfiguration
       Top             =   8160
       Width           =   1935
    End
-   Begin VB.CommandButton Command5 
+   Begin VB.CommandButton CmdFeedb 
       Caption         =   "Feedback"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -167,7 +167,7 @@ Begin VB.Form carConfiguration
       Top             =   8160
       Width           =   1695
    End
-   Begin VB.CommandButton Command4 
+   Begin VB.CommandButton CmdBook 
       Caption         =   "Book"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -184,7 +184,7 @@ Begin VB.Form carConfiguration
       Top             =   8160
       Width           =   1935
    End
-   Begin VB.CommandButton Command3 
+   Begin VB.CommandButton CmdMain 
       Caption         =   "Main"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -755,14 +755,37 @@ Dim car_category_list
 Dim car_category As String
 Dim model_name As String
 
+'Connect with datbase
 
 Dim conn As New ADODB.Connection
 Dim car As New ADODB.Recordset
 Dim pictures As New ADODB.Recordset
 
+'set picture in Confi
+
 Dim pic_context() As String
 Dim display_pic As String
 Dim current_loaded_pic_index As Integer
+
+Private Sub CmdBook_Click()
+    Load AccLogin
+    bookingfrm.Load_Selected_Data model_id, brand, model_price, model_name, car_category
+    AccLogin.Show
+End Sub
+
+Private Sub CmdExit_Click()
+End
+End Sub
+
+Private Sub CmdFeedb_Click()
+Load feedbackfrm
+feedbackfrm.Show
+End Sub
+
+Private Sub CmdMain_Click()
+Load MainForm
+MainForm.Show
+End Sub
 
 Private Sub CmdNex_Click()
     If current_loaded_pic_index < UBound(pic_context) - 1 Then
@@ -784,36 +807,8 @@ Private Sub CmdPrev_Click()
     End If
 End Sub
 
-Private Sub Command3_Click()
-Load MainForm
-MainForm.Show
-End Sub
-
-Private Sub Command4_Click()
-    'Load AccLogin
-    Load bookingfrm
-    bookingfrm.Load_Selected_Data model_id, brand, model_price, model_name, car_category
-    bookingfrm.Show
-    'AccLogin.Show
-    
-End Sub
-
-Private Sub Command5_Click()
-Load feedbackfrm
-feedbackfrm.Show
-End Sub
-
-Private Sub Command6_Click()
-End
-End Sub
-
 Private Sub Form_Load()
     conn.Open "Provider=Microsoft.jet.OLEDB.4.0;Data Source =E:\project\assets\cars3.mdb;persist security info=false"
-    
-    'model_id = 1
-    
-    
-    
 End Sub
 
 Public Sub Intilize_form()
@@ -853,6 +848,7 @@ Public Sub Intilize_form()
             Txt_Whee.Text = car!Wheels_Cover
             
             'Load images from pictures database
+            
             pic_query = "SELECT Pic FROM cars2 WHERE model_id = " & model_id
             pictures.Open pic_query, conn, adUseClient, adLockOptimistic, adCmdText
             
@@ -876,8 +872,9 @@ Public Sub Intilize_form()
     Else
         MsgBox ("Invalid Model ID")
     End If
+    car.Close
+    pictures.Close
 End Sub
 Public Sub Add_model_id(ByVal model As Integer)
     model_id = model
-   
 End Sub

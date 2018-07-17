@@ -118,9 +118,9 @@ Public conn As ADODB.Connection
 
 
 Private Sub cmdlogin_Click()
-If Txtuser.Text = "" Then
+If TxtUser.Text = "" Then
 MsgBox "Username is Empty.", vbInformation
-Txtuser.SetFocus
+TxtUser.SetFocus
 Exit Sub
 ElseIf TxtPass.Text = "" Then
 MsgBox "Password is Empty"
@@ -133,10 +133,10 @@ End Sub
 
 Private Sub login()
 Dim rs As New ADODB.Recordset
-rs.Open "SELECT password FROM Logintab WHERE Username = '" & Txtuser.Text & "'", conn, adOpenStatic, adLockReadOnly
+rs.Open "SELECT password FROM Logintab WHERE Username = '" & TxtUser.Text & "'", conn, adOpenStatic, adLockReadOnly
 If rs.RecordCount < 1 Then
     MsgBox "Username is Invalid. Please try again.", vbInformation
-    Txtuser.SetFocus
+    TxtUser.SetFocus
 Exit Sub
 Else
     If TxtPass.Text = rs!Password Then
@@ -156,7 +156,6 @@ End Sub
 
 Private Sub Form_Load()
     Set conn = New ADODB.Connection
-    'conn.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\project\assest\Logindb.mdb; Persist Security Info=False;"
     conn.Open "Provider=Microsoft.jet.OLEDB.4.0;Data Source =E:\project\assets\Logindb.mdb;persist security info=false"
 End Sub
 

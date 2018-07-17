@@ -149,15 +149,15 @@ Private Sub Command2_Click()
 Invoice.Show
 End Sub
 
-Public Sub Load_data(price, car_category, car_brand, m_id, m_name, ByRef customer_object As customer)
+Public Sub Load_data(price, car_category, car_brand, car_model_id, m_name, ByRef customer_object As customer)
     amount = price
     category = car_category
     brand = car_brand
-    model_id = m_id
+    model_id = car_model_id
     model_name = m_name
     
     Load Invoice
-    Invoice.Load_data model_id, model_name, category, brand, customer_object
+    Invoice.Load_data car_model_id, model_name, category, brand, customer_object
        
     
     Load Accfrm

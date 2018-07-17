@@ -13,7 +13,7 @@ Begin VB.Form MainForm
    ScaleWidth      =   20490
    ShowInTaskbar   =   0   'False
    WindowState     =   2  'Maximized
-   Begin VB.CommandButton Command3 
+   Begin VB.CommandButton CmdSel 
       Caption         =   "Select"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -47,7 +47,7 @@ Begin VB.Form MainForm
       Top             =   10800
       Width           =   1335
    End
-   Begin VB.CommandButton Command2 
+   Begin VB.CommandButton CmdClose 
       Caption         =   "X"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -223,11 +223,17 @@ Dim currentModels() As Integer
 Dim current_model As Integer
 
 'Store car brand ids
+
 Dim carBrands() As Integer
 
 Dim filter_query As String
 
-Private Sub Command3_Click()
+
+Private Sub CmdClose_Click()
+End
+End Sub
+
+Private Sub CmdSel_Click()
 Load Selection
 Selection.Show
 End Sub
@@ -244,7 +250,6 @@ Private Sub Form_Load()
     currentVdo = ""
     loadcarBtn.Enabled = False
     
-    'carTypeTables = Array("sport", "vintage", "luxury", "hybrid", "evision")
     
     brandType.AddItem "Sports", 0
     brandType.AddItem "Vintage", 1
@@ -299,11 +304,11 @@ End Sub
 Private Sub carModel_Click()
     loadcarBtn.Enabled = True
     Index = carModel.ListIndex
-    Model_id = currentModels(Index)
-    current_model = Model_id
+    model_id = currentModels(Index)
+    current_model = model_id
     
     Dim car As New ADODB.Recordset
-    q = "SELECT * FROM cars WHERE model_id = " & Model_id
+    q = "SELECT * FROM cars WHERE model_id = " & model_id
     car.Open q, conn, adUseClient, adLockOptimistic, adCmdText
     
     If IsNull(car!display_pic) Then
@@ -312,7 +317,7 @@ Private Sub carModel_Click()
         BGpic.Picture = LoadPicture("E:\project\images\" & car!display_pic)
     End If
     
-    currentCar = car!Brand & "(" & car!Model & ")"
+    currentCar = car!brand & "(" & car!model & ")"
     
     If IsNull(car!video) Then
     MsgBox ("No Vdo found for this car")
@@ -325,15 +330,6 @@ Private Sub carModel_Click()
     car.Close
 End Sub
 
-Private Sub Command1_Click()
-    
-End Sub
-
-Private Sub Command2_Click()
-End
-End Sub
-
-
 Private Sub Form_Resize()
     BGpic.Height = Me.Height
     BGpic.Width = Me.Width
@@ -343,10 +339,10 @@ Private Sub frontView_Click()
     Dim pic As New ADODB.Recordset
         
     Index = carModel.ListIndex
-    Model_id = currentModels(Index)
+    model_id = currentModels(Index)
     
     Dim car As New ADODB.Recordset
-    q = "SELECT pic FROM pictures WHERE model_id = " & Model_id & " AND view = 'front'"
+    q = "SELECT pic FROM pictures WHERE model_id = " & model_id & " AND view = 'front'"
     car.Open q, conn, adUseClient, adLockOptimistic, adCmdText
     
     If IsNull(car!pic) Then
@@ -363,7 +359,6 @@ Private Sub loadcarBtn_Click()
     carConfiguration.Intilize_form
     carConfiguration.Show
 End Sub
-
 
 Private Sub carList_Click()
 
@@ -405,8 +400,6 @@ Private Sub ConnectDatabase(ByVal database_path As String)
     conn.Open "Provider=Microsoft.jet.OLEDB.4.0;Data Source =" & database_path & ";persist security info=false"
 End Sub
 
-
-
 Private Sub playVdoControl_Click()
     Load vdoPlayerDlg
     vdoPlayerDlg.Show
@@ -421,7 +414,6 @@ Public Sub loadBrands(ByRef brands() As Integer, ByRef names() As String, total 
     carList.Refresh
     
     For i = 0 To total - 1
-        'MsgBox (names(i))
         carList.AddItem names(i), i
     Next i
 End Sub

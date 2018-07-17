@@ -31,7 +31,7 @@ Begin VB.Form Chqfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   59179009
+      Format          =   160366593
       CurrentDate     =   43288
    End
    Begin VB.CommandButton C 
@@ -353,8 +353,7 @@ ChqD.Value = "1/10/2018"
 End Sub
 
 Private Sub CmdClose_Click()
-Load feedbackfrm
-feedbackfrm.Show
+Invoice.Show
 End Sub
 
 Private Sub Submit_Click()
@@ -367,6 +366,8 @@ ch.Cheq_Amt_Words = TxtAw.Text
 ch.Cheq_No = TxtCn.Text
 ch.Cheq_Dated = ChqD.Value
 Call ch.SaveD
+
+Invoice.Load_payment TxtAno.Text, "Cheque Pay"
 End Sub
 
 Public Sub Load_Amount(price)

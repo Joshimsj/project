@@ -82,7 +82,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   130220033
+      Format          =   180944897
       CurrentDate     =   43289
    End
    Begin VB.TextBox TxtDeMob 
@@ -479,13 +479,9 @@ TxtAmtWords.Text = ""
 TxtDeName.Text = ""
 TxtDeMob.Text = ""
 Dat.Value = "1/10/2018"
-'Date.Value = "1/10/2018"
 End Sub
 
 Private Sub CmdClose_Click()
-'Load feedbackfrm
-'feedbackfrm.Show
-
 Invoice.Show
 End Sub
 

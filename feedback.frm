@@ -117,7 +117,7 @@ Begin VB.Form feedbackfrm
       Width           =   1695
    End
    Begin VB.CommandButton CmdAdd 
-      Caption         =   "Clear"
+      Caption         =   "Add"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -150,7 +150,7 @@ Begin VB.Form feedbackfrm
       Top             =   8160
       Width           =   1215
    End
-   Begin VB.CommandButton Command1 
+   Begin VB.CommandButton CmdClose 
       Caption         =   "Close"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -603,7 +603,6 @@ Attribute VB_Exposed = False
 Dim C As New ADODB.Connection
 Dim r As New ADODB.Recordset
 Dim s As String
-'Dim Gender As String
 
 Private Sub CmdAdd_Click()
 TxtName.Text = ""
@@ -620,8 +619,12 @@ TxtQ7.Text = ""
 TxtQ8.Text = ""
 End Sub
 
+Private Sub CmdClose_Click()
+Load Thankufrm
+Thankufrm.Show
+End Sub
+
 Private Sub CmdSubmit_Click()
-'MsgBox (Gender)
 Dim fee As New Feedback
 fee.Name = TxtName.Text
 fee.Sex = TxtSex.Text
@@ -638,17 +641,4 @@ fee.Q8 = TxtQ8.Text
 Call fee.SaveData
 End Sub
 
-Private Sub Command1_Click()
-Load Thankufrm
-Thankufrm.Show
-'MsgBox "Thank you for Visting"
-End Sub
-
-'Private Sub Female_Click()
-'Gender = "Female"
-'End Sub
-
-'Private Sub Male_Click()
-'Gender = "Male"
-'End Sub
 
