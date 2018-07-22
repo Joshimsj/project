@@ -146,7 +146,7 @@ Dim s As String
 'connect
  conn.Open "Provider=Microsoft.jet.OLEDB.4.0;Data Source =E:\project\assets\Customers.mdb;persist security info=false"
 'query
-     s = "INSERT INTO cus_details (name, company, contact, DOB, address, state, city, pincode, Model_id, Brand, DOP, Deal_name, Deal_mobile, Deal_Mail ) VALUES('" & Me.Name & "','" & Me.Company & "','" & Me.MobileNumber & "','" & Me.DOB & "','" & Me.Address & "','" & Me.State & "','" & Me.City & "','" & Me.Zip & "','" & Me.model_id & "','" & Me.brand & "','" & Me.DOP & "','" & Me.Dealer_Name & "','" & Me.Dealer_Mob & "','" & Me.Dealer_Mid & "')"
+     s = "INSERT INTO cus_details (name, company, contact, DOB, address, state, city, pincode, Model_id, Brand, DOP, Deal_name, Deal_mobile, Deal_Mail) VALUES('" & Me.Name & "','" & Me.Company & "','" & Me.MobileNumber & "','" & Me.DOB & "','" & Me.Address & "','" & Me.State & "','" & Me.City & "','" & Me.Zip & "','" & Me.model_id & "','" & Me.brand & "','" & Me.DOP & "','" & Me.Dealer_Name & "','" & Me.Dealer_Mob & "','" & Me.Dealer_Mid & "')"
      rec.Open s, conn, adOpenDynamic, adLockOptimistic
      conn.Close
      MsgBox "Customer Saved", vbInformation

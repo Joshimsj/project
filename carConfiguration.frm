@@ -748,6 +748,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
 Dim model_id As Integer
 Dim brand As String
 Dim model_price As String

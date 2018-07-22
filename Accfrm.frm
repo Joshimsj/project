@@ -82,7 +82,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   180944897
+      Format          =   118030337
       CurrentDate     =   43289
    End
    Begin VB.TextBox TxtDeMob 
@@ -137,6 +137,7 @@ Begin VB.Form Accfrm
       Width           =   5055
    End
    Begin VB.TextBox TxtAmtNo 
+      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -149,7 +150,6 @@ Begin VB.Form Accfrm
       Height          =   615
       Left            =   4320
       TabIndex        =   16
-      Text            =   "Enter Amt in No"
       Top             =   4320
       Width           =   5055
    End
@@ -240,7 +240,7 @@ Begin VB.Form Accfrm
    End
    Begin VB.Label Label11 
       BackStyle       =   0  'Transparent
-      Caption         =   "Depositer Mob No:-"
+      Caption         =   "Depositer Mob No :-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -259,7 +259,7 @@ Begin VB.Form Accfrm
    End
    Begin VB.Label Label10 
       BackStyle       =   0  'Transparent
-      Caption         =   "Depositer Name:-"
+      Caption         =   "Depositer Name :-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -298,7 +298,7 @@ Begin VB.Form Accfrm
    End
    Begin VB.Label Label8 
       BackStyle       =   0  'Transparent
-      Caption         =   "Date:-"
+      Caption         =   "Date :-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -317,7 +317,7 @@ Begin VB.Form Accfrm
    End
    Begin VB.Label Label7 
       BackStyle       =   0  'Transparent
-      Caption         =   "Amount in Words:- "
+      Caption         =   "Amount in Words :- "
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -336,7 +336,7 @@ Begin VB.Form Accfrm
    End
    Begin VB.Label Label6 
       BackStyle       =   0  'Transparent
-      Caption         =   "Branch Name:-"
+      Caption         =   "Branch Name :-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -355,7 +355,7 @@ Begin VB.Form Accfrm
    End
    Begin VB.Label Label5 
       BackStyle       =   0  'Transparent
-      Caption         =   "IFSC Code:-"
+      Caption         =   "IFSC Code :-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -374,7 +374,7 @@ Begin VB.Form Accfrm
    End
    Begin VB.Label Label4 
       BackStyle       =   0  'Transparent
-      Caption         =   "Amount in No:-"
+      Caption         =   "Amount in No :-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -393,7 +393,7 @@ Begin VB.Form Accfrm
    End
    Begin VB.Label Label3 
       BackStyle       =   0  'Transparent
-      Caption         =   "Bank Drawn Name:-"
+      Caption         =   "Bank Drawn Name :-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -412,7 +412,7 @@ Begin VB.Form Accfrm
    End
    Begin VB.Label Label2 
       BackStyle       =   0  'Transparent
-      Caption         =   "Acc No:-"
+      Caption         =   "Acc No :-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -431,7 +431,7 @@ Begin VB.Form Accfrm
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
-      Caption         =   "Acc Holder Name:- "
+      Caption         =   "Acc Holder Name :- "
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -474,7 +474,6 @@ TxtAccNo.Text = ""
 TxtCode.Text = ""
 TxtDName.Text = ""
 TxtBrName.Text = ""
-TxtAmtNo.Text = ""
 TxtAmtWords.Text = ""
 TxtDeName.Text = ""
 TxtDeMob.Text = ""

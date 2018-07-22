@@ -79,7 +79,7 @@ Begin VB.Form bookingfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   162201601
+      Format          =   133758977
       CurrentDate     =   43294
    End
    Begin VB.TextBox Brand_Txt 
@@ -270,7 +270,7 @@ Begin VB.Form bookingfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   162201601
+      Format          =   133758977
       CurrentDate     =   43265
    End
    Begin VB.TextBox TxtMob 
@@ -627,7 +627,7 @@ End Sub
 
 Private Sub CmdNext_Click()
 Load Selfrom
-Selfrom.Load_data model_price, car_category, brand_selected, model_id, model_name, cst
+Selfrom.Load_data model_price, car_category, brand_selected, model_id_selected, model_name, cst
 Selfrom.Show
 End Sub
 
