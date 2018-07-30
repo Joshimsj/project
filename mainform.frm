@@ -14,7 +14,7 @@ Begin VB.Form MainForm
    ShowInTaskbar   =   0   'False
    WindowState     =   2  'Maximized
    Begin VB.CommandButton CmdSel 
-      Caption         =   "Select"
+      Caption         =   "Search"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -25,7 +25,7 @@ Begin VB.Form MainForm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   15480
+      Left            =   15000
       TabIndex        =   9
       Top             =   10800
       Width           =   1335
@@ -42,7 +42,7 @@ Begin VB.Form MainForm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   16920
+      Left            =   16440
       TabIndex        =   8
       Top             =   10800
       Width           =   1335
@@ -104,7 +104,7 @@ Begin VB.Form MainForm
    End
    Begin VB.CommandButton loadcarBtn 
       BackColor       =   &H000080FF&
-      Caption         =   "View"
+      Caption         =   "View Configuration"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -114,14 +114,14 @@ Begin VB.Form MainForm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   600
+      Height          =   720
       Left            =   120
       MaskColor       =   &H0000FFFF&
       Style           =   1  'Graphical
       TabIndex        =   2
-      Top             =   10800
+      Top             =   10680
       UseMaskColor    =   -1  'True
-      Width           =   1900
+      Width           =   2265
    End
    Begin VB.ListBox carList 
       Appearance      =   0  'Flat
@@ -144,7 +144,7 @@ Begin VB.Form MainForm
    End
    Begin VB.CommandButton playVdoControl 
       Cancel          =   -1  'True
-      Caption         =   "Play"
+      Caption         =   "Play Adv"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -155,11 +155,11 @@ Begin VB.Form MainForm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   600
-      Left            =   18360
+      Left            =   17880
       Style           =   1  'Graphical
       TabIndex        =   0
       Top             =   10800
-      Width           =   1305
+      Width           =   1785
    End
    Begin VB.Label Label6 
       BackStyle       =   0  'Transparent
