@@ -79,7 +79,7 @@ Begin VB.Form bookingfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   133758977
+      Format          =   137625601
       CurrentDate     =   43294
    End
    Begin VB.TextBox Brand_Txt 
@@ -111,7 +111,7 @@ Begin VB.Form bookingfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   3960
+      Left            =   3840
       TabIndex        =   22
       Top             =   1200
       Width           =   3135
@@ -195,7 +195,7 @@ Begin VB.Form bookingfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   3960
+      Left            =   3840
       TabIndex        =   7
       Text            =   "Enter your Zipcode"
       Top             =   5400
@@ -246,7 +246,7 @@ Begin VB.Form bookingfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   3960
+      Left            =   3840
       TabIndex        =   4
       Text            =   "Enter your Address"
       Top             =   3960
@@ -254,7 +254,7 @@ Begin VB.Form bookingfrm
    End
    Begin MSComCtl2.DTPicker DOB 
       Height          =   615
-      Left            =   3960
+      Left            =   3840
       TabIndex        =   3
       Top             =   4680
       Width           =   3135
@@ -270,7 +270,7 @@ Begin VB.Form bookingfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   133758977
+      Format          =   137625601
       CurrentDate     =   43265
    End
    Begin VB.TextBox TxtMob 
@@ -284,7 +284,7 @@ Begin VB.Form bookingfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   3960
+      Left            =   3840
       TabIndex        =   2
       Text            =   "Enter your Mobile No"
       Top             =   3240
@@ -301,7 +301,7 @@ Begin VB.Form bookingfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   3960
+      Left            =   3840
       TabIndex        =   1
       Text            =   "Enter Company name"
       Top             =   2520
@@ -318,7 +318,7 @@ Begin VB.Form bookingfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   3960
+      Left            =   3840
       TabIndex        =   0
       Text            =   "Enter Customer Name"
       Top             =   1800

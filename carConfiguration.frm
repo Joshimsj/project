@@ -14,6 +14,57 @@ Begin VB.Form carConfiguration
    ScaleWidth      =   20400
    ShowInTaskbar   =   0   'False
    WindowState     =   2  'Maximized
+   Begin VB.TextBox Txt_Des 
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1455
+      Left            =   360
+      TabIndex        =   46
+      Top             =   9480
+      Width           =   9375
+   End
+   Begin VB.TextBox Txt_Pol 
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   12000
+      TabIndex        =   45
+      Top             =   10440
+      Width           =   2175
+   End
+   Begin VB.TextBox Txt_Bui 
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   12000
+      TabIndex        =   43
+      Top             =   9480
+      Width           =   2175
+   End
    Begin VB.TextBox Txt_Whee 
       Enabled         =   0   'False
       BeginProperty Font 
@@ -27,7 +78,7 @@ Begin VB.Form carConfiguration
       EndProperty
       Height          =   405
       Left            =   17400
-      TabIndex        =   41
+      TabIndex        =   40
       Top             =   10680
       Width           =   2535
    End
@@ -44,7 +95,7 @@ Begin VB.Form carConfiguration
       EndProperty
       Height          =   375
       Left            =   17400
-      TabIndex        =   40
+      TabIndex        =   39
       Top             =   10080
       Width           =   2535
    End
@@ -61,7 +112,7 @@ Begin VB.Form carConfiguration
       EndProperty
       Height          =   375
       Left            =   17400
-      TabIndex        =   39
+      TabIndex        =   38
       Top             =   9480
       Width           =   2535
    End
@@ -78,7 +129,7 @@ Begin VB.Form carConfiguration
       EndProperty
       Height          =   375
       Left            =   17400
-      TabIndex        =   38
+      TabIndex        =   37
       Top             =   8880
       Width           =   2535
    End
@@ -95,7 +146,7 @@ Begin VB.Form carConfiguration
       EndProperty
       Height          =   375
       Left            =   17400
-      TabIndex        =   37
+      TabIndex        =   36
       Top             =   8280
       Width           =   2535
    End
@@ -112,7 +163,7 @@ Begin VB.Form carConfiguration
       EndProperty
       Height          =   495
       Left            =   2520
-      TabIndex        =   31
+      TabIndex        =   30
       Top             =   8160
       Width           =   1815
    End
@@ -129,7 +180,7 @@ Begin VB.Form carConfiguration
       EndProperty
       Height          =   495
       Left            =   360
-      TabIndex        =   30
+      TabIndex        =   29
       Top             =   8160
       Width           =   1575
    End
@@ -405,6 +456,75 @@ Begin VB.Form carConfiguration
       Top             =   1080
       Width           =   2535
    End
+   Begin VB.Label Label1 
+      Caption         =   "Description"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   360
+      TabIndex        =   47
+      Top             =   8880
+      Width           =   2175
+   End
+   Begin VB.Label Label22 
+      Caption         =   "Polution Check"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   9960
+      TabIndex        =   44
+      Top             =   10440
+      Width           =   1815
+   End
+   Begin VB.Label Label21 
+      Caption         =   "Built Quality"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   9960
+      TabIndex        =   42
+      Top             =   9480
+      Width           =   1815
+   End
+   Begin VB.Label Label20 
+      Alignment       =   2  'Center
+      Caption         =   "Certification"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   10920
+      TabIndex        =   41
+      Top             =   8880
+      Width           =   2535
+   End
    Begin VB.Label Label19 
       Caption         =   "Wheels Cover :-"
       BeginProperty Font 
@@ -418,7 +538,7 @@ Begin VB.Form carConfiguration
       EndProperty
       Height          =   375
       Left            =   14640
-      TabIndex        =   36
+      TabIndex        =   35
       Top             =   10680
       Width           =   2175
    End
@@ -435,7 +555,7 @@ Begin VB.Form carConfiguration
       EndProperty
       Height          =   375
       Left            =   14640
-      TabIndex        =   35
+      TabIndex        =   34
       Top             =   10080
       Width           =   2175
    End
@@ -452,7 +572,7 @@ Begin VB.Form carConfiguration
       EndProperty
       Height          =   375
       Left            =   14640
-      TabIndex        =   34
+      TabIndex        =   33
       Top             =   9480
       Width           =   2175
    End
@@ -469,7 +589,7 @@ Begin VB.Form carConfiguration
       EndProperty
       Height          =   375
       Left            =   14640
-      TabIndex        =   33
+      TabIndex        =   32
       Top             =   8880
       Width           =   2175
    End
@@ -486,26 +606,9 @@ Begin VB.Form carConfiguration
       EndProperty
       Height          =   375
       Left            =   14640
-      TabIndex        =   32
+      TabIndex        =   31
       Top             =   8280
       Width           =   2175
-   End
-   Begin VB.Label Label1 
-      Caption         =   """A Car is not just 4 wheels.... It's Much More Then That...!!!!"""
-      BeginProperty Font 
-         Name            =   "Century Gothic"
-         Size            =   27.75
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   1935
-      Left            =   120
-      TabIndex        =   29
-      Top             =   9000
-      Width           =   14295
    End
    Begin VB.Label Label15 
       Caption         =   "Cost (Rs) :-"
@@ -748,7 +851,6 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-
 Dim model_id As Integer
 Dim brand As String
 Dim model_price As String
@@ -847,6 +949,9 @@ Public Sub Intilize_form()
             Txt_Stw.Text = car!Steering_Wheel
             Txt_Dri.Text = car!Drive_mode
             Txt_Whee.Text = car!Wheels_Cover
+            Txt_Bui.Text = car!Built
+            Txt_Pol.Text = car!Polution
+            Txt_Des.Text = car!Description
             
             'Load images from pictures database
             
