@@ -35,11 +35,11 @@ Begin VB.Form frmWelcome
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H000000FF&
+      ForeColor       =   &H000040C0&
       Height          =   1095
-      Left            =   5160
+      Left            =   7680
       TabIndex        =   3
-      Top             =   6000
+      Top             =   2040
       Width           =   7215
    End
    Begin VB.Label Label4 
@@ -54,12 +54,12 @@ Begin VB.Form frmWelcome
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H000000FF&
-      Height          =   1935
-      Left            =   7320
+      ForeColor       =   &H000080FF&
+      Height          =   1095
+      Left            =   9360
       TabIndex        =   2
-      Top             =   4200
-      Width           =   2895
+      Top             =   1200
+      Width           =   4335
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
@@ -73,11 +73,11 @@ Begin VB.Form frmWelcome
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H000000FF&
+      ForeColor       =   &H000040C0&
       Height          =   1095
-      Left            =   6600
+      Left            =   11760
       TabIndex        =   1
-      Top             =   3360
+      Top             =   360
       Width           =   3975
    End
    Begin VB.Label Label2 
@@ -92,16 +92,16 @@ Begin VB.Form frmWelcome
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H000000FF&
+      ForeColor       =   &H000040C0&
       Height          =   975
-      Left            =   6000
+      Left            =   7200
       TabIndex        =   0
-      Top             =   2400
+      Top             =   360
       Width           =   4935
    End
    Begin VB.Image SplashImg 
       Height          =   9105
-      Left            =   -120
+      Left            =   0
       Picture         =   "frmSplash.frx":000C
       Stretch         =   -1  'True
       Top             =   0

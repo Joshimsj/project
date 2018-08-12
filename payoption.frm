@@ -31,7 +31,7 @@ Begin VB.Form Chqfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   160366593
+      Format          =   137494529
       CurrentDate     =   43288
    End
    Begin VB.CommandButton C 
@@ -97,6 +97,7 @@ Begin VB.Form Chqfrm
       EndProperty
       Height          =   615
       Left            =   6360
+      MaxLength       =   6
       TabIndex        =   12
       Text            =   "Chq No "
       Top             =   5640
@@ -326,6 +327,8 @@ Begin VB.Form Chqfrm
    Begin VB.Image Image1 
       Height          =   7815
       Left            =   0
+      Picture         =   "payoption.frx":0000
+      Stretch         =   -1  'True
       Top             =   0
       Width           =   10335
    End
@@ -342,8 +345,9 @@ Dim s As String
 
 Dim amount As String
 
+
 Private Sub C_Click()
-Txtpay.Text = ""
+TxtPay.Text = ""
 TxtName.Text = ""
 TxtHol.Text = ""
 TxtAno.Text = ""
@@ -358,7 +362,7 @@ End Sub
 
 Private Sub Submit_Click()
 Dim ch As New ChqDetails
-ch.Pay_to = Txtpay.Text
+ch.Pay_to = TxtPay.Text
 ch.Bank_Name = TxtName.Text
 ch.Cheq_Holder_Name = TxtHol.Text
 ch.Cheq_Amt_No = TxtAno.Text
@@ -370,7 +374,7 @@ Call ch.SaveD
 Invoice.Load_payment TxtAno.Text, "Cheque Pay"
 End Sub
 
-Public Sub Load_Amount(price)
-    amount = price
+Public Sub Load_Amount(Price)
+    amount = Price
     TxtAno.Text = amount
 End Sub

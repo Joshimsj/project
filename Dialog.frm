@@ -2,17 +2,18 @@ VERSION 5.00
 Begin VB.Form Selection 
    BorderStyle     =   0  'None
    Caption         =   "Selection "
-   ClientHeight    =   3300
+   ClientHeight    =   4575
    ClientLeft      =   5040
    ClientTop       =   1980
-   ClientWidth     =   8670
+   ClientWidth     =   10050
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   3300
-   ScaleWidth      =   8670
+   ScaleHeight     =   4575
+   ScaleWidth      =   10050
    ShowInTaskbar   =   0   'False
    Begin VB.CommandButton Search 
+      BackColor       =   &H00808080&
       Caption         =   "Search"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -24,12 +25,14 @@ Begin VB.Form Selection
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   3720
+      Left            =   7320
+      Style           =   1  'Graphical
       TabIndex        =   5
-      Top             =   2640
+      Top             =   3840
       Width           =   1335
    End
    Begin VB.ComboBox PriceRange 
+      BackColor       =   &H00808080&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -40,13 +43,14 @@ Begin VB.Form Selection
          Strikethrough   =   0   'False
       EndProperty
       Height          =   450
-      Left            =   4800
+      Left            =   6360
       TabIndex        =   4
       Text            =   "Price Range"
-      Top             =   1920
+      Top             =   2280
       Width           =   3495
    End
    Begin VB.ComboBox CarCategory 
+      BackColor       =   &H00808080&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -57,13 +61,14 @@ Begin VB.Form Selection
          Strikethrough   =   0   'False
       EndProperty
       Height          =   450
-      Left            =   4800
+      Left            =   6360
       TabIndex        =   3
       Text            =   "Car Category"
-      Top             =   1200
+      Top             =   1320
       Width           =   3495
    End
    Begin VB.Label Label3 
+      BackStyle       =   0  'Transparent
       Caption         =   "Price Range"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -74,13 +79,15 @@ Begin VB.Form Selection
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FFFF&
       Height          =   375
       Left            =   360
       TabIndex        =   2
-      Top             =   1920
-      Width           =   3375
+      Top             =   2280
+      Width           =   2895
    End
    Begin VB.Label Label2 
+      BackStyle       =   0  'Transparent
       Caption         =   "Select Category"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -91,13 +98,15 @@ Begin VB.Form Selection
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
-      Left            =   360
+      ForeColor       =   &H0000FFFF&
+      Height          =   615
+      Left            =   240
       TabIndex        =   1
-      Top             =   1200
-      Width           =   3375
+      Top             =   1320
+      Width           =   2895
    End
    Begin VB.Label Label1 
+      BackStyle       =   0  'Transparent
       Caption         =   "Selection of your Choice...!!!"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -108,17 +117,20 @@ Begin VB.Form Selection
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FFFF&
       Height          =   375
-      Left            =   240
+      Left            =   5760
       TabIndex        =   0
-      Top             =   240
-      Width           =   4455
+      Top             =   0
+      Width           =   4335
    End
    Begin VB.Image Image1 
-      Height          =   3375
+      Height          =   4575
       Left            =   0
+      Picture         =   "Dialog.frx":0000
+      Stretch         =   -1  'True
       Top             =   0
-      Width           =   8655
+      Width           =   10095
    End
 End
 Attribute VB_Name = "Selection"

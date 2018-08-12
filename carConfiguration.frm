@@ -3,154 +3,172 @@ Begin VB.Form carConfiguration
    BackColor       =   &H8000000B&
    BorderStyle     =   0  'None
    Caption         =   "Car Configuration"
-   ClientHeight    =   11265
+   ClientHeight    =   11520
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   20400
+   ClientWidth     =   20490
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   11265
-   ScaleWidth      =   20400
+   ScaleHeight     =   11520
+   ScaleWidth      =   20490
    ShowInTaskbar   =   0   'False
    WindowState     =   2  'Maximized
    Begin VB.TextBox Txt_Des 
+      BackColor       =   &H00400000&
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Bookman Old Style"
-         Size            =   11.25
+         Size            =   14.25
          Charset         =   0
          Weight          =   600
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1455
-      Left            =   360
+      ForeColor       =   &H00FFFFFF&
+      Height          =   1575
+      Left            =   240
+      MultiLine       =   -1  'True
       TabIndex        =   46
       Top             =   9480
-      Width           =   9375
+      Width           =   9495
    End
    Begin VB.TextBox Txt_Pol 
+      BackColor       =   &H00000000&
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Bookman Old Style"
-         Size            =   11.25
+         Size            =   14.25
          Charset         =   0
          Weight          =   600
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   495
-      Left            =   12000
+      Left            =   12240
       TabIndex        =   45
-      Top             =   10440
+      Top             =   10560
       Width           =   2175
    End
    Begin VB.TextBox Txt_Bui 
+      BackColor       =   &H00000000&
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Bookman Old Style"
-         Size            =   11.25
+         Size            =   14.25
          Charset         =   0
          Weight          =   600
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   495
-      Left            =   12000
+      Left            =   12240
       TabIndex        =   43
-      Top             =   9480
+      Top             =   9600
       Width           =   2175
    End
    Begin VB.TextBox Txt_Whee 
+      BackColor       =   &H00000000&
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Bookman Old Style"
-         Size            =   11.25
+         Size            =   14.25
          Charset         =   0
          Weight          =   600
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   405
-      Left            =   17400
+      Left            =   17520
       TabIndex        =   40
       Top             =   10680
-      Width           =   2535
+      Width           =   2655
    End
    Begin VB.TextBox Txt_Dri 
+      BackColor       =   &H00000000&
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Bookman Old Style"
-         Size            =   11.25
+         Size            =   14.25
          Charset         =   0
          Weight          =   600
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   375
-      Left            =   17400
+      Left            =   17520
       TabIndex        =   39
       Top             =   10080
-      Width           =   2535
+      Width           =   2655
    End
    Begin VB.TextBox Txt_Stw 
+      BackColor       =   &H00000000&
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Bookman Old Style"
-         Size            =   11.25
+         Size            =   14.25
          Charset         =   0
          Weight          =   600
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   375
-      Left            =   17400
+      Left            =   17520
       TabIndex        =   38
       Top             =   9480
-      Width           =   2535
+      Width           =   2655
    End
    Begin VB.TextBox Txt_Tank 
+      BackColor       =   &H00000000&
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Bookman Old Style"
-         Size            =   11.25
+         Size            =   14.25
          Charset         =   0
          Weight          =   600
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   375
-      Left            =   17400
+      Left            =   17520
       TabIndex        =   37
       Top             =   8880
-      Width           =   2535
+      Width           =   2655
    End
    Begin VB.TextBox Txt_Size 
+      BackColor       =   &H00000000&
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Bookman Old Style"
-         Size            =   11.25
+         Size            =   14.25
          Charset         =   0
          Weight          =   600
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   375
-      Left            =   17400
+      Left            =   17520
       TabIndex        =   36
       Top             =   8280
-      Width           =   2535
+      Width           =   2655
    End
    Begin VB.CommandButton CmdNex 
+      BackColor       =   &H0000FF00&
       Caption         =   "Next"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -162,12 +180,14 @@ Begin VB.Form carConfiguration
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   2520
+      Left            =   2640
+      Style           =   1  'Graphical
       TabIndex        =   30
       Top             =   8160
       Width           =   1815
    End
    Begin VB.CommandButton CmdPrev 
+      BackColor       =   &H0000FF00&
       Caption         =   "Previous "
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -180,11 +200,13 @@ Begin VB.Form carConfiguration
       EndProperty
       Height          =   495
       Left            =   360
+      Style           =   1  'Graphical
       TabIndex        =   29
       Top             =   8160
       Width           =   1575
    End
    Begin VB.CommandButton CmdExit 
+      BackColor       =   &H0000FF00&
       Caption         =   "Exit"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -196,12 +218,14 @@ Begin VB.Form carConfiguration
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   12240
+      Left            =   12480
+      Style           =   1  'Graphical
       TabIndex        =   28
       Top             =   8160
       Width           =   1935
    End
    Begin VB.CommandButton CmdFeedb 
+      BackColor       =   &H0000FF00&
       Caption         =   "Feedback"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -213,12 +237,14 @@ Begin VB.Form carConfiguration
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   7440
+      Left            =   7680
+      Style           =   1  'Graphical
       TabIndex        =   27
       Top             =   8160
       Width           =   1695
    End
    Begin VB.CommandButton CmdBook 
+      BackColor       =   &H0000FF00&
       Caption         =   "Book"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -230,12 +256,14 @@ Begin VB.Form carConfiguration
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   9720
+      Left            =   9960
+      Style           =   1  'Graphical
       TabIndex        =   26
       Top             =   8160
       Width           =   1935
    End
    Begin VB.CommandButton CmdMain 
+      BackColor       =   &H0000FF00&
       Caption         =   "Main"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -247,217 +275,15 @@ Begin VB.Form carConfiguration
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   4920
+      Left            =   5280
+      Style           =   1  'Graphical
       TabIndex        =   25
       Top             =   8160
       Width           =   1815
    End
    Begin VB.TextBox Txt_Cost 
+      BackColor       =   &H00000000&
       Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   17400
-      TabIndex        =   24
-      Top             =   7680
-      Width           =   2535
-   End
-   Begin VB.TextBox Txt_FuelType 
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   17400
-      TabIndex        =   23
-      Top             =   7080
-      Width           =   2535
-   End
-   Begin VB.TextBox Txt_Torque 
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   17400
-      TabIndex        =   22
-      Top             =   6480
-      Width           =   2535
-   End
-   Begin VB.TextBox Txt_Abs 
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   17400
-      TabIndex        =   21
-      Top             =   5880
-      Width           =   2535
-   End
-   Begin VB.TextBox Txt_Airbags 
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   17400
-      TabIndex        =   20
-      Top             =   5280
-      Width           =   2535
-   End
-   Begin VB.TextBox Txt_Speed 
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   17400
-      TabIndex        =   19
-      Top             =   4680
-      Width           =   2535
-   End
-   Begin VB.TextBox Txt_Power 
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   17400
-      TabIndex        =   18
-      Top             =   4080
-      Width           =   2535
-   End
-   Begin VB.TextBox Txt_Transmission 
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   17400
-      TabIndex        =   17
-      Top             =   3480
-      Width           =   2535
-   End
-   Begin VB.TextBox Txt_Engine 
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   17400
-      TabIndex        =   16
-      Top             =   2880
-      Width           =   2535
-   End
-   Begin VB.TextBox Txt_Model 
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   17400
-      TabIndex        =   15
-      Top             =   2280
-      Width           =   2535
-   End
-   Begin VB.TextBox Txt_Brand 
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   17400
-      TabIndex        =   14
-      Top             =   1680
-      Width           =   2535
-   End
-   Begin VB.TextBox Txt_Model_ID 
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   17400
-      TabIndex        =   2
-      Top             =   1080
-      Width           =   2535
-   End
-   Begin VB.Label Label1 
-      Caption         =   "Description"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -467,6 +293,235 @@ Begin VB.Form carConfiguration
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   375
+      Left            =   17520
+      TabIndex        =   24
+      Top             =   7680
+      Width           =   2655
+   End
+   Begin VB.TextBox Txt_FuelType 
+      BackColor       =   &H00000000&
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   375
+      Left            =   17520
+      TabIndex        =   23
+      Top             =   7080
+      Width           =   2655
+   End
+   Begin VB.TextBox Txt_Torque 
+      BackColor       =   &H00000000&
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   375
+      Left            =   17520
+      TabIndex        =   22
+      Top             =   6480
+      Width           =   2655
+   End
+   Begin VB.TextBox Txt_Abs 
+      BackColor       =   &H00000000&
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   375
+      Left            =   17520
+      TabIndex        =   21
+      Top             =   5880
+      Width           =   2655
+   End
+   Begin VB.TextBox Txt_Airbags 
+      BackColor       =   &H00000000&
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   375
+      Left            =   17520
+      TabIndex        =   20
+      Top             =   5280
+      Width           =   2655
+   End
+   Begin VB.TextBox Txt_Speed 
+      BackColor       =   &H00000000&
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   375
+      Left            =   17520
+      TabIndex        =   19
+      Top             =   4680
+      Width           =   2655
+   End
+   Begin VB.TextBox Txt_Power 
+      BackColor       =   &H00000000&
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   375
+      Left            =   17520
+      TabIndex        =   18
+      Top             =   4080
+      Width           =   2655
+   End
+   Begin VB.TextBox Txt_Transmission 
+      BackColor       =   &H00000000&
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   375
+      Left            =   17520
+      TabIndex        =   17
+      Top             =   3480
+      Width           =   2655
+   End
+   Begin VB.TextBox Txt_Engine 
+      BackColor       =   &H00000000&
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   375
+      Left            =   17520
+      TabIndex        =   16
+      Top             =   2880
+      Width           =   2655
+   End
+   Begin VB.TextBox Txt_Model 
+      BackColor       =   &H00000000&
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   375
+      Left            =   17520
+      TabIndex        =   15
+      Top             =   2280
+      Width           =   2655
+   End
+   Begin VB.TextBox Txt_Brand 
+      BackColor       =   &H00000000&
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   375
+      Left            =   17520
+      TabIndex        =   14
+      Top             =   1680
+      Width           =   2655
+   End
+   Begin VB.TextBox Txt_Model_ID 
+      BackColor       =   &H00000000&
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   420
+      Left            =   17520
+      TabIndex        =   2
+      Top             =   1080
+      Width           =   2655
+   End
+   Begin VB.Label Label1 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Description"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   -1  'True
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
       Height          =   375
       Left            =   360
       TabIndex        =   47
@@ -474,24 +529,27 @@ Begin VB.Form carConfiguration
       Width           =   2175
    End
    Begin VB.Label Label22 
-      Caption         =   "Polution Check"
+      BackStyle       =   0  'Transparent
+      Caption         =   "Polution Check :-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
-         Size            =   11.25
+         Size            =   9.75
          Charset         =   0
          Weight          =   600
          Underline       =   0   'False
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FF00&
       Height          =   375
-      Left            =   9960
+      Left            =   10080
       TabIndex        =   44
-      Top             =   10440
+      Top             =   10560
       Width           =   1815
    End
    Begin VB.Label Label21 
-      Caption         =   "Built Quality"
+      BackStyle       =   0  'Transparent
+      Caption         =   "Built Quality :-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   11.25
@@ -501,24 +559,27 @@ Begin VB.Form carConfiguration
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FF00&
       Height          =   375
-      Left            =   9960
+      Left            =   10080
       TabIndex        =   42
-      Top             =   9480
+      Top             =   9600
       Width           =   1815
    End
    Begin VB.Label Label20 
       Alignment       =   2  'Center
+      BackStyle       =   0  'Transparent
       Caption         =   "Certification"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
          Charset         =   0
          Weight          =   600
-         Underline       =   0   'False
+         Underline       =   -1  'True
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FF00&
       Height          =   375
       Left            =   10920
       TabIndex        =   41
@@ -526,297 +587,8 @@ Begin VB.Form carConfiguration
       Width           =   2535
    End
    Begin VB.Label Label19 
+      BackStyle       =   0  'Transparent
       Caption         =   "Wheels Cover :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   35
-      Top             =   10680
-      Width           =   2175
-   End
-   Begin VB.Label Label18 
-      Caption         =   "Driving Mode :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   34
-      Top             =   10080
-      Width           =   2175
-   End
-   Begin VB.Label Label17 
-      Caption         =   "Steering Wheel :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   33
-      Top             =   9480
-      Width           =   2175
-   End
-   Begin VB.Label Label16 
-      Caption         =   "Fuel Tank (ltr) :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   32
-      Top             =   8880
-      Width           =   2175
-   End
-   Begin VB.Label Label2 
-      Caption         =   "Tyre Size :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   31
-      Top             =   8280
-      Width           =   2175
-   End
-   Begin VB.Label Label15 
-      Caption         =   "Cost (Rs) :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   13
-      Top             =   7680
-      Width           =   2175
-   End
-   Begin VB.Label Label14 
-      Caption         =   "Fuel Type(G/D) :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   12
-      Top             =   7080
-      Width           =   2175
-   End
-   Begin VB.Label Label13 
-      Caption         =   "Torque (NM) :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   11
-      Top             =   6480
-      Width           =   2175
-   End
-   Begin VB.Label Label12 
-      Caption         =   "ABS :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   10
-      Top             =   5880
-      Width           =   2175
-   End
-   Begin VB.Label Label11 
-      Caption         =   "Airbags :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   9
-      Top             =   5280
-      Width           =   2175
-   End
-   Begin VB.Label Label10 
-      Caption         =   "Speed (KPH) :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   8
-      Top             =   4680
-      Width           =   2175
-   End
-   Begin VB.Label Label9 
-      Caption         =   "Power (BHP) :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   7
-      Top             =   4080
-      Width           =   2175
-   End
-   Begin VB.Label Label8 
-      Caption         =   "Transmission :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   6
-      Top             =   3480
-      Width           =   2175
-   End
-   Begin VB.Label Label7 
-      Caption         =   "Engine (cc) :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   5
-      Top             =   2880
-      Width           =   2175
-   End
-   Begin VB.Label Label6 
-      Caption         =   "Model :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   4
-      Top             =   2280
-      Width           =   2175
-   End
-   Begin VB.Label Label5 
-      Caption         =   "Brand :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   3
-      Top             =   1680
-      Width           =   2175
-   End
-   Begin VB.Label Label4 
-      Caption         =   "Model_Id :-"
-      BeginProperty Font 
-         Name            =   "Bookman Old Style"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   14640
-      TabIndex        =   1
-      Top             =   1080
-      Width           =   2175
-   End
-   Begin VB.Label Label3 
-      Alignment       =   2  'Center
-      Caption         =   "Configuration"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -826,6 +598,332 @@ Begin VB.Form carConfiguration
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   35
+      Top             =   10680
+      Width           =   2655
+   End
+   Begin VB.Label Label18 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Driving Mode :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   34
+      Top             =   10080
+      Width           =   2655
+   End
+   Begin VB.Label Label17 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Steering Wheel :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   33
+      Top             =   9480
+      Width           =   2655
+   End
+   Begin VB.Label Label16 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Fuel Tank (ltr) :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   32
+      Top             =   8880
+      Width           =   2655
+   End
+   Begin VB.Label Label2 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Tyre Size :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   31
+      Top             =   8280
+      Width           =   2655
+   End
+   Begin VB.Label Label15 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Cost (Rs) :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   13
+      Top             =   7680
+      Width           =   2655
+   End
+   Begin VB.Label Label14 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Fuel Type(G/D) :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   12
+      Top             =   7080
+      Width           =   2655
+   End
+   Begin VB.Label Label13 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Torque (NM) :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   11
+      Top             =   6480
+      Width           =   2655
+   End
+   Begin VB.Label Label12 
+      BackStyle       =   0  'Transparent
+      Caption         =   "ABS :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   10
+      Top             =   5880
+      Width           =   2655
+   End
+   Begin VB.Label Label11 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Airbags :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   9
+      Top             =   5280
+      Width           =   2655
+   End
+   Begin VB.Label Label10 
+      BackColor       =   &H00000000&
+      BackStyle       =   0  'Transparent
+      Caption         =   "Speed (KPH) :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   8
+      Top             =   4680
+      Width           =   2655
+   End
+   Begin VB.Label Label9 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Power (BHP) :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   7
+      Top             =   4080
+      Width           =   2655
+   End
+   Begin VB.Label Label8 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Transmission :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   6
+      Top             =   3480
+      Width           =   2655
+   End
+   Begin VB.Label Label7 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Engine (cc) :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   5
+      Top             =   2880
+      Width           =   2655
+   End
+   Begin VB.Label Label6 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Model :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   4
+      Top             =   2280
+      Width           =   2655
+   End
+   Begin VB.Label Label5 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Brand :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   3
+      Top             =   1680
+      Width           =   2655
+   End
+   Begin VB.Label Label4 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Model_Id :-"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
+      Height          =   375
+      Left            =   14640
+      TabIndex        =   1
+      Top             =   1080
+      Width           =   2655
+   End
+   Begin VB.Label Label3 
+      Alignment       =   2  'Center
+      BackStyle       =   0  'Transparent
+      Caption         =   "Configuration"
+      BeginProperty Font 
+         Name            =   "Bookman Old Style"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   600
+         Underline       =   -1  'True
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FF00&
       Height          =   375
       Left            =   15000
       TabIndex        =   0
@@ -840,10 +938,12 @@ Begin VB.Form carConfiguration
       Width           =   14415
    End
    Begin VB.Image Image1 
-      Height          =   11295
+      Height          =   11520
       Left            =   0
+      Picture         =   "carConfiguration.frx":0000
+      Stretch         =   -1  'True
       Top             =   0
-      Width           =   20415
+      Width           =   20520
    End
 End
 Attribute VB_Name = "carConfiguration"
@@ -943,7 +1043,7 @@ Public Sub Intilize_form()
             
             model_price = car!cost
             Txt_Cost.Text = car!cost
-            
+        
             Txt_Size.Text = car!Tyre_Size
             Txt_Tank.Text = car!Fuel_tank
             Txt_Stw.Text = car!Steering_Wheel
@@ -952,6 +1052,7 @@ Public Sub Intilize_form()
             Txt_Bui.Text = car!Built
             Txt_Pol.Text = car!Polution
             Txt_Des.Text = car!Description
+            
             
             'Load images from pictures database
             

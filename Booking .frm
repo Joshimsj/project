@@ -79,7 +79,7 @@ Begin VB.Form bookingfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   137625601
+      Format          =   142737409
       CurrentDate     =   43294
    End
    Begin VB.TextBox Brand_Txt 
@@ -196,6 +196,7 @@ Begin VB.Form bookingfrm
       EndProperty
       Height          =   615
       Left            =   3840
+      MaxLength       =   6
       TabIndex        =   7
       Text            =   "Enter your Zipcode"
       Top             =   5400
@@ -231,7 +232,7 @@ Begin VB.Form bookingfrm
       Height          =   615
       Left            =   11040
       TabIndex        =   5
-      Text            =   "Enter your Sate"
+      Text            =   "Enter your State"
       Top             =   1800
       Width           =   3255
    End
@@ -270,7 +271,7 @@ Begin VB.Form bookingfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   137625601
+      Format          =   142737409
       CurrentDate     =   43265
    End
    Begin VB.TextBox TxtMob 
@@ -285,6 +286,7 @@ Begin VB.Form bookingfrm
       EndProperty
       Height          =   615
       Left            =   3840
+      MaxLength       =   10
       TabIndex        =   2
       Text            =   "Enter your Mobile No"
       Top             =   3240
@@ -461,7 +463,7 @@ Begin VB.Form bookingfrm
       Width           =   1695
    End
    Begin VB.Label Label7 
-      Caption         =   "Sate :-"
+      Caption         =   "State :-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   11.25
@@ -649,10 +651,10 @@ cst.Dealer_Mid = Txt_DelMid.Text
 Call cst.SaveData
 End Sub
 
-Public Sub Load_Selected_Data(car_model_id, brand, price, model, category)
+Public Sub Load_Selected_Data(car_model_id, brand, Price, model, category)
     model_id_selected = car_model_id
     brand_selected = brand
-    model_price = price
+    model_price = Price
     model_name = model
     car_category = category
     

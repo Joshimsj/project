@@ -11,6 +11,7 @@ Begin VB.Form AccLogin
    ScaleWidth      =   7125
    ShowInTaskbar   =   0   'False
    Begin VB.CommandButton CmdSign 
+      BackColor       =   &H00808000&
       Caption         =   "Sign in"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -23,6 +24,8 @@ Begin VB.Form AccLogin
       EndProperty
       Height          =   495
       Left            =   2280
+      MaskColor       =   &H00C0C000&
+      Style           =   1  'Graphical
       TabIndex        =   2
       Top             =   2520
       Width           =   2535

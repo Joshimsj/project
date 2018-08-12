@@ -82,7 +82,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   118030337
+      Format          =   141754369
       CurrentDate     =   43289
    End
    Begin VB.TextBox TxtDeMob 
@@ -120,6 +120,7 @@ Begin VB.Form Accfrm
       Width           =   5055
    End
    Begin VB.TextBox TxtAmtWords 
+      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -132,7 +133,6 @@ Begin VB.Form Accfrm
       Height          =   615
       Left            =   4320
       TabIndex        =   17
-      Text            =   "Enter Amt in Words"
       Top             =   5040
       Width           =   5055
    End
@@ -199,6 +199,7 @@ Begin VB.Form Accfrm
       EndProperty
       Height          =   495
       Left            =   4320
+      MaxLength       =   11
       TabIndex        =   13
       Text            =   "Enter Code"
       Top             =   2400
@@ -214,8 +215,10 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00000000&
       Height          =   495
       Left            =   4320
+      MaxLength       =   15
       TabIndex        =   12
       Text            =   "Enter Acc No"
       Top             =   1800
@@ -317,7 +320,7 @@ Begin VB.Form Accfrm
    End
    Begin VB.Label Label7 
       BackStyle       =   0  'Transparent
-      Caption         =   "Amount in Words :- "
+      Caption         =   "Amount (in Words) :- "
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -374,7 +377,7 @@ Begin VB.Form Accfrm
    End
    Begin VB.Label Label4 
       BackStyle       =   0  'Transparent
-      Caption         =   "Amount in No :-"
+      Caption         =   "Amount (in Rs.) :-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -467,6 +470,7 @@ Dim r As New ADODB.Recordset
 Dim s As String
 
 Dim amount As String
+'Dim amountw As String
 
 Private Sub CmdAdd_Click()
 TxtAccN.Text = ""
@@ -478,6 +482,7 @@ TxtAmtWords.Text = ""
 TxtDeName.Text = ""
 TxtDeMob.Text = ""
 Dat.Value = "1/10/2018"
+TxtAccN.SetFocus
 End Sub
 
 Private Sub CmdClose_Click()
@@ -485,6 +490,7 @@ Invoice.Show
 End Sub
 
 Private Sub CmdSummit_Click()
+Invoice.Load_payment TxtAmtNo.Text, "Account Pay"
 Dim An As New AccDetails
 An.Acc_Holder_Name = TxtAccN.Text
 An.Acc_No = TxtAccNo.Text
@@ -497,12 +503,61 @@ An.Depositor_Name = TxtDeName.Text
 An.Depositor_Mob_No = TxtDeMob.Text
 An.Acc_Dat = Dat.Value
 Call An.Save
-
-Invoice.Load_payment TxtAmtNo.Text, "Account Pay"
 End Sub
 
-Public Sub Load_Amount(price)
-    amount = price
+Public Sub Load_Amount(Price)
+    amount = Price
     TxtAmtNo.Text = amount
 End Sub
 
+'Public Sub Load_Amountw(P)
+    'amountw = P
+    'TxtAmtWords.Text = amountw
+'End Sub
+
+Private Sub TxtAccNo_Change()
+If TxtAccN.Text = "" Then
+MsgBox ("Acc Holder Name cannot be blank")
+TxtAccN.SetFocus
+End If
+End Sub
+
+Private Sub TxtBrName_Change()
+If TxtDName.Text = "" Then
+MsgBox ("Bank Drawn Name cannot be Blank")
+TxtDName.SetFocus
+End If
+End Sub
+
+Private Sub TxtCode_Change()
+If TxtAccNo.Text = "" Then
+MsgBox ("Acc No cannot be blank")
+TxtAccNo.SetFocus
+End If
+End Sub
+
+Private Sub TxtDeMob_Change()
+If TxtDeName.Text = "" Then
+MsgBox ("Depositor Name cannot be blank")
+TxtDeName.SetFocus
+End If
+
+If TxtDeMob.Text = "" Then
+MsgBox ("Depositor Mobile No cannot be blank")
+TxtDeMob.SetFocus
+End If
+End Sub
+
+Private Sub TxtDeName_Change()
+If TxtBrName.Text = "" Then
+MsgBox ("Branch Name cannot be blank")
+TxtBrName.SetFocus
+End If
+End Sub
+
+Private Sub TxtDName_Change()
+If TxtCode.Text = "" Then
+MsgBox ("IFSC Code cannot be Blank")
+TxtCode.SetFocus
+End If
+End Sub

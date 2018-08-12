@@ -111,6 +111,7 @@ Begin VB.Form feedbackfrm
       EndProperty
       Height          =   450
       Left            =   9240
+      MaxLength       =   3
       TabIndex        =   22
       Text            =   "Enter Age"
       Top             =   2640
@@ -590,6 +591,7 @@ Begin VB.Form feedbackfrm
    Begin VB.Image Image1 
       Height          =   8715
       Left            =   0
+      Picture         =   "feedback.frx":00DF
       Stretch         =   -1  'True
       Top             =   0
       Width           =   15765

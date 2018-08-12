@@ -1,11 +1,13 @@
 VERSION 5.00
 Begin VB.Form MainForm 
+   BackColor       =   &H00FFFF00&
    BorderStyle     =   0  'None
    Caption         =   "Form1"
    ClientHeight    =   11445
    ClientLeft      =   0
    ClientTop       =   0
    ClientWidth     =   20490
+   ForeColor       =   &H0000FF00&
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -14,6 +16,7 @@ Begin VB.Form MainForm
    ShowInTaskbar   =   0   'False
    WindowState     =   2  'Maximized
    Begin VB.CommandButton CmdSel 
+      BackColor       =   &H00FFFF00&
       Caption         =   "Search"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -26,11 +29,13 @@ Begin VB.Form MainForm
       EndProperty
       Height          =   615
       Left            =   15000
+      Style           =   1  'Graphical
       TabIndex        =   9
       Top             =   10800
       Width           =   1335
    End
    Begin VB.CommandButton ResetFilters 
+      BackColor       =   &H00C0C000&
       Caption         =   "Reset"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -43,11 +48,13 @@ Begin VB.Form MainForm
       EndProperty
       Height          =   615
       Left            =   16440
+      Style           =   1  'Graphical
       TabIndex        =   8
       Top             =   10800
       Width           =   1335
    End
    Begin VB.CommandButton CmdClose 
+      BackColor       =   &H00C0C000&
       Caption         =   "X"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -60,6 +67,7 @@ Begin VB.Form MainForm
       EndProperty
       Height          =   615
       Left            =   19800
+      Style           =   1  'Graphical
       TabIndex        =   5
       Top             =   10800
       Width           =   615
@@ -95,7 +103,7 @@ Begin VB.Form MainForm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H0000FFFF&
+      ForeColor       =   &H00C0C000&
       Height          =   1020
       Left            =   3240
       TabIndex        =   3
@@ -103,7 +111,7 @@ Begin VB.Form MainForm
       Width           =   3105
    End
    Begin VB.CommandButton loadcarBtn 
-      BackColor       =   &H000080FF&
+      BackColor       =   &H00C0C000&
       Caption         =   "View Configuration"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -116,7 +124,7 @@ Begin VB.Form MainForm
       EndProperty
       Height          =   720
       Left            =   120
-      MaskColor       =   &H0000FFFF&
+      MaskColor       =   &H00C0C000&
       Style           =   1  'Graphical
       TabIndex        =   2
       Top             =   10680
@@ -135,7 +143,7 @@ Begin VB.Form MainForm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H0000FFFF&
+      ForeColor       =   &H00C0C000&
       Height          =   1020
       Left            =   120
       TabIndex        =   1
@@ -143,6 +151,7 @@ Begin VB.Form MainForm
       Width           =   2865
    End
    Begin VB.CommandButton playVdoControl 
+      BackColor       =   &H00FFFF00&
       Cancel          =   -1  'True
       Caption         =   "Play Adv"
       BeginProperty Font 
@@ -163,17 +172,17 @@ Begin VB.Form MainForm
    End
    Begin VB.Label Label6 
       BackStyle       =   0  'Transparent
-      Caption         =   """The Best of the Best"""
+      Caption         =   """Best of the Best"""
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   48
          Charset         =   0
          Weight          =   600
-         Underline       =   0   'False
+         Underline       =   -1  'True
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H000040C0&
+      ForeColor       =   &H00C0C000&
       Height          =   1215
       Left            =   8640
       TabIndex        =   7
@@ -181,7 +190,8 @@ Begin VB.Form MainForm
       Width           =   11295
    End
    Begin VB.Label Label1 
-      BackColor       =   &H00808080&
+      Alignment       =   2  'Center
+      BackColor       =   &H00808000&
       Caption         =   "Car Model "
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -192,7 +202,7 @@ Begin VB.Form MainForm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H000080FF&
+      ForeColor       =   &H0000FF00&
       Height          =   495
       Left            =   3240
       TabIndex        =   6
