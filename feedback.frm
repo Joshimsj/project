@@ -15,6 +15,7 @@ Begin VB.Form feedbackfrm
    ScaleWidth      =   15780
    ShowInTaskbar   =   0   'False
    Begin VB.TextBox TxtQ7 
+      BackColor       =   &H8000000D&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -27,11 +28,11 @@ Begin VB.Form feedbackfrm
       Height          =   495
       Left            =   7680
       TabIndex        =   30
-      Text            =   "Q7"
       Top             =   7560
       Width           =   7935
    End
    Begin VB.TextBox TxtQ8 
+      BackColor       =   &H8000000D&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -44,11 +45,11 @@ Begin VB.Form feedbackfrm
       Height          =   495
       Left            =   7680
       TabIndex        =   29
-      Text            =   "Q8"
       Top             =   8160
       Width           =   4335
    End
    Begin VB.TextBox TxtSex 
+      BackColor       =   &H8000000D&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -61,11 +62,11 @@ Begin VB.Form feedbackfrm
       Height          =   450
       Left            =   5400
       TabIndex        =   26
-      Text            =   "Enter Sex"
       Top             =   2640
       Width           =   1695
    End
    Begin VB.TextBox TxtName 
+      BackColor       =   &H8000000D&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -78,11 +79,11 @@ Begin VB.Form feedbackfrm
       Height          =   465
       Left            =   1800
       TabIndex        =   25
-      Text            =   "Enter Name"
       Top             =   2640
       Width           =   1935
    End
    Begin VB.TextBox TxtIncome 
+      BackColor       =   &H8000000D&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -92,14 +93,15 @@ Begin VB.Form feedbackfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00000000&
       Height          =   450
       Left            =   12960
       TabIndex        =   23
-      Text            =   "Income"
       Top             =   2640
       Width           =   2175
    End
    Begin VB.TextBox TxtAge 
+      BackColor       =   &H8000000D&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -113,7 +115,6 @@ Begin VB.Form feedbackfrm
       Left            =   9240
       MaxLength       =   3
       TabIndex        =   22
-      Text            =   "Enter Age"
       Top             =   2640
       Width           =   1695
    End
@@ -169,6 +170,7 @@ Begin VB.Form feedbackfrm
       Width           =   975
    End
    Begin VB.TextBox TxtQ6 
+      BackColor       =   &H8000000D&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -181,11 +183,11 @@ Begin VB.Form feedbackfrm
       Height          =   495
       Left            =   7680
       TabIndex        =   18
-      Text            =   "Q6"
       Top             =   6960
       Width           =   7935
    End
    Begin VB.TextBox TxtQ5 
+      BackColor       =   &H8000000D&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -198,11 +200,11 @@ Begin VB.Form feedbackfrm
       Height          =   495
       Left            =   7680
       TabIndex        =   17
-      Text            =   "Q5"
       Top             =   6360
       Width           =   7935
    End
    Begin VB.TextBox TxtQ4 
+      BackColor       =   &H8000000D&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -215,11 +217,11 @@ Begin VB.Form feedbackfrm
       Height          =   495
       Left            =   7680
       TabIndex        =   16
-      Text            =   "Q4"
       Top             =   5760
       Width           =   7935
    End
    Begin VB.TextBox TxtQ3 
+      BackColor       =   &H8000000D&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -232,11 +234,11 @@ Begin VB.Form feedbackfrm
       Height          =   495
       Left            =   7680
       TabIndex        =   15
-      Text            =   "Q3"
       Top             =   5160
       Width           =   7935
    End
    Begin VB.TextBox TxtQ2 
+      BackColor       =   &H8000000D&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -249,11 +251,11 @@ Begin VB.Form feedbackfrm
       Height          =   495
       Left            =   7680
       TabIndex        =   14
-      Text            =   "Q2"
       Top             =   4560
       Width           =   7935
    End
    Begin VB.TextBox TxtQ1 
+      BackColor       =   &H8000000D&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -266,11 +268,11 @@ Begin VB.Form feedbackfrm
       Height          =   495
       Left            =   7680
       TabIndex        =   13
-      Text            =   "Q1"
       Top             =   3960
       Width           =   7935
    End
    Begin VB.Label Label16 
+      BackColor       =   &H000000FF&
       BackStyle       =   0  'Transparent
       Caption         =   "Feedback "
       BeginProperty Font 
@@ -278,10 +280,11 @@ Begin VB.Form feedbackfrm
          Size            =   14.25
          Charset         =   0
          Weight          =   600
-         Underline       =   0   'False
+         Underline       =   -1  'True
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FFFF&
       Height          =   375
       Left            =   13920
       TabIndex        =   31
@@ -315,10 +318,11 @@ Begin VB.Form feedbackfrm
          Size            =   14.25
          Charset         =   0
          Weight          =   600
-         Underline       =   0   'False
+         Underline       =   -1  'True
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FF00&
       Height          =   495
       Left            =   4320
       TabIndex        =   27
@@ -333,10 +337,11 @@ Begin VB.Form feedbackfrm
          Size            =   14.25
          Charset         =   0
          Weight          =   600
-         Underline       =   0   'False
+         Underline       =   -1  'True
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FF00&
       Height          =   495
       Left            =   360
       TabIndex        =   24
@@ -355,7 +360,7 @@ Begin VB.Form feedbackfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00C00000&
+      ForeColor       =   &H00800080&
       Height          =   495
       Index           =   0
       Left            =   240
@@ -380,7 +385,7 @@ Begin VB.Form feedbackfrm
       Left            =   240
       TabIndex        =   11
       Top             =   6360
-      Width           =   9015
+      Width           =   7455
    End
    Begin VB.Label Label12 
       BackStyle       =   0  'Transparent
@@ -394,13 +399,13 @@ Begin VB.Form feedbackfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00C00000&
+      ForeColor       =   &H00800080&
       Height          =   375
       Index           =   0
       Left            =   240
       TabIndex        =   10
       Top             =   7560
-      Width           =   9015
+      Width           =   7335
    End
    Begin VB.Label Label11 
       BackStyle       =   0  'Transparent
@@ -414,12 +419,12 @@ Begin VB.Form feedbackfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00C00000&
+      ForeColor       =   &H00800000&
       Height          =   495
       Left            =   240
       TabIndex        =   9
       Top             =   6960
-      Width           =   9015
+      Width           =   7935
    End
    Begin VB.Label Label10 
       BackStyle       =   0  'Transparent
@@ -433,12 +438,12 @@ Begin VB.Form feedbackfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00C00000&
+      ForeColor       =   &H00800080&
       Height          =   495
       Left            =   240
       TabIndex        =   8
       Top             =   5760
-      Width           =   9015
+      Width           =   7335
    End
    Begin VB.Label Label9 
       BackStyle       =   0  'Transparent
@@ -452,12 +457,12 @@ Begin VB.Form feedbackfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00C00000&
+      ForeColor       =   &H00800000&
       Height          =   495
       Left            =   240
       TabIndex        =   7
       Top             =   5160
-      Width           =   9015
+      Width           =   7335
    End
    Begin VB.Label Label8 
       BackStyle       =   0  'Transparent
@@ -476,20 +481,22 @@ Begin VB.Form feedbackfrm
       Left            =   240
       TabIndex        =   6
       Top             =   4560
-      Width           =   9015
+      Width           =   7335
    End
    Begin VB.Label Label7 
-      BackColor       =   &H000080FF&
-      Caption         =   "Please rate our Team on the basis of :- "
+      BackColor       =   &H000000FF&
+      BackStyle       =   0  'Transparent
+      Caption         =   "Please Rate our Team on the basis of :- "
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
          Charset         =   0
          Weight          =   600
-         Underline       =   0   'False
+         Underline       =   -1  'True
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FFFF&
       Height          =   495
       Left            =   120
       TabIndex        =   5
@@ -497,18 +504,20 @@ Begin VB.Form feedbackfrm
       Width           =   15615
    End
    Begin VB.Label Label6 
+      BackColor       =   &H000000FF&
       BackStyle       =   0  'Transparent
-      Caption         =   " Annual Income:-"
+      Caption         =   "Annual Income :-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
          Charset         =   0
          Weight          =   600
-         Underline       =   0   'False
+         Underline       =   -1  'True
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   495
+      ForeColor       =   &H0000FF00&
+      Height          =   375
       Left            =   10920
       TabIndex        =   4
       Top             =   2280
@@ -516,16 +525,17 @@ Begin VB.Form feedbackfrm
    End
    Begin VB.Label Label5 
       BackStyle       =   0  'Transparent
-      Caption         =   "Age Group:-"
+      Caption         =   "Age :-"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
          Charset         =   0
          Weight          =   600
-         Underline       =   0   'False
+         Underline       =   -1  'True
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FF00&
       Height          =   495
       Left            =   7440
       TabIndex        =   3
@@ -533,22 +543,24 @@ Begin VB.Form feedbackfrm
       Width           =   2055
    End
    Begin VB.Label Label3 
-      BackColor       =   &H000080FF&
-      Caption         =   "Please tell us a bit about  you......!!!!!"
+      BackColor       =   &H000000FF&
+      BackStyle       =   0  'Transparent
+      Caption         =   "Please tell us a bit about  you ..... ! ! !"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
          Charset         =   0
          Weight          =   600
-         Underline       =   0   'False
+         Underline       =   -1  'True
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H0000FFFF&
       Height          =   375
       Left            =   120
       TabIndex        =   2
       Top             =   1800
-      Width           =   15495
+      Width           =   15735
    End
    Begin VB.Label Label2 
       BackStyle       =   0  'Transparent
@@ -562,7 +574,7 @@ Begin VB.Form feedbackfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00000000&
+      ForeColor       =   &H00FFFF00&
       Height          =   1095
       Left            =   120
       TabIndex        =   1
@@ -570,23 +582,23 @@ Begin VB.Form feedbackfrm
       Width           =   15495
    End
    Begin VB.Label Label1 
-      BackColor       =   &H000080FF&
-      Caption         =   "Auto Expo Satisfactory Survey"
+      BackColor       =   &H000000FF&
+      Caption         =   "Auto Expo Satisfactory Survey =>"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
          Charset         =   0
          Weight          =   600
-         Underline       =   0   'False
+         Underline       =   -1  'True
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00000000&
+      ForeColor       =   &H0000FFFF&
       Height          =   375
       Left            =   120
       TabIndex        =   0
       Top             =   120
-      Width           =   4935
+      Width           =   5295
    End
    Begin VB.Image Image1 
       Height          =   8715
@@ -594,7 +606,7 @@ Begin VB.Form feedbackfrm
       Picture         =   "feedback.frx":00DF
       Stretch         =   -1  'True
       Top             =   0
-      Width           =   15765
+      Width           =   16005
    End
 End
 Attribute VB_Name = "feedbackfrm"
@@ -607,18 +619,7 @@ Dim r As New ADODB.Recordset
 Dim s As String
 
 Private Sub CmdAdd_Click()
-TxtName.Text = ""
-TxtSex.Text = ""
-TxtAge.Text = ""
-TxtIncome.Text = ""
-TxtQ1.Text = ""
-TxtQ2.Text = ""
-TxtQ3.Text = ""
-TxtQ4.Text = ""
-TxtQ5.Text = ""
-TxtQ6.Text = ""
-TxtQ7.Text = ""
-TxtQ8.Text = ""
+TxtName.SetFocus
 End Sub
 
 Private Sub CmdClose_Click()
@@ -643,4 +644,111 @@ fee.Q8 = TxtQ8.Text
 Call fee.SaveData
 End Sub
 
+Private Sub TxtAge_Change()
+If IsNumeric(TxtAge.Text) = False Then
+MsgBox ("Digits Only")
+TxtAge.Text = ""
+TxtAge.SetFocus
+End If
+End Sub
 
+Private Sub TxtAge_GotFocus()
+If (TxtSex.Text = "") Then
+MsgBox ("Please Enter Your Sex")
+TxtSex.SetFocus
+End If
+End Sub
+
+Private Sub TxtIncome_Change()
+If IsNumeric(TxtIncome.Text) = False Then
+MsgBox ("Digits Only")
+TxtIncome.Text = ""
+TxtIncome.SetFocus
+End If
+End Sub
+
+Private Sub TxtIncome_GotFocus()
+If (TxtAge.Text = "") Then
+MsgBox ("Please Enter your Age")
+TxtAge.SetFocus
+End If
+End Sub
+
+Private Sub TxtName_Change()
+If IsNumeric(TxtName.Text) = True Then
+MsgBox ("Text Only")
+TxtName.Text = ""
+TxtName.SetFocus
+End If
+End Sub
+
+Private Sub TxtQ1_GotFocus()
+If (TxtIncome.Text = "") Then
+MsgBox ("Please Enter a valid Annual Income")
+TxtIncome.SetFocus
+End If
+End Sub
+
+Private Sub TxtQ2_GotFocus()
+If (TxtQ1.Text = "") Then
+MsgBox ("Please Enter a valid Response")
+TxtQ1.SetFocus
+End If
+End Sub
+
+Private Sub TxtQ3_GotFocus()
+If (TxtQ2.Text = "") Then
+MsgBox ("Please Enter a valid Response")
+TxtQ2.SetFocus
+End If
+End Sub
+
+Private Sub TxtQ4_GotFocus()
+If (TxtQ3.Text = "") Then
+MsgBox ("Please Enter a valid Response")
+TxtQ3.SetFocus
+End If
+End Sub
+
+Private Sub TxtQ5_GotFocus()
+If (TxtQ4.Text = "") Then
+MsgBox ("Please Enter a valid Response")
+TxtQ4.SetFocus
+End If
+End Sub
+
+Private Sub TxtQ6_GotFocus()
+If (TxtQ5.Text = "") Then
+MsgBox ("Please Enter a valid Response")
+TxtQ5.SetFocus
+End If
+End Sub
+
+Private Sub TxtQ7_GotFocus()
+If (TxtQ6.Text = "") Then
+MsgBox ("Please Enter a valid Response")
+TxtQ6.SetFocus
+End If
+End Sub
+
+Private Sub TxtQ8_GotFocus()
+If (TxtQ7.Text = "") Then
+MsgBox ("Please Enter a valid Response")
+TxtQ7.SetFocus
+End If
+End Sub
+
+Private Sub TxtSex_Change()
+If IsNumeric(TxtSex.Text) = True Then
+MsgBox ("Text Only")
+TxtSex.Text = ""
+TxtSex.SetFocus
+End If
+End Sub
+
+Private Sub TxtSex_GotFocus()
+If (TxtName.Text = "") Then
+MsgBox ("Please Enter a valid Name")
+TxtName.SetFocus
+End If
+End Sub

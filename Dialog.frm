@@ -32,7 +32,7 @@ Begin VB.Form Selection
       Width           =   1335
    End
    Begin VB.ComboBox PriceRange 
-      BackColor       =   &H00808080&
+      BackColor       =   &H00404080&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -42,15 +42,16 @@ Begin VB.Form Selection
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H8000000D&
       Height          =   450
       Left            =   6360
       TabIndex        =   4
       Text            =   "Price Range"
-      Top             =   2280
+      Top             =   2400
       Width           =   3495
    End
    Begin VB.ComboBox CarCategory 
-      BackColor       =   &H00808080&
+      BackColor       =   &H00404080&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -60,6 +61,7 @@ Begin VB.Form Selection
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H8000000D&
       Height          =   450
       Left            =   6360
       TabIndex        =   3
@@ -79,12 +81,12 @@ Begin VB.Form Selection
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H0000FFFF&
-      Height          =   375
-      Left            =   360
+      ForeColor       =   &H0000FF00&
+      Height          =   495
+      Left            =   240
       TabIndex        =   2
       Top             =   2280
-      Width           =   2895
+      Width           =   2175
    End
    Begin VB.Label Label2 
       BackStyle       =   0  'Transparent
@@ -94,35 +96,35 @@ Begin VB.Form Selection
          Size            =   14.25
          Charset         =   0
          Weight          =   600
-         Underline       =   0   'False
+         Underline       =   -1  'True
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H0000FFFF&
-      Height          =   615
-      Left            =   240
+      ForeColor       =   &H0000FF00&
+      Height          =   495
+      Left            =   120
       TabIndex        =   1
       Top             =   1320
-      Width           =   2895
+      Width           =   2535
    End
    Begin VB.Label Label1 
-      BackStyle       =   0  'Transparent
-      Caption         =   "Selection of your Choice...!!!"
+      BackColor       =   &H0000FF00&
+      Caption         =   "Choice Selection ! ! !"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
-         Size            =   14.25
+         Size            =   18
          Charset         =   0
          Weight          =   600
-         Underline       =   0   'False
+         Underline       =   -1  'True
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H0000FFFF&
-      Height          =   375
-      Left            =   5760
+      ForeColor       =   &H00FF0000&
+      Height          =   495
+      Left            =   240
       TabIndex        =   0
-      Top             =   0
-      Width           =   4335
+      Top             =   3840
+      Width           =   3975
    End
    Begin VB.Image Image1 
       Height          =   4575

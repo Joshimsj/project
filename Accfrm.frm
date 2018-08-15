@@ -14,6 +14,7 @@ Begin VB.Form Accfrm
    ScaleWidth      =   9750
    ShowInTaskbar   =   0   'False
    Begin VB.CommandButton CmdClose 
+      BackColor       =   &H00C0C0C0&
       Caption         =   "Close"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -25,12 +26,15 @@ Begin VB.Form Accfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   7320
+      Left            =   7200
+      MaskColor       =   &H00808080&
+      Style           =   1  'Graphical
       TabIndex        =   23
       Top             =   7800
-      Width           =   2055
+      Width           =   2175
    End
    Begin VB.CommandButton CmdAdd 
+      BackColor       =   &H00C0C0C0&
       Caption         =   "ADD"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -42,12 +46,14 @@ Begin VB.Form Accfrm
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   7320
+      Left            =   7200
+      Style           =   1  'Graphical
       TabIndex        =   22
       Top             =   7080
-      Width           =   2055
+      Width           =   2175
    End
    Begin VB.CommandButton CmdSummit 
+      BackColor       =   &H00C0C0C0&
       Caption         =   "Submit"
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -60,17 +66,18 @@ Begin VB.Form Accfrm
       EndProperty
       Height          =   495
       Left            =   4320
+      Style           =   1  'Graphical
       TabIndex        =   21
       Top             =   7800
-      Width           =   2655
+      Width           =   2535
    End
    Begin MSComCtl2.DTPicker Dat 
       Height          =   495
       Left            =   4320
       TabIndex        =   20
       Top             =   7080
-      Width           =   2655
-      _ExtentX        =   4683
+      Width           =   2535
+      _ExtentX        =   4471
       _ExtentY        =   873
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -82,10 +89,16 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   141754369
+      CalendarBackColor=   0
+      CalendarForeColor=   65535
+      CalendarTitleBackColor=   255
+      CalendarTitleForeColor=   65535
+      CalendarTrailingForeColor=   65280
+      Format          =   109510657
       CurrentDate     =   43289
    End
    Begin VB.TextBox TxtDeMob 
+      BackColor       =   &H0000FFFF&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -95,14 +108,16 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H000000FF&
       Height          =   495
       Left            =   4320
+      MaxLength       =   10
       TabIndex        =   19
-      Text            =   "Enter Depositor Mob No"
       Top             =   6360
       Width           =   5055
    End
    Begin VB.TextBox TxtDeName 
+      BackColor       =   &H0000FFFF&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -112,14 +127,15 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H000000FF&
       Height          =   495
       Left            =   4320
       TabIndex        =   18
-      Text            =   "Enter Depositor Name"
       Top             =   5760
       Width           =   5055
    End
    Begin VB.TextBox TxtAmtWords 
+      BackColor       =   &H0000FFFF&
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -130,6 +146,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H000000FF&
       Height          =   615
       Left            =   4320
       TabIndex        =   17
@@ -137,6 +154,7 @@ Begin VB.Form Accfrm
       Width           =   5055
    End
    Begin VB.TextBox TxtAmtNo 
+      BackColor       =   &H0000FFFF&
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Bookman Old Style"
@@ -147,6 +165,7 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H000000FF&
       Height          =   615
       Left            =   4320
       TabIndex        =   16
@@ -154,6 +173,7 @@ Begin VB.Form Accfrm
       Width           =   5055
    End
    Begin VB.TextBox TxtBrName 
+      BackColor       =   &H0000FFFF&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -163,14 +183,15 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H000000FF&
       Height          =   525
       Left            =   4320
       TabIndex        =   15
-      Text            =   "Enter Branch Name"
       Top             =   3720
       Width           =   5055
    End
    Begin VB.TextBox TxtDName 
+      BackColor       =   &H0000FFFF&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -180,14 +201,15 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H000000FF&
       Height          =   615
       Left            =   4320
       TabIndex        =   14
-      Text            =   "Enter Drawer Name"
       Top             =   3000
       Width           =   5055
    End
    Begin VB.TextBox TxtCode 
+      BackColor       =   &H0000FFFF&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -197,15 +219,16 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H000000FF&
       Height          =   495
       Left            =   4320
       MaxLength       =   11
       TabIndex        =   13
-      Text            =   "Enter Code"
       Top             =   2400
       Width           =   5055
    End
    Begin VB.TextBox TxtAccNo 
+      BackColor       =   &H0000FFFF&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -215,16 +238,16 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00000000&
+      ForeColor       =   &H000000FF&
       Height          =   495
       Left            =   4320
       MaxLength       =   15
       TabIndex        =   12
-      Text            =   "Enter Acc No"
       Top             =   1800
       Width           =   5055
    End
    Begin VB.TextBox TxtAccN 
+      BackColor       =   &H0000FFFF&
       BeginProperty Font 
          Name            =   "Bookman Old Style"
          Size            =   14.25
@@ -234,10 +257,10 @@ Begin VB.Form Accfrm
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H000000FF&
       Height          =   495
       Left            =   4320
       TabIndex        =   11
-      Text            =   "Enter Acc Name"
       Top             =   1200
       Width           =   5055
    End
@@ -288,7 +311,7 @@ Begin VB.Form Accfrm
          Size            =   24
          Charset         =   0
          Weight          =   600
-         Underline       =   0   'False
+         Underline       =   -1  'True
          Italic          =   -1  'True
          Strikethrough   =   0   'False
       EndProperty
@@ -470,17 +493,8 @@ Dim r As New ADODB.Recordset
 Dim s As String
 
 Dim amount As String
-'Dim amountw As String
 
 Private Sub CmdAdd_Click()
-TxtAccN.Text = ""
-TxtAccNo.Text = ""
-TxtCode.Text = ""
-TxtDName.Text = ""
-TxtBrName.Text = ""
-TxtAmtWords.Text = ""
-TxtDeName.Text = ""
-TxtDeMob.Text = ""
 Dat.Value = "1/10/2018"
 TxtAccN.SetFocus
 End Sub
@@ -510,54 +524,100 @@ Public Sub Load_Amount(Price)
     TxtAmtNo.Text = amount
 End Sub
 
-'Public Sub Load_Amountw(P)
-    'amountw = P
-    'TxtAmtWords.Text = amountw
-'End Sub
+Private Sub TxtAccN_Change()
+If IsNumeric(TxtAccN.Text) = True Then
+MsgBox ("Text Only")
+TxtAccN.Text = ""
+TxtAccN.SetFocus
+End If
+End Sub
 
 Private Sub TxtAccNo_Change()
-If TxtAccN.Text = "" Then
-MsgBox ("Acc Holder Name cannot be blank")
+If IsNumeric(TxtAccNo.Text) = False Then
+MsgBox ("Digits Only")
+TxtAccNo.Text = ""
+TxtAccNo.SetFocus
+End If
+End Sub
+
+Private Sub TxtAccNo_GotFocus()
+If (TxtAccN.Text = "") Then
+MsgBox ("Enter a valid Bank Acc Name")
 TxtAccN.SetFocus
 End If
 End Sub
 
 Private Sub TxtBrName_Change()
-If TxtDName.Text = "" Then
-MsgBox ("Bank Drawn Name cannot be Blank")
+If IsNumeric(TxtBrName.Text) = True Then
+MsgBox ("Text Only")
+TxtBrName.Text = ""
+TxtBrName.SetFocus
+End If
+End Sub
+
+Private Sub TxtBrName_GotFocus()
+If (TxtDName.Text = "") Then
+MsgBox ("Enter a valid Drawer Name")
 TxtDName.SetFocus
 End If
 End Sub
 
 Private Sub TxtCode_Change()
-If TxtAccNo.Text = "" Then
-MsgBox ("Acc No cannot be blank")
+If IsNumeric(TxtCode.Text) = False Then
+MsgBox ("Digits Only")
+TxtCode.Text = ""
+TxtCode.SetFocus
+End If
+End Sub
+
+Private Sub TxtCode_GotFocus()
+If (TxtAccNo.Text = "") Then
+MsgBox ("Enter a valid Bank Acc No")
 TxtAccNo.SetFocus
 End If
 End Sub
 
 Private Sub TxtDeMob_Change()
-If TxtDeName.Text = "" Then
-MsgBox ("Depositor Name cannot be blank")
-TxtDeName.SetFocus
-End If
-
-If TxtDeMob.Text = "" Then
-MsgBox ("Depositor Mobile No cannot be blank")
+If IsNumeric(TxtDeMob.Text) = False Then
+MsgBox ("Digits Only")
+TxtDeMob.Text = ""
 TxtDeMob.SetFocus
 End If
 End Sub
 
+Private Sub TxtDeMob_GotFocus()
+If (TxtDeName.Text = "") Then
+MsgBox ("Enter a valid Depositor Name")
+TxtDeName.SetFocus
+End If
+End Sub
+
 Private Sub TxtDeName_Change()
-If TxtBrName.Text = "" Then
-MsgBox ("Branch Name cannot be blank")
+If IsNumeric(TxtDeName.Text) = True Then
+MsgBox ("Text Only")
+TxtDeName.Text = ""
+TxtDeName.SetFocus
+End If
+End Sub
+
+Private Sub TxtDeName_GotFocus()
+If (TxtBrName.Text = "") Then
+MsgBox ("Enter a valid Branch Name")
 TxtBrName.SetFocus
 End If
 End Sub
 
 Private Sub TxtDName_Change()
-If TxtCode.Text = "" Then
-MsgBox ("IFSC Code cannot be Blank")
+If IsNumeric(TxtDName.Text) = True Then
+MsgBox ("Text Only")
+TxtDName.Text = ""
+TxtDName.SetFocus
+End If
+End Sub
+
+Private Sub TxtDName_GotFocus()
+If (TxtCode.Text = "") Then
+MsgBox ("Enter a valid IFSC Code")
 TxtCode.SetFocus
 End If
 End Sub
